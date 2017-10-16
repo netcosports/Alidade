@@ -97,7 +97,9 @@
 				CE91F31F1F948AA8002FCE7E /* Utility */,
 				CE91F31E1F948AA8002FCE7E /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		CE91F31E1F948AA8002FCE7E /* Products */ = {
 			isa = PBXGroup;

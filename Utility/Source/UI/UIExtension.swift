@@ -121,6 +121,7 @@ public extension UI.Device {
 
   public enum System {
 
+    case iOS8
     case iOS9
     case iOS10
     case iOS11
@@ -128,11 +129,14 @@ public extension UI.Device {
     public static let current: System = {
       if #available(iOS 11, *) {
         return System.iOS11
-      } else if #available(iOS 10, *) {
+      }
+      if #available(iOS 10, *) {
         return System.iOS10
-      } else {
+      }
+      if #available(iOS 9, *) {
         return System.iOS9
       }
+      return System.iOS8
     }()
   }
 }
