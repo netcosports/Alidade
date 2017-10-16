@@ -17,7 +17,7 @@ public extension UIFont { var ui: UIFont { return withSize(pointSize.ui) } }
 // swiftlint:disable:next type_name
 public class UI {
 
-  fileprivate static let scaleFactor: CGFloat = {
+  public static let scaleFactor: CGFloat = {
     let size = UIScreen.main.bounds.size
     let width = min(size.width, size.height)
     let idiom = UIDevice.current.userInterfaceIdiom
@@ -30,11 +30,6 @@ public class UI {
   }()
 
   private init() { }
-
-  static func sizeOf(_ image: UIImage?) -> CGSize {
-    let size = image?.size ?? CGSize.zero
-    return size.ui
-  }
 }
 
 fileprivate extension UI {

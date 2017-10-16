@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author       = "dDomovoj"
   s.source       = { :git => "https://github.com/dDomovoj/Utility.git", :tag => s.version }
 
-  s.ios.deployment_target = "8.0"
+  s.ios.deployment_target = "9.3"
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'Utility/Source/Core/*.swift'
