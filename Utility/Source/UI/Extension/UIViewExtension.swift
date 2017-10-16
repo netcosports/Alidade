@@ -16,7 +16,6 @@ public extension UIView {
     }
   }
 
-  @available(iOS 9.0, *)
   func removeLayoutGuides(with identifier: String?) {
     if let identifier = identifier {
       layoutGuides
@@ -34,13 +33,13 @@ public extension UIView {
 
   func makeNotHuggable(in directions: [UILayoutConstraintAxis] = [.horizontal, .vertical]) {
     directions.forEach {
-      setContentHuggingPriority(UILayoutPriority.required, for: $0)
+      setContentHuggingPriority(.required, for: $0)
     }
   }
 
   func makeNotCompressable(in directions: [UILayoutConstraintAxis] = [.horizontal, .vertical]) {
     directions.forEach {
-      setContentCompressionResistancePriority(UILayoutPriority.required, for: $0)
+      setContentCompressionResistancePriority(.required, for: $0)
     }
   }
 }

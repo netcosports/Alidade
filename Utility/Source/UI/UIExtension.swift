@@ -114,7 +114,6 @@ public extension UI.Device {
 
   public enum System {
 
-    case iOS8
     case iOS9
     case iOS10
     case iOS11
@@ -126,10 +125,7 @@ public extension UI.Device {
       if #available(iOS 10, *) {
         return System.iOS10
       }
-      if #available(iOS 9, *) {
-        return System.iOS9
-      }
-      return System.iOS8
+      return System.iOS9
     }()
   }
 }
