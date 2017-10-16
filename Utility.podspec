@@ -6,6 +6,7 @@ Pod::Spec.new do |s|
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = "dDomovoj"
+  s.homepage     = "https://github.com/dDomovoj/Utility"
 
   s.ios.deployment_target = "8.0"
 
