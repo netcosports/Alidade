@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'UI' do |ss|
-    ss.source_files = 'Utility/Source/UI/**/.swift'
+    ss.source_files = 'Utility/Source/UI/**/*.swift'
   end
 
   s.subspec 'Debug' do |ss|
