@@ -1,11 +1,3 @@
-//
-//  Array+Custom.swift
-//  Liverpool_FC
-//
-//  Created by Sergey Dikovitsky on 2/18/16.
-//  Copyright © 2016 NETCOSPORTS. All rights reserved.
-//
-
 import Foundation
 
 public extension Array {

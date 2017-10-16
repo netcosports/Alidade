@@ -1,11 +1,3 @@
-//
-//  TestView.swift
-//  TourDeFrance
-//
-//  Created by Dmitry Duleba on 6/15/17.
-//  Copyright © 2017 NetcoSports. All rights reserved.
-//
-
 import Foundation
 
 class TestView: UIView {

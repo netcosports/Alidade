@@ -1,10 +1,3 @@
-//
-//  GeometryExtensions.swift
-//
-//  Created by Vladimir Burdukov on 12/22/16.
-//  Copyright © 2016 NetcoSports. All rights reserved.
-//
-
 import UIKit
 
 public extension CGAffineTransform {

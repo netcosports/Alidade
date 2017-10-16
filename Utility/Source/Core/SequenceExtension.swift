@@ -1,11 +1,3 @@
-//
-//  SequenceExtension.swift
-//  Utility
-//
-//  Created by Dmitry Duleba on 9/27/17.
-//  Copyright © 2017 NetcoSports. All rights reserved.
-//
-
 import Foundation
 
 public extension Sequence {

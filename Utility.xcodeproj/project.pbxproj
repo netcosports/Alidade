@@ -40,6 +40,38 @@
 		CE91F3B51F948FB3002FCE7E /* PathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3951F948F9C002FCE7E /* PathView.swift */; };
 		CE91F3B61F948FB3002FCE7E /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3961F948F9C002FCE7E /* RadialGradientLayer.swift */; };
 		CE91F3B71F948FB3002FCE7E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3971F948F9C002FCE7E /* TestView.swift */; };
+		CEC90CA01F94BB9B00FA7643 /* ArrayExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3721F948F9C002FCE7E /* ArrayExtension.swift */; };
+		CEC90CA11F94BB9B00FA7643 /* BoolExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3731F948F9C002FCE7E /* BoolExtension.swift */; };
+		CEC90CA21F94BB9B00FA7643 /* Boxed.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3741F948F9C002FCE7E /* Boxed.swift */; };
+		CEC90CA31F94BB9B00FA7643 /* FloatExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3751F948F9C002FCE7E /* FloatExtension.swift */; };
+		CEC90CA41F94BB9B00FA7643 /* Geometry.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3761F948F9C002FCE7E /* Geometry.swift */; };
+		CEC90CA51F94BB9B00FA7643 /* IntExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3771F948F9C002FCE7E /* IntExtension.swift */; };
+		CEC90CA61F94BB9B00FA7643 /* NSObjectExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3781F948F9C002FCE7E /* NSObjectExtension.swift */; };
+		CEC90CA71F94BB9B00FA7643 /* SequenceExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3791F948F9C002FCE7E /* SequenceExtension.swift */; };
+		CEC90CA81F94BB9B00FA7643 /* String+Emoji.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F37A1F948F9C002FCE7E /* String+Emoji.swift */; };
+		CEC90CA91F94BB9B00FA7643 /* StringExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F37B1F948F9C002FCE7E /* StringExtension.swift */; };
+		CEC90CAA1F94BB9B00FA7643 /* TimeIntervalExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F37C1F948F9C002FCE7E /* TimeIntervalExtension.swift */; };
+		CEC90CAB1F94BB9B00FA7643 /* Functions.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F37E1F948F9C002FCE7E /* Functions.swift */; };
+		CEC90CAC1F94BB9B00FA7643 /* UIView+Debug.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F37F1F948F9C002FCE7E /* UIView+Debug.swift */; };
+		CEC90CAD1F94BB9B00FA7643 /* FormatterPool.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3811F948F9C002FCE7E /* FormatterPool.swift */; };
+		CEC90CAE1F94BB9B00FA7643 /* CGFloat+Geometry.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3841F948F9C002FCE7E /* CGFloat+Geometry.swift */; };
+		CEC90CAF1F94BB9B00FA7643 /* CGPoint+Geometry.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3851F948F9C002FCE7E /* CGPoint+Geometry.swift */; };
+		CEC90CB01F94BB9B00FA7643 /* CGRect+Geometry.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3861F948F9C002FCE7E /* CGRect+Geometry.swift */; };
+		CEC90CB11F94BB9B00FA7643 /* ComparableExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3871F948F9C002FCE7E /* ComparableExtension.swift */; };
+		CEC90CB21F94BB9B00FA7643 /* GeometryOperators.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3881F948F9C002FCE7E /* GeometryOperators.swift */; };
+		CEC90CB31F94BB9B00FA7643 /* UIColorExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3891F948F9C002FCE7E /* UIColorExtension.swift */; };
+		CEC90CB41F94BB9B00FA7643 /* UIGestureRecognizerExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F38A1F948F9C002FCE7E /* UIGestureRecognizerExtension.swift */; };
+		CEC90CB51F94BB9B00FA7643 /* UIImageExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F38B1F948F9C002FCE7E /* UIImageExtension.swift */; };
+		CEC90CB61F94BB9B00FA7643 /* UIScrollViewExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F38C1F948F9C002FCE7E /* UIScrollViewExtension.swift */; };
+		CEC90CB71F94BB9B00FA7643 /* UIView+Animations.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F38D1F948F9C002FCE7E /* UIView+Animations.swift */; };
+		CEC90CB81F94BB9B00FA7643 /* UIViewExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F38E1F948F9C002FCE7E /* UIViewExtension.swift */; };
+		CEC90CB91F94BB9B00FA7643 /* Updateable.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3901F948F9C002FCE7E /* Updateable.swift */; };
+		CEC90CBA1F94BB9B00FA7643 /* UIExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3911F948F9C002FCE7E /* UIExtension.swift */; };
+		CEC90CBB1F94BB9B00FA7643 /* GradientView.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3931F948F9C002FCE7E /* GradientView.swift */; };
+		CEC90CBC1F94BB9B00FA7643 /* LineView.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3941F948F9C002FCE7E /* LineView.swift */; };
+		CEC90CBD1F94BB9B00FA7643 /* PathView.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3951F948F9C002FCE7E /* PathView.swift */; };
+		CEC90CBE1F94BB9B00FA7643 /* RadialGradientLayer.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3961F948F9C002FCE7E /* RadialGradientLayer.swift */; };
+		CEC90CBF1F94BB9B00FA7643 /* TestView.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3971F948F9C002FCE7E /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -222,6 +254,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE91F3221F948AA8002FCE7E /* Utility.h in Headers */,
+				CEC90CA01F94BB9B00FA7643 /* ArrayExtension.swift in Headers */,
+				CEC90CA11F94BB9B00FA7643 /* BoolExtension.swift in Headers */,
+				CEC90CA21F94BB9B00FA7643 /* Boxed.swift in Headers */,
+				CEC90CA31F94BB9B00FA7643 /* FloatExtension.swift in Headers */,
+				CEC90CA41F94BB9B00FA7643 /* Geometry.swift in Headers */,
+				CEC90CA51F94BB9B00FA7643 /* IntExtension.swift in Headers */,
+				CEC90CA61F94BB9B00FA7643 /* NSObjectExtension.swift in Headers */,
+				CEC90CA71F94BB9B00FA7643 /* SequenceExtension.swift in Headers */,
+				CEC90CA81F94BB9B00FA7643 /* String+Emoji.swift in Headers */,
+				CEC90CA91F94BB9B00FA7643 /* StringExtension.swift in Headers */,
+				CEC90CAA1F94BB9B00FA7643 /* TimeIntervalExtension.swift in Headers */,
+				CEC90CAB1F94BB9B00FA7643 /* Functions.swift in Headers */,
+				CEC90CAC1F94BB9B00FA7643 /* UIView+Debug.swift in Headers */,
+				CEC90CAD1F94BB9B00FA7643 /* FormatterPool.swift in Headers */,
+				CEC90CAE1F94BB9B00FA7643 /* CGFloat+Geometry.swift in Headers */,
+				CEC90CAF1F94BB9B00FA7643 /* CGPoint+Geometry.swift in Headers */,
+				CEC90CB01F94BB9B00FA7643 /* CGRect+Geometry.swift in Headers */,
+				CEC90CB11F94BB9B00FA7643 /* ComparableExtension.swift in Headers */,
+				CEC90CB21F94BB9B00FA7643 /* GeometryOperators.swift in Headers */,
+				CEC90CB31F94BB9B00FA7643 /* UIColorExtension.swift in Headers */,
+				CEC90CB41F94BB9B00FA7643 /* UIGestureRecognizerExtension.swift in Headers */,
+				CEC90CB51F94BB9B00FA7643 /* UIImageExtension.swift in Headers */,
+				CEC90CB61F94BB9B00FA7643 /* UIScrollViewExtension.swift in Headers */,
+				CEC90CB71F94BB9B00FA7643 /* UIView+Animations.swift in Headers */,
+				CEC90CB81F94BB9B00FA7643 /* UIViewExtension.swift in Headers */,
+				CEC90CB91F94BB9B00FA7643 /* Updateable.swift in Headers */,
+				CEC90CBA1F94BB9B00FA7643 /* UIExtension.swift in Headers */,
+				CEC90CBB1F94BB9B00FA7643 /* GradientView.swift in Headers */,
+				CEC90CBC1F94BB9B00FA7643 /* LineView.swift in Headers */,
+				CEC90CBD1F94BB9B00FA7643 /* PathView.swift in Headers */,
+				CEC90CBE1F94BB9B00FA7643 /* RadialGradientLayer.swift in Headers */,
+				CEC90CBF1F94BB9B00FA7643 /* TestView.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +519,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Utility/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dev.Utility;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -475,6 +540,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Utility/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dev.Utility;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";

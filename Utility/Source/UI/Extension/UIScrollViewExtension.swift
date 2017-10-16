@@ -1,10 +1,3 @@
-//
-//  UIScrollViewExtension.swift
-//
-//  Created by Dmitry Duleba on 5/15/17.
-//  Copyright © 2017 NetcoSports. All rights reserved.
-//
-
 import UIKit
 
 public extension UIScrollView {

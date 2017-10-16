@@ -1,10 +1,3 @@
-//
-//  UIViewExtension.swift
-//
-//  Created by Alexey Zhemblovskiy on 4/21/17.
-//  Copyright © 2017 NetcoSports. All rights reserved.
-//
-
 import UIKit
 
 public extension UIView {
@@ -23,6 +16,7 @@ public extension UIView {
     }
   }
 
+  @available(iOS 9.0, *)
   func removeLayoutGuides(with identifier: String?) {
     if let identifier = identifier {
       layoutGuides

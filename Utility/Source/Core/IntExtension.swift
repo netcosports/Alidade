@@ -1,11 +1,3 @@
-//
-//  Int+Custom.swift
-//  Liverpool_FC
-//
-//  Created by Dmitry Duleba on 4/1/16.
-//  Copyright © 2016 NETCOSPORTS. All rights reserved.
-//
-
 import Foundation
 
 public extension Int {

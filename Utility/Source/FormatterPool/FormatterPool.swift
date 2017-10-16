@@ -1,10 +1,3 @@
-//
-//  FormatterPool.swift
-//
-//  Created by Dmitry Duleba on 5/8/17.
-//  Copyright © 2017 NetcoSports. All rights reserved.
-//
-
 import Foundation
 
 public protocol Formatter: class {

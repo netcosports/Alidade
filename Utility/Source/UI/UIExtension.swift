@@ -1,10 +1,3 @@
-//
-//  UI.swift
-//
-//  Created by Dmitry Duleba on 3/7/16.
-//  Copyright © 2016 NETCOSPORTS. All rights reserved.
-//
-
 import UIKit
 import Foundation
 

@@ -1,11 +1,3 @@
-//
-//  FloatExtension.swift
-//  TourDeFrance
-//
-//  Created by Dmitry Duleba on 5/12/17.
-//  Copyright © 2017 NetcoSports. All rights reserved.
-//
-
 import Foundation
 import UIKit
 

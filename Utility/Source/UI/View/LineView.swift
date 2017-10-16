@@ -1,10 +1,3 @@
-//
-//  LineView.swift
-//
-//  Created by Dmitry Duleba on 5/11/17.
-//  Copyright © 2017 NetcoSports. All rights reserved.
-//
-
 import UIKit
 
 // MARK: - LineView.ViewModel

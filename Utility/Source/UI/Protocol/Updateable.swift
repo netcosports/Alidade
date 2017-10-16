@@ -1,10 +1,3 @@
-//
-//  Updateable.swift
-//
-//  Created by Dmitry Duleba on 5/19/16.
-//  Copyright © 2016 NETCOSPORTS. All rights reserved.
-//
-
 import UIKit
 
 private var updater = Updater()

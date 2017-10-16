@@ -1,11 +1,3 @@
-//
-//  Functions.swift
-//  TourDeFrance
-//
-//  Created by Dmitry Duleba on 5/26/17.
-//  Copyright © 2017 NetcoSports. All rights reserved.
-//
-
 import Foundation
 
 #if DEBUG

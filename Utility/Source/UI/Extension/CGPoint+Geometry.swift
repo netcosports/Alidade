@@ -1,10 +1,3 @@
-//
-//  CGPoint+Geometry.swift
-//
-//  Created by Dmitry Duleba on 4/18/17.
-//  Copyright © 2017 NetcoSports. All rights reserved.
-//
-
 import UIKit
 
 public extension CGPoint {

@@ -1,11 +1,3 @@
-//
-//  StringExtension.swift
-//  TourDeFrance
-//
-//  Created by Dmitry Duleba on 5/1/17.
-//  Copyright © 2017 NetcoSports. All rights reserved.
-//
-
 import Foundation
 import UIKit
 

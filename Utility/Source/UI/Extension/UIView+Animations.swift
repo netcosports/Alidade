@@ -1,10 +1,3 @@
-//
-//  UIView+Animations.swift
-//
-//  Created by Dmitry Duleba on 2/3/16.
-//  Copyright © 2016 NETCOSPORTS. All rights reserved.
-//
-
 import UIKit
 
 // MARK: - Show/Hide

@@ -1,10 +1,3 @@
-//
-//  Boxed.swift
-//
-//  Created by Dmitry Duleba on 10/4/17.
-//  Copyright © 2017 NetcoSports. All rights reserved.
-//
-
 public class Boxed<T> {
 
   public var value: T?
