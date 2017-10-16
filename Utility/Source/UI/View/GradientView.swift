@@ -1,0 +1,103 @@
+//
+//  GradientView.swift
+//
+//  Created by Dmitry Duleba on 4/18/17.
+//  Copyright © 2017 NetcoSports. All rights reserved.
+//
+
+import UIKit
+
+// MARK: - GradientView.Color
+
+public extension GradientView {
+
+  public struct Color {
+
+    let color: UIColor
+    let location: CGFloat
+
+    public init(color: UIColor, location: CGFloat) {
+      self.location = location.normalized
+      self.color = color
+    }
+
+    public init(color: UIColor, location: Double) {
+      self.location = CGFloat(location).normalized
+      self.color = color
+    }
+  }
+}
+
+// MARK: - GradientView.Direction
+
+public extension GradientView {
+
+  public struct Direction {
+
+    public static let up = Direction(start: CGPoint(x: 0.0, y: 1.0), end: CGPoint(x: 0.0, y: 0.0))
+    public static let left = Direction(start: CGPoint(x: 1.0, y: 0.0), end: CGPoint(x: 0.0, y: 0.0))
+    public static let down = Direction(start: CGPoint(x: 0.0, y: 0.0), end: CGPoint(x: 0.0, y: 1.0))
+    public static let right = Direction(start: CGPoint(x: 0.0, y: 0.0), end: CGPoint(x: 1.0, y: 0.0))
+
+    public let start: CGPoint
+    public let end: CGPoint
+
+    public init(start: CGPoint, end: CGPoint) {
+      self.start = start.clampNormal
+      self.end = end.clampNormal
+    }
+  }
+}
+
+// MARK: - GradientView
+
+public class GradientView: UIView {
+
+  public var colors = [Color(color: .white, location: 0.0),
+                       Color(color: .black, location: 1.0)] { didSet { didUpdateColors() } }
+  public var direction = Direction(start: CGPoint(x: 0.0, y: 0.0),
+                                   end: CGPoint(x: 1.0, y: 0.0)) { didSet { didUpdateDirection() } }
+
+  fileprivate var gradientLayer: CAGradientLayer? { return layer as? CAGradientLayer }
+
+  override public func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+    return nil
+  }
+
+  override public class var layerClass: AnyClass {
+    return CAGradientLayer.self
+  }
+
+  public override init(frame: CGRect) {
+    super.init(frame: frame)
+    translatesAutoresizingMaskIntoConstraints = false
+    setup()
+  }
+
+  required public init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+}
+
+// MARK: - Private
+
+fileprivate extension GradientView {
+
+  func setup() {
+    backgroundColor = .clear
+    didUpdateColors()
+    didUpdateDirection()
+  }
+
+  func didUpdateColors() {
+    gradientLayer?.colors = colors.map { $0.color.cgColor }
+    gradientLayer?.locations = colors.map { NSNumber(value: Double($0.location)) }
+    setNeedsDisplay()
+  }
+
+  func didUpdateDirection() {
+    gradientLayer?.startPoint = direction.start
+    gradientLayer?.endPoint = direction.end
+    setNeedsDisplay()
+  }
+}
