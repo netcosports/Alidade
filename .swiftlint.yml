@@ -1,0 +1,15 @@
+excluded:
+  - Pods
+line_length: 120
+
+disabled_rules:
+  - nesting
+  - superfluous_disable_command
+
+identifier_name:
+  excluded:
+    - id
+    - ok
+    - to
+    - ui
+    - up
