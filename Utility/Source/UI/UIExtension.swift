@@ -19,11 +19,12 @@ public class UI {
 
   public static var baseWidths: [UIUserInterfaceIdiom : CGFloat] = [:] {
     didSet {
-      scaleFactor = calculateScale()
+      _scaleFactor = calculateScale()
     }
   }
 
-  internal(set) static var scaleFactor = calculateScale()
+  public static var scaleFactor: CGFloat { return _scaleFactor }
+  private static var _scaleFactor = calculateScale()
 
   private static func calculateScale() -> CGFloat {
     let size = UIScreen.main.bounds.size
