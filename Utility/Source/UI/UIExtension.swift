@@ -17,17 +17,28 @@ public extension UIFont { var ui: UIFont { return withSize(pointSize.ui) } }
 // swiftlint:disable:next type_name
 public class UI {
 
-  public static let scaleFactor: CGFloat = {
+  public static var baseWidths: [UIUserInterfaceIdiom : CGFloat] = [:] {
+    didSet {
+      scaleFactor = calculateScale()
+    }
+  }
+
+  internal(set) static var scaleFactor = calculateScale()
+
+  private static func calculateScale() -> CGFloat {
     let size = UIScreen.main.bounds.size
     let width = min(size.width, size.height)
     let idiom = UIDevice.current.userInterfaceIdiom
     let result: CGFloat
+    let baseWidth: CGFloat
     switch (idiom, width) {
-    case (.pad, _)  : result = width / 1536.0
-    default         : result = width / 640.0
+    case (.pad, _)  : baseWidth = baseWidths[idiom] ?? 1536.0
+    case (.phone, _): baseWidth = baseWidths[idiom] ?? 640.0
+    default         : baseWidth = width
     }
+    result = width / baseWidth
     return result
-  }()
+  }
 
   private init() { }
 }
