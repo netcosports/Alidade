@@ -15,27 +15,35 @@ Pod::Spec.new do |s|
     ss.source_files = 'Utility/Source/Core/*.swift'
   end
 
+  s.subspec 'Formatter' do |ss|
+    ss.source_files = 'Utility/Source/Formatter/*.swift'
+  end
+
+  # s.subspec 'Geometry' do |ss|
+  #   ss.source_files = 'Utility/Geometry/*.swift'
+  #   ss.dependency 'Utility/Core'
+  #   ss.dependency 'Utility/Operators'
+  # end
+
   s.subspec 'Operators' do |ss|
     ss.source_files = 'Utility/Source/Operators/*.swift'
   end
 
-  s.subspec 'UIExtension' do |ss|
-    ss.source_files = 'Utility/Source/UIExtension/*.swift'
+  # s.subspec 'Other' do |ss|
+  #   ss.source_files = 'Utility/Other/*.swift'
+  # end
+
+  s.subspec 'String' do |ss|
+    ss.source_files = 'Utility/Source/String/*.swift'
+    ss.dependency 'Utility/Core'
   end
 
   s.subspec 'UI' do |ss|
     ss.source_files = 'Utility/Source/UI/**/*.swift'
   end
 
-  s.subspec 'String' do |ss|
-    ss.source_files = 'Utility/Source/String/*.swift'
+  s.subspec 'UIExtension' do |ss|
+    ss.source_files = 'Utility/Source/UIExtension/*.swift'
   end
 
-  s.subspec 'Formatter' do |ss|
-    ss.source_files = 'Utility/Source/Formatter/*.swift'
-  end
-
-  # s.subspec 'Geometry' do |ss|
-  #   ss.source_files = 'Utility/Geometry/UI/**/*.swift'
-  # end
 end
