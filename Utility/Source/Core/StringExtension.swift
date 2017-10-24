@@ -28,4 +28,16 @@ public extension String {
     }
     return String(self[index])
   }
+
+  subscript (range: Range<Int>) -> String {
+    let from = index(startIndex, offsetBy: range.lowerBound)
+    let to = index(startIndex, offsetBy: range.upperBound)
+    return String(self[from..<to])
+  }
+
+  subscript (range: ClosedRange<Int>) -> String {
+    let from = index(startIndex, offsetBy: range.lowerBound)
+    let to = index(startIndex, offsetBy: range.upperBound)
+    return String(self[from...to])
+  }
 }
