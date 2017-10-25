@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C30E6001FA0D8C600591CAA /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30E5FF1FA0D8C600591CAA /* Demo.swift */; };
 		CE91F3221F948AA8002FCE7E /* Utility.h in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3201F948AA8002FCE7E /* Utility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE91F3991F948FA5002FCE7E /* BoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3731F948F9C002FCE7E /* BoolExtension.swift */; };
 		CE91F39A1F948FA5002FCE7E /* Boxed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3741F948F9C002FCE7E /* Boxed.swift */; };
@@ -86,6 +87,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C30E5FF1FA0D8C600591CAA /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
 		CE91F31D1F948AA8002FCE7E /* Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE91F3201F948AA8002FCE7E /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		CE91F3211F948AA8002FCE7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				CEE0CAA71F9F434E00EE9B2E /* AppDelegate.swift */,
+				5C30E5FF1FA0D8C600591CAA /* Demo.swift */,
 				CEE0CAA91F9F434E00EE9B2E /* ViewController.swift */,
 				CEE0CAAB1F9F434E00EE9B2E /* Main.storyboard */,
 				CEE0CAAE1F9F434E00EE9B2E /* Assets.xcassets */,
@@ -493,6 +496,7 @@
 			files = (
 				CEE0CAAA1F9F434E00EE9B2E /* ViewController.swift in Sources */,
 				CEE0CAA81F9F434E00EE9B2E /* AppDelegate.swift in Sources */,
+				5C30E6001FA0D8C600591CAA /* Demo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

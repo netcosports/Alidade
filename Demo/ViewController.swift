@@ -10,5 +10,9 @@ import UIKit
 import Utility
 
 class ViewController: UIViewController {
-
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    Demo().run()
+  }
 }
