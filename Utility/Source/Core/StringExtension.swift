@@ -5,7 +5,7 @@ import Foundation
 public extension String {
 
   var trimmed: String { return trimmingCharacters(in: .whitespacesAndNewlines) }
-  var length: Int { return characters.count }
+  var length: Int { return count }
 
   var sentenceCapitalized: String {
     guard length > 0 else { return self }
