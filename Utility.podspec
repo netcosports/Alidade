@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Geometry' do |ss|
-    ss.source_files = 'Utility/Geometry/*.swift'
+    ss.source_files = 'Utility/Source/Geometry/*.swift'
     ss.dependency 'Utility/Core'
     ss.dependency 'Utility/Operators'
   end
