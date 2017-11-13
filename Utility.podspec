@@ -28,11 +28,11 @@ Pod::Spec.new do |s|
     ss.source_files = 'Utility/Source/Formatter/*.swift'
   end
 
-  # s.subspec 'Geometry' do |ss|
-  #   ss.source_files = 'Utility/Geometry/*.swift'
-  #   ss.dependency 'Utility/Core'
-  #   ss.dependency 'Utility/Operators'
-  # end
+  s.subspec 'Geometry' do |ss|
+    ss.source_files = 'Utility/Geometry/*.swift'
+    ss.dependency 'Utility/Core'
+    ss.dependency 'Utility/Operators'
+  end
 
   s.subspec 'Operators' do |ss|
     ss.source_files = 'Utility/Source/Operators/*.swift'
