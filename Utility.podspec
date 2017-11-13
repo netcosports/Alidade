@@ -9,7 +9,16 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/dDomovoj/Utility.git", :tag => s.version }
 
   s.ios.deployment_target = "9.0"
-  s.default_subspec = 'Core'
+  s.default_subspec = 'Default'
+
+  s.subspec 'Default' do |ss| 
+    ss.dependency 'Utility/Core'
+    ss.dependency 'Utility/Formatter'
+    ss.dependency 'Utility/Operators'
+    ss.dependency 'Utility/String'
+    ss.dependency 'Utility/UI'
+    ss.dependency 'Utility/UIExtension'
+  end
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'Utility/Source/Core/*.swift'
