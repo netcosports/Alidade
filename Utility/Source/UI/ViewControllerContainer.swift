@@ -29,9 +29,23 @@ extension ViewControllerContainer where Self: UIViewController {
 
     addChildViewController(childViewController)
     containerView.addSubview(childViewController.view)
-    childViewController.view.snp.remakeConstraints {
-      $0.edges.equalToSuperview()
-    }
+    view.fillSuperview()
     childViewController.didMove(toParentViewController: self)
+  }
+}
+
+extension UIView {
+
+  func fillSuperview() {
+    guard let superview = superview else {
+      return
+    }
+
+    translatesAutoresizingMaskIntoConstraints = false
+    let attributes: [NSLayoutAttribute] = [.width, .height, .top, .leading]
+    attributes
+      .map { NSLayoutConstraint(item: self, attribute: $0, relatedBy: .equal,
+                                toItem: superview, attribute: $0, multiplier: 1.0, constant: 0.0) }
+      .forEach { superview.addConstraint($0) }
   }
 }
