@@ -29,7 +29,7 @@ public extension ViewControllerContainer where Self: UIViewController {
 
     addChildViewController(childViewController)
     containerView.addSubview(childViewController.view)
-    view.fillSuperview()
+    childViewController.view.fillSuperview()
     childViewController.didMove(toParentViewController: self)
   }
 }
