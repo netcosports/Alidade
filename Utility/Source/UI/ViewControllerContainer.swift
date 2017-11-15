@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol ViewControllerContainer {
+public protocol ViewControllerContainer {
 
   func add(_ childViewController: UIViewController?, to containerView: UIView)
   func remove(_ childViewController: UIViewController?)
 }
 
-extension ViewControllerContainer where Self: UIViewController {
+public extension ViewControllerContainer where Self: UIViewController {
 
   func remove(_ childViewController: UIViewController?) {
     guard let childViewController = childViewController else { return }
