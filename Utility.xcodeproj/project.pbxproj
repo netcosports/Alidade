@@ -74,6 +74,7 @@
 		CEE0CAD01F9F868A00EE9B2E /* UIExtensionDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CACF1F9F868A00EE9B2E /* UIExtensionDevice.swift */; };
 		CEE0CAD21F9F869300EE9B2E /* UIExtensionSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CAD11F9F869300EE9B2E /* UIExtensionSize.swift */; };
 		CEE0CAD41F9F874700EE9B2E /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CAD31F9F874700EE9B2E /* IntExtension.swift */; };
+		CEE637FC1FBC746E00BCF9C9 /* ViewControllerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE637FB1FBC746E00BCF9C9 /* ViewControllerContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		CEE0CACF1F9F868A00EE9B2E /* UIExtensionDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensionDevice.swift; sourceTree = "<group>"; };
 		CEE0CAD11F9F869300EE9B2E /* UIExtensionSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensionSize.swift; sourceTree = "<group>"; };
 		CEE0CAD31F9F874700EE9B2E /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		CEE637FB1FBC746E00BCF9C9 /* ViewControllerContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 				CE91F38C1F948F9C002FCE7E /* UIScrollViewExtension.swift */,
 				CE91F38D1F948F9C002FCE7E /* UIView+Animations.swift */,
 				CE91F38E1F948F9C002FCE7E /* UIViewExtension.swift */,
+				CEE637FB1FBC746E00BCF9C9 /* ViewControllerContainer.swift */,
 				CE91F3921F948F9C002FCE7E /* Views */,
 			);
 			path = UI;
@@ -464,6 +467,7 @@
 				CE91F3B61F948FB3002FCE7E /* RadialGradientLayer.swift in Sources */,
 				CE91F3B71F948FB3002FCE7E /* TestView.swift in Sources */,
 				CEE0CACE1F9F79FB00EE9B2E /* UIEdgeInsetsExtension.swift in Sources */,
+				CEE637FC1FBC746E00BCF9C9 /* ViewControllerContainer.swift in Sources */,
 				CE91F3A51F948FAC002FCE7E /* FormatterPool.swift in Sources */,
 				CE91F3A61F948FAC002FCE7E /* CGFloatExtension.swift in Sources */,
 				CE91F3A71F948FAC002FCE7E /* CGPointExtension.swift in Sources */,
