@@ -32,6 +32,13 @@ public extension UI.Device {
 }
 
 public extension UI.Device {
+  public static var isIPhoneX: Bool {
+    return UIDevice.current.userInterfaceIdiom == .phone &&
+        UIScreen.main.nativeBounds.height == 2436
+  }
+}
+
+public extension UI.Device {
 
   public enum System {
 
