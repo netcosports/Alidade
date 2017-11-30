@@ -10,7 +10,7 @@ public extension String {
   var sentenceCapitalized: String {
     guard length > 0 else { return self }
 
-    let letter = self[0]
+    let letter = self[0].uppercased()
     let range = startIndex..<index(startIndex, offsetBy: 1)
     let result = replacingCharacters(in: range, with: letter)
     return result

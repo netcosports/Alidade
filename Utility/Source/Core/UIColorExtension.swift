@@ -63,7 +63,7 @@ public extension UIColor {
     // swiftlint:enable identifier_name
 
     public var debugDescription: String {
-      return "r: \(red.formatted(".2")), g: \(green.formatted(".2")), b: \(blue.formatted(".2"))"
+      return "r: %.2\(red)), g: %.2\(green), b: %.2\(blue)"
     }
 
     public func hslValue() -> HSL {
@@ -131,7 +131,7 @@ public extension UIColor {
     // swiftlint:enable identifier_name
 
     public var debugDescription: String {
-      return "h: \(hue.formatted(".2")), s: \(saturation.formatted(".2")), l: \(luminance.formatted(".2"))"
+      return "h: %.2\(hue), s: %.2\(saturation), l: %.2\(luminance)"
     }
 
     public func color() -> UIColor {
@@ -196,7 +196,7 @@ public extension UIColor {
     }
 
     public var debugDescription: String {
-      return "h: \(hue.formatted(".2")), s: \(saturation.formatted(".2")), l: \(brightness.formatted(".2"))"
+      return "h: %.2\(hue), s: %.2\(saturation), l: %.2\(brightness)"
     }
   }
 

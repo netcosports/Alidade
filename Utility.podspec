@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Utility"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
   s.summary      = "Utility components"
   s.homepage     = "https://github.com/dDomovoj/Utility"
@@ -9,7 +9,16 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/dDomovoj/Utility.git", :tag => s.version }
 
   s.ios.deployment_target = "9.0"
-  s.default_subspec = 'Core'
+  s.default_subspec = 'Default'
+
+  s.subspec 'Default' do |ss|
+    ss.dependency 'Utility/Core'
+    ss.dependency 'Utility/Formatter'
+    ss.dependency 'Utility/Operators'
+    ss.dependency 'Utility/String'
+    ss.dependency 'Utility/UI'
+    ss.dependency 'Utility/UIExtension'
+  end
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'Utility/Source/Core/*.swift'
@@ -19,11 +28,11 @@ Pod::Spec.new do |s|
     ss.source_files = 'Utility/Source/Formatter/*.swift'
   end
 
-  # s.subspec 'Geometry' do |ss|
-  #   ss.source_files = 'Utility/Geometry/*.swift'
-  #   ss.dependency 'Utility/Core'
-  #   ss.dependency 'Utility/Operators'
-  # end
+  s.subspec 'Geometry' do |ss|
+    ss.source_files = 'Utility/Source/Geometry/*.swift'
+    ss.dependency 'Utility/Core'
+    ss.dependency 'Utility/Operators'
+  end
 
   s.subspec 'Operators' do |ss|
     ss.source_files = 'Utility/Source/Operators/*.swift'
