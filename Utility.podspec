@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Utility"
-  s.version      = "0.1.0"
+  s.version      = "0.1.2"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
   s.summary      = "Utility components"
   s.homepage     = "https://github.com/dDomovoj/Utility"
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "9.0"
   s.default_subspec = 'Default'
 
-  s.subspec 'Default' do |ss| 
+  s.subspec 'Default' do |ss|
     ss.dependency 'Utility/Core'
     ss.dependency 'Utility/Formatter'
     ss.dependency 'Utility/Operators'

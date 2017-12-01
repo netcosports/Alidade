@@ -20,12 +20,11 @@ public class UI {
 
   public static var baseWidths: [UIUserInterfaceIdiom : CGFloat] = [:] {
     didSet {
-      _scaleFactor = calculateScale()
+      scaleFactor = calculateScale()
     }
   }
 
-  public static var scaleFactor: CGFloat { return _scaleFactor }
-  private static var _scaleFactor = calculateScale()
+  public private(set) static var scaleFactor: CGFloat = calculateScale()
 
   private static func calculateScale() -> CGFloat {
     let size = UIScreen.main.bounds.size
@@ -33,10 +32,10 @@ public class UI {
     let idiom = UIDevice.current.userInterfaceIdiom
     let result: CGFloat
     let baseWidth: CGFloat
-    switch (idiom, width) {
-    case (.pad, _)  : baseWidth = baseWidths[idiom] ?? 1536.0
-    case (.phone, _): baseWidth = baseWidths[idiom] ?? 640.0
-    default         : baseWidth = width
+    switch idiom {
+    case .pad: baseWidth = baseWidths[idiom] ?? 1536.0
+    case .phone: baseWidth = baseWidths[idiom] ?? 640.0
+    default: baseWidth = width
     }
     result = width / baseWidth
     return result
