@@ -72,7 +72,6 @@
 		CEE0CAC91F9F727A00EE9B2E /* CGRectOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CAC81F9F727A00EE9B2E /* CGRectOperators.swift */; };
 		CEE0CACE1F9F79FB00EE9B2E /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CACD1F9F79FB00EE9B2E /* UIEdgeInsetsExtension.swift */; };
 		CEE0CAD01F9F868A00EE9B2E /* UIExtensionDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CACF1F9F868A00EE9B2E /* UIExtensionDevice.swift */; };
-		CEE0CAD21F9F869300EE9B2E /* UIExtensionSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CAD11F9F869300EE9B2E /* UIExtensionSize.swift */; };
 		CEE0CAD41F9F874700EE9B2E /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CAD31F9F874700EE9B2E /* IntExtension.swift */; };
 		CEE637FC1FBC746E00BCF9C9 /* ViewControllerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE637FB1FBC746E00BCF9C9 /* ViewControllerContainer.swift */; };
 /* End PBXBuildFile section */
@@ -133,7 +132,6 @@
 		CEE0CAC81F9F727A00EE9B2E /* CGRectOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectOperators.swift; sourceTree = "<group>"; };
 		CEE0CACD1F9F79FB00EE9B2E /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
 		CEE0CACF1F9F868A00EE9B2E /* UIExtensionDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensionDevice.swift; sourceTree = "<group>"; };
-		CEE0CAD11F9F869300EE9B2E /* UIExtensionSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensionSize.swift; sourceTree = "<group>"; };
 		CEE0CAD31F9F874700EE9B2E /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		CEE637FB1FBC746E00BCF9C9 /* ViewControllerContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -302,7 +300,6 @@
 			children = (
 				CE91F3911F948F9C002FCE7E /* UIExtension.swift */,
 				CEE0CACF1F9F868A00EE9B2E /* UIExtensionDevice.swift */,
-				CEE0CAD11F9F869300EE9B2E /* UIExtensionSize.swift */,
 			);
 			path = UIExtension;
 			sourceTree = "<group>";
@@ -481,7 +478,6 @@
 				CE91F3B01F948FAC002FCE7E /* UIViewExtension.swift in Sources */,
 				CEE0CAC71F9F715A00EE9B2E /* CGRect+Geometry.swift in Sources */,
 				CEE0CABA1F9F44A700EE9B2E /* String+HTML.swift in Sources */,
-				CEE0CAD21F9F869300EE9B2E /* UIExtensionSize.swift in Sources */,
 				CE91F3991F948FA5002FCE7E /* BoolExtension.swift in Sources */,
 				CE91F39A1F948FA5002FCE7E /* Boxed.swift in Sources */,
 				CEE0CAC31F9F703C00EE9B2E /* CGAffineTransformOperators.swift in Sources */,
