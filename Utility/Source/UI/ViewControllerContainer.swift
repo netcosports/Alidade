@@ -16,18 +16,20 @@ public protocol ViewControllerContainer {
 
 public extension ViewControllerContainer where Self: UIViewController {
 
-  func remove(_ childViewController: UIViewController?) {
+  func remove(_ childViewController: UIViewController?, animated: Bool = true) {
     guard let childViewController = childViewController else { return }
 
     childViewController.willMove(toParentViewController: nil)
     childViewController.view.removeFromSuperview()
+    childViewController.beginAppearanceTransition(false, animated: animated)
     childViewController.removeFromParentViewController()
   }
 
-  func add(_ childViewController: UIViewController?, to containerView: UIView) {
+  func add(_ childViewController: UIViewController?, to containerView: UIView, animated: Bool = true) {
     guard let childViewController = childViewController else { return }
 
     addChildViewController(childViewController)
+    childViewController.beginAppearanceTransition(true, animated: animated)
     containerView.addSubview(childViewController.view)
     childViewController.view.fillSuperview()
     childViewController.didMove(toParentViewController: self)
