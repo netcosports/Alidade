@@ -2,6 +2,12 @@ import Foundation
 
 public extension CGSize {
 
+  public init(side: Int) { self.init(width: side, height: side) }
+
+  public init(side: CGFloat) { self.init(width: side, height: side) }
+
+  public init(side: Double) { self.init(width: side, height: side) }
+
   public var pointValue: CGPoint { return CGPoint(x: width, y: height) }
 
   public var rectValue: CGRect { return CGRect(origin: .zero, size: self) }
