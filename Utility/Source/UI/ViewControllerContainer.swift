@@ -10,13 +10,13 @@ import Foundation
 
 public protocol ViewControllerContainer {
 
-  func add(_ childViewController: UIViewController?, to containerView: UIView)
-  func remove(_ childViewController: UIViewController?)
+  func add(_ childViewController: UIViewController?, to containerView: UIView, animated: Bool)
+  func remove(_ childViewController: UIViewController?, animated: Bool)
 }
 
 public extension ViewControllerContainer where Self: UIViewController {
 
-  func remove(_ childViewController: UIViewController?, animated: Bool = true) {
+  func remove(_ childViewController: UIViewController?, animated: Bool) {
     guard let childViewController = childViewController else { return }
 
     childViewController.willMove(toParentViewController: nil)
@@ -25,7 +25,7 @@ public extension ViewControllerContainer where Self: UIViewController {
     childViewController.removeFromParentViewController()
   }
 
-  func add(_ childViewController: UIViewController?, to containerView: UIView, animated: Bool = true) {
+  func add(_ childViewController: UIViewController?, to containerView: UIView, animated: Bool) {
     guard let childViewController = childViewController else { return }
 
     addChildViewController(childViewController)
