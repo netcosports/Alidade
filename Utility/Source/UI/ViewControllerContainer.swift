@@ -9,11 +9,13 @@
 import Foundation
 import UIKit
 
+extension UIViewController: ViewControllerContainerCompatible { }
+
 public struct ViewControllerContainer<Base> {
 
-  public let base: Base
+  let base: Base
 
-  public init(_ base: Base) {
+  init(_ base: Base) {
     self.base = base
   }
 }
@@ -22,15 +24,10 @@ public protocol ViewControllerContainerCompatible {
 
   associatedtype CompatibleType
 
-  static func asContainer() -> ViewControllerContainer<CompatibleType>.Type
   func asContainer() -> ViewControllerContainer<CompatibleType>
 }
 
 public extension ViewControllerContainerCompatible {
-
-  public static func asContainer() -> ViewControllerContainer<Self>.Type {
-    return ViewControllerContainer<Self>.self
-  }
 
   public func asContainer() -> ViewControllerContainer<Self> {
     return ViewControllerContainer(self)
