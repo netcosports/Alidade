@@ -22,21 +22,18 @@ public protocol ViewControllerContainerCompatible {
 
   associatedtype CompatibleType
 
-  static var container: ViewControllerContainer<CompatibleType>.Type { get set }
-
-  var container: ViewControllerContainer<CompatibleType> { get set }
+  static func asContainer() -> ViewControllerContainer<CompatibleType>.Type
+  func asContainer() -> ViewControllerContainer<CompatibleType>
 }
 
-extension ViewControllerContainerCompatible {
+public extension ViewControllerContainerCompatible {
 
-  public static var container: ViewControllerContainer<Self>.Type {
-    get { return ViewControllerContainer<Self>.self }
-    set { }
+  public static func asContainer() -> ViewControllerContainer<Self>.Type {
+    return ViewControllerContainer<Self>.self
   }
 
-  public var container: ViewControllerContainer<Self> {
-    get { return ViewControllerContainer(self) }
-    set { }
+  public func asContainer() -> ViewControllerContainer<Self> {
+    return ViewControllerContainer(self)
   }
 }
 
