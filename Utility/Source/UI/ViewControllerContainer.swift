@@ -7,32 +7,64 @@
 //
 
 import Foundation
+import UIKit
 
-public protocol ViewControllerContainer {
+public struct ViewControllerContainer<Base> {
 
-  func add(_ childViewController: UIViewController?, to containerView: UIView, animated: Bool)
-  func remove(_ childViewController: UIViewController?, animated: Bool)
+  public let base: Base
+
+  public init(_ base: Base) {
+    self.base = base
+  }
 }
 
-public extension ViewControllerContainer where Self: UIViewController {
+public protocol ViewControllerContainerCompatible {
 
-  func remove(_ childViewController: UIViewController?, animated: Bool) {
+  associatedtype CompatibleType
+
+  static var container: ViewControllerContainer<CompatibleType>.Type { get set }
+
+  var container: ViewControllerContainer<CompatibleType> { get set }
+}
+
+extension ViewControllerContainerCompatible {
+
+  public static var container: ViewControllerContainer<Self>.Type {
+    get { return ViewControllerContainer<Self>.self }
+    set { }
+  }
+
+  public var container: ViewControllerContainer<Self> {
+    get { return ViewControllerContainer(self) }
+    set { }
+  }
+}
+
+public extension ViewControllerContainer where Base: UIViewController {
+
+  public func add(_ childViewController: UIViewController?, to containerView: UIView, animated: Bool) {
+    guard let childViewController = childViewController else { return }
+
+    base.addChildViewController(childViewController)
+    childViewController.beginAppearanceTransition(true, animated: animated)
+    containerView.addSubview(childViewController.view)
+    childViewController.view.fillSuperview()
+    childViewController.didMove(toParentViewController: base)
+    if !animated {
+      childViewController.endAppearanceTransition()
+    }
+  }
+
+  public func remove(_ childViewController: UIViewController?, animated: Bool) {
     guard let childViewController = childViewController else { return }
 
     childViewController.willMove(toParentViewController: nil)
     childViewController.view.removeFromSuperview()
     childViewController.beginAppearanceTransition(false, animated: animated)
     childViewController.removeFromParentViewController()
-  }
-
-  func add(_ childViewController: UIViewController?, to containerView: UIView, animated: Bool) {
-    guard let childViewController = childViewController else { return }
-
-    addChildViewController(childViewController)
-    childViewController.beginAppearanceTransition(true, animated: animated)
-    containerView.addSubview(childViewController.view)
-    childViewController.view.fillSuperview()
-    childViewController.didMove(toParentViewController: self)
+    if !animated {
+      childViewController.endAppearanceTransition()
+    }
   }
 }
 
