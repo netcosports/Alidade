@@ -25,7 +25,6 @@
 		CE91F3A71F948FAC002FCE7E /* CGPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3851F948F9C002FCE7E /* CGPointExtension.swift */; };
 		CE91F3A81F948FAC002FCE7E /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3861F948F9C002FCE7E /* CGRectExtension.swift */; };
 		CE91F3A91F948FAC002FCE7E /* ComparableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3871F948F9C002FCE7E /* ComparableExtension.swift */; };
-		CE91F3AA1F948FAC002FCE7E /* CGSizeOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3881F948F9C002FCE7E /* CGSizeOperators.swift */; };
 		CE91F3AB1F948FAC002FCE7E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3891F948F9C002FCE7E /* UIColorExtension.swift */; };
 		CE91F3AE1F948FAC002FCE7E /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F38C1F948F9C002FCE7E /* UIScrollViewExtension.swift */; };
 		CE91F3AF1F948FAC002FCE7E /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F38D1F948F9C002FCE7E /* UIView+Animations.swift */; };
@@ -49,7 +48,6 @@
 		CEC90CAF1F94BB9B00FA7643 /* CGPointExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3851F948F9C002FCE7E /* CGPointExtension.swift */; };
 		CEC90CB01F94BB9B00FA7643 /* CGRectExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3861F948F9C002FCE7E /* CGRectExtension.swift */; };
 		CEC90CB11F94BB9B00FA7643 /* ComparableExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3871F948F9C002FCE7E /* ComparableExtension.swift */; };
-		CEC90CB21F94BB9B00FA7643 /* CGSizeOperators.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3881F948F9C002FCE7E /* CGSizeOperators.swift */; };
 		CEC90CB31F94BB9B00FA7643 /* UIColorExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3891F948F9C002FCE7E /* UIColorExtension.swift */; };
 		CEC90CB61F94BB9B00FA7643 /* UIScrollViewExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F38C1F948F9C002FCE7E /* UIScrollViewExtension.swift */; };
 		CEC90CB71F94BB9B00FA7643 /* UIView+Animations.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F38D1F948F9C002FCE7E /* UIView+Animations.swift */; };
@@ -71,9 +69,7 @@
 		CEE0CABE1F9F685E00EE9B2E /* CGSizeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CABD1F9F685E00EE9B2E /* CGSizeExtension.swift */; };
 		CEE0CAC11F9F700D00EE9B2E /* CGPointOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CAC01F9F700D00EE9B2E /* CGPointOperators.swift */; };
 		CEE0CAC31F9F703C00EE9B2E /* CGAffineTransformOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CAC21F9F703C00EE9B2E /* CGAffineTransformOperators.swift */; };
-		CEE0CAC51F9F705A00EE9B2E /* UIEdgeInsetsOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CAC41F9F705A00EE9B2E /* UIEdgeInsetsOperators.swift */; };
 		CEE0CAC71F9F715A00EE9B2E /* CGRect+Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CAC61F9F715A00EE9B2E /* CGRect+Geometry.swift */; };
-		CEE0CAC91F9F727A00EE9B2E /* CGRectOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CAC81F9F727A00EE9B2E /* CGRectOperators.swift */; };
 		CEE0CACE1F9F79FB00EE9B2E /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CACD1F9F79FB00EE9B2E /* UIEdgeInsetsExtension.swift */; };
 		CEE0CAD01F9F868A00EE9B2E /* UIExtensionDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CACF1F9F868A00EE9B2E /* UIExtensionDevice.swift */; };
 		CEE0CAD41F9F874700EE9B2E /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CAD31F9F874700EE9B2E /* IntExtension.swift */; };
@@ -119,7 +115,6 @@
 		CE91F3851F948F9C002FCE7E /* CGPointExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointExtension.swift; sourceTree = "<group>"; };
 		CE91F3861F948F9C002FCE7E /* CGRectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
 		CE91F3871F948F9C002FCE7E /* ComparableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparableExtension.swift; sourceTree = "<group>"; };
-		CE91F3881F948F9C002FCE7E /* CGSizeOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSizeOperators.swift; sourceTree = "<group>"; };
 		CE91F3891F948F9C002FCE7E /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		CE91F38C1F948F9C002FCE7E /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtension.swift; sourceTree = "<group>"; };
 		CE91F38D1F948F9C002FCE7E /* UIView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
@@ -143,9 +138,7 @@
 		CEE0CABD1F9F685E00EE9B2E /* CGSizeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSizeExtension.swift; sourceTree = "<group>"; };
 		CEE0CAC01F9F700D00EE9B2E /* CGPointOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointOperators.swift; sourceTree = "<group>"; };
 		CEE0CAC21F9F703C00EE9B2E /* CGAffineTransformOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGAffineTransformOperators.swift; sourceTree = "<group>"; };
-		CEE0CAC41F9F705A00EE9B2E /* UIEdgeInsetsOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsOperators.swift; sourceTree = "<group>"; };
 		CEE0CAC61F9F715A00EE9B2E /* CGRect+Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Geometry.swift"; sourceTree = "<group>"; };
-		CEE0CAC81F9F727A00EE9B2E /* CGRectOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectOperators.swift; sourceTree = "<group>"; };
 		CEE0CACD1F9F79FB00EE9B2E /* UIEdgeInsetsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtension.swift; sourceTree = "<group>"; };
 		CEE0CACF1F9F868A00EE9B2E /* UIExtensionDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensionDevice.swift; sourceTree = "<group>"; };
 		CEE0CAD31F9F874700EE9B2E /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
@@ -302,11 +295,9 @@
 		CEE0CABF1F9F6FFD00EE9B2E /* Operators */ = {
 			isa = PBXGroup;
 			children = (
+				5C8ABDA2200155DB003FA5DD /* Vectorable.swift */,
 				CEE0CAC21F9F703C00EE9B2E /* CGAffineTransformOperators.swift */,
 				CEE0CAC01F9F700D00EE9B2E /* CGPointOperators.swift */,
-				CEE0CAC81F9F727A00EE9B2E /* CGRectOperators.swift */,
-				CE91F3881F948F9C002FCE7E /* CGSizeOperators.swift */,
-				CEE0CAC41F9F705A00EE9B2E /* UIEdgeInsetsOperators.swift */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -343,7 +334,6 @@
 			isa = PBXGroup;
 			children = (
 				CE91F3741F948F9C002FCE7E /* Boxed.swift */,
-				5C8ABDA2200155DB003FA5DD /* Vectorable.swift */,
 				5C8ABDA420015620003FA5DD /* Flowable.swift */,
 				CE91F3901F948F9C002FCE7E /* Updateable.swift */,
 			);
@@ -370,7 +360,6 @@
 				CEC90CAF1F94BB9B00FA7643 /* CGPointExtension.swift in Headers */,
 				CEC90CB01F94BB9B00FA7643 /* CGRectExtension.swift in Headers */,
 				CEC90CB11F94BB9B00FA7643 /* ComparableExtension.swift in Headers */,
-				CEC90CB21F94BB9B00FA7643 /* CGSizeOperators.swift in Headers */,
 				CEC90CB31F94BB9B00FA7643 /* UIColorExtension.swift in Headers */,
 				CEC90CB61F94BB9B00FA7643 /* UIScrollViewExtension.swift in Headers */,
 				CEC90CB71F94BB9B00FA7643 /* UIView+Animations.swift in Headers */,
@@ -535,8 +524,6 @@
 				CEE0CAD41F9F874700EE9B2E /* IntExtension.swift in Sources */,
 				CEE0CAD01F9F868A00EE9B2E /* UIExtensionDevice.swift in Sources */,
 				CE91F3B51F948FB3002FCE7E /* PathView.swift in Sources */,
-				CEE0CAC51F9F705A00EE9B2E /* UIEdgeInsetsOperators.swift in Sources */,
-				CEE0CAC91F9F727A00EE9B2E /* CGRectOperators.swift in Sources */,
 				CE91F3B61F948FB3002FCE7E /* RadialGradientLayer.swift in Sources */,
 				CE91F3B71F948FB3002FCE7E /* TestView.swift in Sources */,
 				CEE0CACE1F9F79FB00EE9B2E /* UIEdgeInsetsExtension.swift in Sources */,
@@ -546,7 +533,6 @@
 				CE91F3A71F948FAC002FCE7E /* CGPointExtension.swift in Sources */,
 				CE91F3A81F948FAC002FCE7E /* CGRectExtension.swift in Sources */,
 				CE91F3A91F948FAC002FCE7E /* ComparableExtension.swift in Sources */,
-				CE91F3AA1F948FAC002FCE7E /* CGSizeOperators.swift in Sources */,
 				CE91F3AB1F948FAC002FCE7E /* UIColorExtension.swift in Sources */,
 				CE91F3AE1F948FAC002FCE7E /* UIScrollViewExtension.swift in Sources */,
 				CEE0CABE1F9F685E00EE9B2E /* CGSizeExtension.swift in Sources */,
