@@ -166,7 +166,7 @@ public extension UIColor {
       let r = hue2rgb(p, q, hue + 1.0 / 3.0)
       let g = hue2rgb(p, q, hue)
       let b = hue2rgb(p, q, hue - 1.0 / 3.0)
-      let rgb = RGB(r, g, b)
+      let rgb = RGB(r, g, b, alpha)
       return rgb.color()
     }
     // swiftlint:enable identifier_name
