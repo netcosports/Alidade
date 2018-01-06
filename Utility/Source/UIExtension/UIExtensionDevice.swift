@@ -10,18 +10,7 @@ import Foundation
 
 public extension UI {
 
-  public struct Device {
-    let phone: CGFloat
-    let pad: CGFloat
-
-    public init(_ phone: CGFloat, _ pad: CGFloat) {
-      self.phone = phone
-      self.pad = pad
-    }
-
-    public var value: CGFloat { return UI.Device.value(phone, pad) }
-    public var ui: CGFloat { return value.ui }
-  }
+  public enum Device { }
 }
 
 public extension UI.Device {
@@ -32,10 +21,11 @@ public extension UI.Device {
 }
 
 public extension UI.Device {
-  public static var isIPhoneX: Bool {
+
+  public static let isIPhoneX: Bool = {
     return UIDevice.current.userInterfaceIdiom == .phone &&
         UIScreen.main.nativeBounds.height == 2436
-  }
+  }()
 }
 
 public extension UI.Device {
