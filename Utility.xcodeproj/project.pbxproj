@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5C30E6001FA0D8C600591CAA /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30E5FF1FA0D8C600591CAA /* Demo.swift */; };
+		5C8ABDA3200155DB003FA5DD /* Vectorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABDA2200155DB003FA5DD /* Vectorable.swift */; };
+		5C8ABDA520015620003FA5DD /* Flowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABDA420015620003FA5DD /* Flowable.swift */; };
 		CE91F3221F948AA8002FCE7E /* Utility.h in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3201F948AA8002FCE7E /* Utility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE91F3991F948FA5002FCE7E /* BoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3731F948F9C002FCE7E /* BoolExtension.swift */; };
 		CE91F39A1F948FA5002FCE7E /* Boxed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3741F948F9C002FCE7E /* Boxed.swift */; };
@@ -88,6 +90,8 @@
 
 /* Begin PBXFileReference section */
 		5C30E5FF1FA0D8C600591CAA /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
+		5C8ABDA2200155DB003FA5DD /* Vectorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vectorable.swift; sourceTree = "<group>"; };
+		5C8ABDA420015620003FA5DD /* Flowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flowable.swift; sourceTree = "<group>"; };
 		CE91F31D1F948AA8002FCE7E /* Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE91F3201F948AA8002FCE7E /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		CE91F3211F948AA8002FCE7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -308,6 +312,8 @@
 			isa = PBXGroup;
 			children = (
 				CE91F3741F948F9C002FCE7E /* Boxed.swift */,
+				5C8ABDA2200155DB003FA5DD /* Vectorable.swift */,
+				5C8ABDA420015620003FA5DD /* Flowable.swift */,
 				CE91F3901F948F9C002FCE7E /* Updateable.swift */,
 			);
 			path = Other;
@@ -455,6 +461,7 @@
 				CE91F3B11F948FB3002FCE7E /* Updateable.swift in Sources */,
 				CE91F3B21F948FB3002FCE7E /* UIExtension.swift in Sources */,
 				CE91F3B31F948FB3002FCE7E /* GradientView.swift in Sources */,
+				5C8ABDA3200155DB003FA5DD /* Vectorable.swift in Sources */,
 				CE91F3B41F948FB3002FCE7E /* LineView.swift in Sources */,
 				CEE0CAD41F9F874700EE9B2E /* IntExtension.swift in Sources */,
 				CEE0CAD01F9F868A00EE9B2E /* UIExtensionDevice.swift in Sources */,
@@ -477,6 +484,7 @@
 				CE91F3AF1F948FAC002FCE7E /* UIView+Animations.swift in Sources */,
 				CE91F3B01F948FAC002FCE7E /* UIViewExtension.swift in Sources */,
 				CEE0CAC71F9F715A00EE9B2E /* CGRect+Geometry.swift in Sources */,
+				5C8ABDA520015620003FA5DD /* Flowable.swift in Sources */,
 				CEE0CABA1F9F44A700EE9B2E /* String+HTML.swift in Sources */,
 				CE91F3991F948FA5002FCE7E /* BoolExtension.swift in Sources */,
 				CE91F39A1F948FA5002FCE7E /* Boxed.swift in Sources */,
