@@ -34,14 +34,14 @@ public extension UIColor {
 
   func withLuminance(_ luminance: CGFloat) -> UIColor {
     let hsl = hslValue()
-    let newHSL = HSL(hsl.hue, hsl.saturation, luminance)
+    let newHSL = HSL(hsl.hue, hsl.saturation, luminance, hsl.alpha)
     return newHSL.color()
   }
 
   var isLight: Bool { return luminance >= Lightness.threashold }
 }
 
-// MARK: - RGB
+// MARK: - RGBA
 
 public extension UIColor {
 
@@ -49,21 +49,23 @@ public extension UIColor {
     public let red: CGFloat
     public let green: CGFloat
     public let blue: CGFloat
+    public let alpha: CGFloat
 
     // swiftlint:disable identifier_name
     static public func == (l: RGB, r: RGB) -> Bool {
-      return l.red == r.red && l.green == r.green && l.blue == r.blue
+      return l.red == r.red && l.green == r.green && l.blue == r.blue && l.alpha == r.alpha
     }
 
-    public init(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat) {
+    public init(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ a: CGFloat = 1.0) {
       red = r.normalized
       green = g.normalized
       blue = b.normalized
+      alpha = a.normalized
     }
     // swiftlint:enable identifier_name
 
     public var debugDescription: String {
-      return "r: %.2\(red)), g: %.2\(green), b: %.2\(blue)"
+      return "r: %.2\(red)), g: %.2\(green), b: %.2\(blue), a: %.2\(alpha)"
     }
 
     public func hslValue() -> HSL {
@@ -84,28 +86,28 @@ public extension UIColor {
       default: break
       }
       h /= 6.0
-      return HSL(h, s, l)
+      return HSL(h, s, l, alpha)
     }
 
     public func hsbValue() -> HSB {
-      let color = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
-      var h, s, b: CGFloat
-      (h, s, b) = (0.0, 0.0, 0.0)
-      color.getHue(&h, saturation: &s, brightness: &b, alpha: nil)
-      let hsb = HSB(h, s, b)
+      let color = UIColor(red: red, green: green, blue: blue, alpha: alpha)
+      var h, s, b, a: CGFloat
+      (h, s, b, a) = (0.0, 0.0, 0.0, 0.0)
+      color.getHue(&h, saturation: &s, brightness: &b, alpha: &a)
+      let hsb = HSB(h, s, b, a)
       return hsb
     }
 
     public func color() -> UIColor {
-      return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+      return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
   }
 
   public func rgbValue() -> RGB {
-    var r, g, b: CGFloat
-    (r, g, b) = (0.0, 0.0, 0.0)
-    getRed(&r, green: &g, blue: &b, alpha: nil)
-    return RGB(r, g, b)
+    var r, g, b, a: CGFloat
+    (r, g, b, a) = (0.0, 0.0, 0.0, 0.0)
+    getRed(&r, green: &g, blue: &b, alpha: &a)
+    return RGB(r, g, b, a)
   }
 }
 
@@ -117,21 +119,23 @@ public extension UIColor {
     public let hue: CGFloat
     public let saturation: CGFloat
     public let luminance: CGFloat
+    public let alpha: CGFloat
 
     // swiftlint:disable identifier_name
     static public func == (l: HSL, r: HSL) -> Bool {
-      return l.hue == r.hue && l.saturation == r.saturation && l.luminance == r.luminance
+      return l.hue == r.hue && l.saturation == r.saturation && l.luminance == r.luminance && l.alpha == r.alpha
     }
 
-    public init(_ h: CGFloat, _ s: CGFloat, _ l: CGFloat) {
+    public init(_ h: CGFloat, _ s: CGFloat, _ l: CGFloat, _ a: CGFloat = 1.0) {
       hue = h.normalized
       saturation = s.normalized
       luminance = l.normalized
+      alpha = a.normalized
     }
     // swiftlint:enable identifier_name
 
     public var debugDescription: String {
-      return "h: %.2\(hue), s: %.2\(saturation), l: %.2\(luminance)"
+      return "h: %.2\(hue), s: %.2\(saturation), l: %.2\(luminance), a: %.2\(alpha)"
     }
 
     public func color() -> UIColor {
@@ -177,26 +181,28 @@ public extension UIColor {
     public let hue: CGFloat
     public let saturation: CGFloat
     public let brightness: CGFloat
+    public let alpha: CGFloat
 
     // swiftlint:disable identifier_name
     static public func == (l: HSB, r: HSB) -> Bool {
-      return l.hue == r.hue && l.saturation == r.saturation && l.brightness == r.brightness
+      return l.hue == r.hue && l.saturation == r.saturation && l.brightness == r.brightness && l.alpha == r.alpha
     }
 
-    public init(_ h: CGFloat, _ s: CGFloat, _ b: CGFloat) {
+    public init(_ h: CGFloat, _ s: CGFloat, _ b: CGFloat, _ a: CGFloat = 1.0) {
       hue = h.normalized
       saturation = s.normalized
       brightness = b.normalized
+      alpha = a.normalized
     }
     // swiftlint:enable identifier_name
 
     public func color() -> UIColor {
-      let color = UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1.0)
+      let color = UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: alpha)
       return color
     }
 
     public var debugDescription: String {
-      return "h: %.2\(hue), s: %.2\(saturation), l: %.2\(brightness)"
+      return "h: %.2\(hue), s: %.2\(saturation), l: %.2\(brightness), a: %.2\(alpha)"
     }
   }
 
