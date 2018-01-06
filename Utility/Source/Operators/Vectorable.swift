@@ -192,7 +192,9 @@ extension UIOffset: Vector2D {
   }
 }
 
-// MARK: - 4D
+// MARK: - 3D
+
+// MARK: - N-dimensional
 
 extension CGRect: Vectorable {
   
