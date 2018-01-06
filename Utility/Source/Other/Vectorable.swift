@@ -19,9 +19,22 @@ public protocol Vectorable {
 
 public extension Vectorable {
   
-  public init(value: CGFloat) {
+  public init(_ value: Vector1D) {
+    self.init(value.x)
+  }
+  
+  public init(_ values: [Vector1D]) {
     self.init()
-    vector = .init(repeating: value, count: Self.dimension)
+    vector = values.map { $0.x }
+  }
+  
+  public init(_ values: Vector1D...) {
+    self.init(values)
+  }
+  
+  fileprivate init(_ cgFloatValue: CGFloat) {
+    self.init()
+    vector = .init(repeating: cgFloatValue, count: Self.dimension)
   }
 }
 
@@ -211,6 +224,24 @@ extension UIEdgeInsets: Vectorable {
   }
 }
 
+// MARK: - 1-to-1 Operations
+
+public func + <T, U>(lhs: T, rhs: U) -> T where T: Vector1D, U: Vector1D {
+  return .init(x: lhs.x + rhs.x)
+}
+
+public func - <T, U>(lhs: U, rhs: T) -> T where T: Vector1D, U: Vector1D {
+  return .init(x: lhs.x - rhs.x)
+}
+
+public func * <T, U>(lhs: U, rhs: T) -> T where T: Vector1D, U: Vector1D {
+  return .init(x: lhs.x * rhs.x)
+}
+
+public func / <T, U>(lhs: U, rhs: T) -> T where T: Vector1D, U: Vector1D {
+  return .init(x: lhs.x / rhs.x)
+}
+
 // MARK: - 2 prefix Operations
 
 public prefix func - <T>(lhs: T) -> T where T: Vector2D {
@@ -318,7 +349,7 @@ public prefix func - <T>(lhs: T) -> T where T: Vectorable {
 // MARK: - n-to-1 Operations
 
 fileprivate func n1Operation<T, U>(_ lhs: T, _ rhs: U, transform: (CGFloat, CGFloat) -> CGFloat) -> T where T: Vectorable, U: Vector1D {
-  let lhs = T.init(value: rhs.x)
+  let lhs = T.init(rhs.x)
   return nnOperation(lhs, rhs, transform: transform)
 }
 
