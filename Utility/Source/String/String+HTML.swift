@@ -17,7 +17,7 @@ private let htmlToPlainStringCache: NSCache = { () -> NSCache<AnyObject, AnyObje
 }()
 
 public extension String {
-  
+
   var attributedTextFromHTML: NSAttributedString? {
     guard let data = data(using: String.Encoding.utf8) else { return nil }
 
