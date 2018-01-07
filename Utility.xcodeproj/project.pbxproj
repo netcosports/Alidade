@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1AE3320D091E2179C23C5691 /* Pods_Utility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C70356363D2543582D568A3 /* Pods_Utility.framework */; };
 		5C30E6001FA0D8C600591CAA /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30E5FF1FA0D8C600591CAA /* Demo.swift */; };
+		5C6972922002D2B2001A5051 /* Associatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6972912002D2B2001A5051 /* Associatable.swift */; };
 		5C8ABDA3200155DB003FA5DD /* Vectorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABDA2200155DB003FA5DD /* Vectorable.swift */; };
 		5C8ABDA520015620003FA5DD /* Flowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABDA420015620003FA5DD /* Flowable.swift */; };
 		5C8ABDAD20016F44003FA5DD /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABDAC20016F44003FA5DD /* Tests.swift */; };
@@ -97,6 +98,7 @@
 /* Begin PBXFileReference section */
 		3C70356363D2543582D568A3 /* Pods_Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C30E5FF1FA0D8C600591CAA /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
+		5C6972912002D2B2001A5051 /* Associatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Associatable.swift; sourceTree = "<group>"; };
 		5C8ABDA2200155DB003FA5DD /* Vectorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vectorable.swift; sourceTree = "<group>"; };
 		5C8ABDA420015620003FA5DD /* Flowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flowable.swift; sourceTree = "<group>"; };
 		5C8ABDAA20016F44003FA5DD /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -348,6 +350,7 @@
 		CEE0CAD51F9F878300EE9B2E /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				5C6972912002D2B2001A5051 /* Associatable.swift */,
 				CE91F3741F948F9C002FCE7E /* Boxed.swift */,
 				5C8ABDA420015620003FA5DD /* Flowable.swift */,
 				CE91F3901F948F9C002FCE7E /* Updateable.swift */,
@@ -615,6 +618,7 @@
 				CE91F3B41F948FB3002FCE7E /* LineView.swift in Sources */,
 				CEE0CAD41F9F874700EE9B2E /* IntExtension.swift in Sources */,
 				CEE0CAD01F9F868A00EE9B2E /* UIExtensionDevice.swift in Sources */,
+				5C6972922002D2B2001A5051 /* Associatable.swift in Sources */,
 				CE91F3B51F948FB3002FCE7E /* PathView.swift in Sources */,
 				CE91F3B61F948FB3002FCE7E /* RadialGradientLayer.swift in Sources */,
 				CE91F3B71F948FB3002FCE7E /* TestView.swift in Sources */,
