@@ -351,7 +351,7 @@ public prefix func - <T>(lhs: T) -> T where T: Vectorable {
 // MARK: - n-to-1 Operations
 
 fileprivate func n1Operation<T, U>(_ lhs: T, _ rhs: U, transform: (CGFloat, CGFloat) -> CGFloat) -> T where T: Vectorable, U: Vector1D {
-  let lhs = T.init(rhs.x)
+  let rhs = T.init(rhs.x)
   return nnOperation(lhs, rhs, transform: transform)
 }
 

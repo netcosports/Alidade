@@ -8,6 +8,7 @@
 
 import Foundation
 import Utility
+import CoreGraphics
 
 class Demo {
   
