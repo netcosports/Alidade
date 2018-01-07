@@ -8,6 +8,7 @@
 
 import Foundation
 
+//swiftlint:disable identifier_name file_length
 public protocol Vectorable {
 
   static var dimension: Int { get }
@@ -350,7 +351,8 @@ public prefix func - <T>(lhs: T) -> T where T: Vectorable {
 
 // MARK: - n-to-1 Operations
 
-private func n1Operation<T, U>(_ lhs: T, _ rhs: U, transform: (CGFloat, CGFloat) -> CGFloat) -> T where T: Vectorable, U: Vector1D {
+private typealias Transform = (CGFloat, CGFloat) -> CGFloat
+private func n1Operation<T, U>(_ lhs: T, _ rhs: U, transform: Transform) -> T where T: Vectorable, U: Vector1D {
   let rhs = T.init(rhs.x)
   return nnOperation(lhs, rhs, transform: transform)
 }
@@ -389,7 +391,7 @@ public func / <T, U>(lhs: U, rhs: T) -> T where T: Vectorable, U: Vector1D {
 
 // MARK: - n-to-n Operations
 
-private func nnOperation<T, U>(_ lhs: T, _ rhs: U, transform: (CGFloat, CGFloat) -> CGFloat) -> T where T: Vectorable, U: Vectorable {
+private func nnOperation<T, U>(_ lhs: T, _ rhs: U, transform: Transform) -> T where T: Vectorable, U: Vectorable {
   assert(T.dimension == U.dimension, "vectors dimensions are not equal: \(T.dimension) != \(U.dimension)")
 
   var result = T.init()
@@ -412,3 +414,4 @@ public func * <T, U>(lhs: T, rhs: U) -> T where T: Vectorable, U: Vectorable {
 public func / <T, U>(lhs: T, rhs: U) -> T where T: Vectorable, U: Vectorable {
   return nnOperation(lhs, rhs) { $0 / $1 }
 }
+//swiftlint:enable identifier_name file_length
