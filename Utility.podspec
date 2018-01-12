@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.subspec 'Default' do |ss|
     ss.dependency 'Utility/Core'
     ss.dependency 'Utility/Formatter'
-    ss.dependency 'Utility/Operators'
+    ss.dependency 'Utility/Vectors'
     ss.dependency 'Utility/String'
     ss.dependency 'Utility/UI'
     ss.dependency 'Utility/UIExtension'
@@ -31,11 +31,12 @@ Pod::Spec.new do |s|
   s.subspec 'Geometry' do |ss|
     ss.source_files = 'Utility/Source/Geometry/*.swift'
     ss.dependency 'Utility/Core'
-    ss.dependency 'Utility/Operators'
+    ss.dependency 'Utility/Vectors'
   end
 
-  s.subspec 'Operators' do |ss|
-    ss.source_files = 'Utility/Source/Operators/*.swift'
+  s.subspec 'Vectors' do |ss|
+    ss.source_files = 'Utility/Source/Vectors/*.swift'
+    ss.dependency 'Interpolate'
   end
 
   # s.subspec 'Other' do |ss|

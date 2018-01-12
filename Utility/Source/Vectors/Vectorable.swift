@@ -11,7 +11,7 @@ import Foundation
 //swiftlint:disable identifier_name file_length
 public protocol Vectorable {
 
-  static var dimension: Int { get }
+  static var length: Int { get }
 
   var vector: [CGFloat] { get set }
 
@@ -35,7 +35,7 @@ public extension Vectorable {
 
   fileprivate init(_ cgFloatValue: CGFloat) {
     self.init()
-    vector = .init(repeating: cgFloatValue, count: Self.dimension)
+    vector = .init(repeating: cgFloatValue, count: Self.length)
   }
 }
 
@@ -48,7 +48,7 @@ public protocol Vector1D: Vectorable {
 
 extension Vector1D {
 
-  public static var dimension: Int { return 1 }
+  public static var length: Int { return 1 }
 
   public var vector: [CGFloat] {
     get { return [x] }
@@ -70,7 +70,7 @@ public protocol Vector2D: Vector1D {
 
 extension Vector2D {
 
-  public static var dimension: Int { return 2 }
+  public static var length: Int { return 2 }
 
   public var vector: [CGFloat] {
     get { return [x, y] }
@@ -93,7 +93,7 @@ public protocol Vector3D: Vector2D {
 
 public extension Vector3D {
 
-  public static var dimension: Int { return 3 }
+  public static var length: Int { return 3 }
 
   public var vector: [CGFloat] {
     get { return [x, y, z] }
@@ -199,7 +199,7 @@ extension UIOffset: Vector2D {
 
 extension CGRect: Vectorable {
 
-  public static var dimension: Int { return 4 }
+  public static var length: Int { return 4 }
 
   public var vector: [CGFloat] {
     get { return [origin.x, origin.y, size.width, size.height] }
@@ -214,7 +214,7 @@ extension CGRect: Vectorable {
 
 extension UIEdgeInsets: Vectorable {
 
-  public static var dimension: Int { return 4 }
+  public static var length: Int { return 4 }
 
   public var vector: [CGFloat] {
     get { return [top, left, bottom, right] }
@@ -392,7 +392,7 @@ public func / <T, U>(lhs: U, rhs: T) -> T where T: Vectorable, U: Vector1D {
 // MARK: - n-to-n Operations
 
 private func nnOperation<T, U>(_ lhs: T, _ rhs: U, transform: Transform) -> T where T: Vectorable, U: Vectorable {
-  assert(T.dimension == U.dimension, "vectors dimensions are not equal: \(T.dimension) != \(U.dimension)")
+  assert(T.length == U.length, "vectors lengths not equal: \(T.length) != \(U.length)")
 
   var result = T.init()
   result.vector = zip(lhs.vector, rhs.vector).map(transform)
