@@ -6,43 +6,41 @@
 //  Copyright © 2018 NetcoSports. All rights reserved.
 //
 
-import Foundation
-
 import ObjectiveC
 
 // MARK: - Associatable
 
-protocol Associatable {
+public protocol Associatable {
 
   var associated: Associated<AnyObject> { get }
 }
 
-extension Associatable where Self: AnyObject {
+public extension Associatable where Self: AnyObject {
 
-  var associated: Associated<AnyObject> { return Associated(base: self) }
+  public var associated: Associated<AnyObject> { return Associated(base: self) }
 }
 
 extension NSObject: Associatable { }
 
 // MARK: - Associated
 
-struct Associated<T> {
+public struct Associated<T> {
 
-  let base: T
+  public let base: T
 
   fileprivate init(base: T) {
     self.base = base
   }
 }
 
-extension Associated where T: AnyObject {
+public extension Associated where T: AnyObject {
 
-  func set<U: Any>(_ value: U?, for associativeKey: UnsafeRawPointer,
+  public func set<U: Any>(_ value: U?, for associativeKey: UnsafeRawPointer,
                    policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC) {
     Associator.set(value, in: base, for: associativeKey, policy: policy)
   }
 
-  func value<U>(for associativeKey: UnsafeRawPointer) -> U? {
+  public func value<U>(for associativeKey: UnsafeRawPointer) -> U? {
     return Associator.value(from: base, for: associativeKey)
   }
 }
