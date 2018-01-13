@@ -29,7 +29,7 @@ public extension CGPoint {
     if p.y < min.y { p.y = min.y }
     return p
   }
-  
+
   public func isFuzzyEqual(to point: CGPoint, epsilon: CGFloat = .epsilon) -> Bool {
     return point.x.isFuzzyEqual(to: x, epsilon: epsilon)
       && point.y.isFuzzyEqual(to: y, epsilon: epsilon)

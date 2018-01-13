@@ -55,9 +55,7 @@ final private class Associator {
 
   class func set<T: Any>(_ value: T?, in object: AnyObject, for associativeKey: UnsafeRawPointer,
                          policy: objc_AssociationPolicy) {
-    // Actually no: it returns false for value types
-    let isRef = type(of: value).self is AnyObject
-    if isRef {
+    if isRefType(value) {
       objc_setAssociatedObject(object, associativeKey, value, policy)
     } else {
       objc_setAssociatedObject(object, associativeKey, Boxed(value), policy)
@@ -71,5 +69,10 @@ final private class Associator {
       return v.value
     }
     return nil
+  }
+
+  // Actually no: it returns false for value types
+  private class func isRefType<T: Any>(_ value: T) -> Bool {
+    return type(of: value).self is AnyObject
   }
 }

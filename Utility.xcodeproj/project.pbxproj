@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		1AE3320D091E2179C23C5691 /* Pods_Utility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C70356363D2543582D568A3 /* Pods_Utility.framework */; };
 		5C30E6001FA0D8C600591CAA /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30E5FF1FA0D8C600591CAA /* Demo.swift */; };
-		5C6972922002D2B2001A5051 /* Associatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6972912002D2B2001A5051 /* Associatable.swift */; };
+		5C5442AC200A7FE900E1E326 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5442AB200A7FE900E1E326 /* DoubleExtension.swift */; };
+		5C5442AE200A7FF500E1E326 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5442AD200A7FF500E1E326 /* FloatExtension.swift */; };
+		5C6972922002D2B2001A5051 /* Associatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6972912002D2B2001A5051 /* Associatable.swift */; settings = {COMPILER_FLAGS = "-w"; }; };
 		5C8ABDA3200155DB003FA5DD /* Vectorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABDA2200155DB003FA5DD /* Vectorable.swift */; };
 		5C8ABDA520015620003FA5DD /* Flowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABDA420015620003FA5DD /* Flowable.swift */; };
 		5C8ABDAD20016F44003FA5DD /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABDAC20016F44003FA5DD /* Tests.swift */; };
@@ -17,9 +19,7 @@
 		CE91F3221F948AA8002FCE7E /* Utility.h in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3201F948AA8002FCE7E /* Utility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE91F3991F948FA5002FCE7E /* BoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3731F948F9C002FCE7E /* BoolExtension.swift */; };
 		CE91F39A1F948FA5002FCE7E /* Boxed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3741F948F9C002FCE7E /* Boxed.swift */; };
-		CE91F39B1F948FA5002FCE7E /* Float+Formatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3751F948F9C002FCE7E /* Float+Formatted.swift */; };
 		CE91F39C1F948FA5002FCE7E /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3761F948F9C002FCE7E /* Geometry.swift */; };
-		CE91F39D1F948FA5002FCE7E /* Int+Formatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3771F948F9C002FCE7E /* Int+Formatted.swift */; };
 		CE91F39F1F948FA5002FCE7E /* SequenceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3791F948F9C002FCE7E /* SequenceExtension.swift */; };
 		CE91F3A11F948FA5002FCE7E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F37B1F948F9C002FCE7E /* StringExtension.swift */; };
 		CE91F3A51F948FAC002FCE7E /* FormatterPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3811F948F9C002FCE7E /* FormatterPool.swift */; };
@@ -40,9 +40,7 @@
 		CE91F3B71F948FB3002FCE7E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3971F948F9C002FCE7E /* TestView.swift */; };
 		CEC90CA11F94BB9B00FA7643 /* BoolExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3731F948F9C002FCE7E /* BoolExtension.swift */; };
 		CEC90CA21F94BB9B00FA7643 /* Boxed.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3741F948F9C002FCE7E /* Boxed.swift */; };
-		CEC90CA31F94BB9B00FA7643 /* Float+Formatted.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3751F948F9C002FCE7E /* Float+Formatted.swift */; };
 		CEC90CA41F94BB9B00FA7643 /* Geometry.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3761F948F9C002FCE7E /* Geometry.swift */; };
-		CEC90CA51F94BB9B00FA7643 /* Int+Formatted.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3771F948F9C002FCE7E /* Int+Formatted.swift */; };
 		CEC90CA71F94BB9B00FA7643 /* SequenceExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3791F948F9C002FCE7E /* SequenceExtension.swift */; };
 		CEC90CA91F94BB9B00FA7643 /* StringExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F37B1F948F9C002FCE7E /* StringExtension.swift */; };
 		CEC90CAD1F94BB9B00FA7643 /* FormatterPool.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3811F948F9C002FCE7E /* FormatterPool.swift */; };
@@ -97,6 +95,8 @@
 /* Begin PBXFileReference section */
 		3C70356363D2543582D568A3 /* Pods_Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C30E5FF1FA0D8C600591CAA /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
+		5C5442AB200A7FE900E1E326 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		5C5442AD200A7FF500E1E326 /* FloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
 		5C6972912002D2B2001A5051 /* Associatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Associatable.swift; sourceTree = "<group>"; };
 		5C8ABDA2200155DB003FA5DD /* Vectorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vectorable.swift; sourceTree = "<group>"; };
 		5C8ABDA420015620003FA5DD /* Flowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flowable.swift; sourceTree = "<group>"; };
@@ -110,9 +110,7 @@
 		CE91F3211F948AA8002FCE7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE91F3731F948F9C002FCE7E /* BoolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolExtension.swift; sourceTree = "<group>"; };
 		CE91F3741F948F9C002FCE7E /* Boxed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxed.swift; sourceTree = "<group>"; };
-		CE91F3751F948F9C002FCE7E /* Float+Formatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Formatted.swift"; sourceTree = "<group>"; };
 		CE91F3761F948F9C002FCE7E /* Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
-		CE91F3771F948F9C002FCE7E /* Int+Formatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Formatted.swift"; sourceTree = "<group>"; };
 		CE91F3791F948F9C002FCE7E /* SequenceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExtension.swift; sourceTree = "<group>"; };
 		CE91F37B1F948F9C002FCE7E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		CE91F3811F948F9C002FCE7E /* FormatterPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterPool.swift; sourceTree = "<group>"; };
@@ -231,7 +229,6 @@
 			isa = PBXGroup;
 			children = (
 				CE91F3711F948F9C002FCE7E /* Core */,
-				CEE0CACB1F9F737500EE9B2E /* Formatter */,
 				CEE0CAA01F9F414C00EE9B2E /* Geometry */,
 				CEE0CABF1F9F6FFD00EE9B2E /* Vectors */,
 				CEE0CAD51F9F878300EE9B2E /* Other */,
@@ -247,6 +244,8 @@
 			children = (
 				CE91F3731F948F9C002FCE7E /* BoolExtension.swift */,
 				CE91F3841F948F9C002FCE7E /* CGFloatExtension.swift */,
+				5C5442AB200A7FE900E1E326 /* DoubleExtension.swift */,
+				5C5442AD200A7FF500E1E326 /* FloatExtension.swift */,
 				CE91F3851F948F9C002FCE7E /* CGPointExtension.swift */,
 				CE91F3861F948F9C002FCE7E /* CGRectExtension.swift */,
 				CEE0CABD1F9F685E00EE9B2E /* CGSizeExtension.swift */,
@@ -325,16 +324,6 @@
 			path = String;
 			sourceTree = "<group>";
 		};
-		CEE0CACB1F9F737500EE9B2E /* Formatter */ = {
-			isa = PBXGroup;
-			children = (
-				CE91F3751F948F9C002FCE7E /* Float+Formatted.swift */,
-				CE91F3771F948F9C002FCE7E /* Int+Formatted.swift */,
-				CE91F3811F948F9C002FCE7E /* FormatterPool.swift */,
-			);
-			path = Formatter;
-			sourceTree = "<group>";
-		};
 		CEE0CACC1F9F77D800EE9B2E /* UIExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +339,7 @@
 				5C6972912002D2B2001A5051 /* Associatable.swift */,
 				CE91F3741F948F9C002FCE7E /* Boxed.swift */,
 				5C8ABDA420015620003FA5DD /* Flowable.swift */,
+				CE91F3811F948F9C002FCE7E /* FormatterPool.swift */,
 				CE91F3901F948F9C002FCE7E /* Updateable.swift */,
 			);
 			path = Other;
@@ -374,9 +364,7 @@
 				CE91F3221F948AA8002FCE7E /* Utility.h in Headers */,
 				CEC90CA11F94BB9B00FA7643 /* BoolExtension.swift in Headers */,
 				CEC90CA21F94BB9B00FA7643 /* Boxed.swift in Headers */,
-				CEC90CA31F94BB9B00FA7643 /* Float+Formatted.swift in Headers */,
 				CEC90CA41F94BB9B00FA7643 /* Geometry.swift in Headers */,
-				CEC90CA51F94BB9B00FA7643 /* Int+Formatted.swift in Headers */,
 				CEC90CA71F94BB9B00FA7643 /* SequenceExtension.swift in Headers */,
 				CEC90CA91F94BB9B00FA7643 /* StringExtension.swift in Headers */,
 				CEC90CAD1F94BB9B00FA7643 /* FormatterPool.swift in Headers */,
@@ -619,6 +607,7 @@
 				CE91F3B61F948FB3002FCE7E /* RadialGradientLayer.swift in Sources */,
 				CE91F3B71F948FB3002FCE7E /* TestView.swift in Sources */,
 				CEE0CACE1F9F79FB00EE9B2E /* UIEdgeInsetsExtension.swift in Sources */,
+				5C5442AC200A7FE900E1E326 /* DoubleExtension.swift in Sources */,
 				CEE637FC1FBC746E00BCF9C9 /* ViewControllerContainer.swift in Sources */,
 				CE91F3A51F948FAC002FCE7E /* FormatterPool.swift in Sources */,
 				CE91F3A61F948FAC002FCE7E /* CGFloatExtension.swift in Sources */,
@@ -632,13 +621,12 @@
 				CE91F3B01F948FAC002FCE7E /* UIViewExtension.swift in Sources */,
 				CEE0CAC71F9F715A00EE9B2E /* CGRect+Geometry.swift in Sources */,
 				5C8ABDA520015620003FA5DD /* Flowable.swift in Sources */,
+				5C5442AE200A7FF500E1E326 /* FloatExtension.swift in Sources */,
 				CEE0CABA1F9F44A700EE9B2E /* String+HTML.swift in Sources */,
 				CE91F3991F948FA5002FCE7E /* BoolExtension.swift in Sources */,
 				CE91F39A1F948FA5002FCE7E /* Boxed.swift in Sources */,
 				CEE0CAC31F9F703C00EE9B2E /* CGAffineTransformOperators.swift in Sources */,
-				CE91F39B1F948FA5002FCE7E /* Float+Formatted.swift in Sources */,
 				CE91F39C1F948FA5002FCE7E /* Geometry.swift in Sources */,
-				CE91F39D1F948FA5002FCE7E /* Int+Formatted.swift in Sources */,
 				CE91F39F1F948FA5002FCE7E /* SequenceExtension.swift in Sources */,
 				CEE0CABC1F9F48B200EE9B2E /* String+Rendering.swift in Sources */,
 				CE91F3A11F948FA5002FCE7E /* StringExtension.swift in Sources */,
