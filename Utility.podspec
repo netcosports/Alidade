@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Vectors' do |ss|
     ss.source_files = 'Utility/Source/Vectors/*.swift'
-    ss.dependency 'Interpolate'
+    # ss.dependency 'Interpolate'
   end
 
   s.subspec 'String' do |ss|
