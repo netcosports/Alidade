@@ -51,15 +51,15 @@ Pod::Spec.new do |s|
   # Other
 
   s.subspec 'Associatable' do |ss|
-    ss.source_files = 'Utility/Other/Associatable.swift'
+    ss.source_files = 'Utility/Source/Other/Associatable.swift'
   end
 
   s.subspec 'Boxed' do |ss|
-    ss.source_files = 'Utility/Other/Boxed.swift'
+    ss.source_files = 'Utility/Source/Other/Boxed.swift'
   end
 
   s.subspec 'Flowable' do |ss|
-    ss.source_files = 'Utility/Other/Flowable.swift'
+    ss.source_files = 'Utility/Source/Other/Flowable.swift'
   end
 
   s.subspec 'FormatterPool' do |ss|
@@ -67,7 +67,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Updateable' do |ss|
-    ss.source_files = 'Utility/Other/Updateable.swift'
+    ss.source_files = 'Utility/Source/Other/Updateable.swift'
   end
 
 end
