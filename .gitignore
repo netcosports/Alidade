@@ -23,6 +23,7 @@ swiftlint_result.txt
 build/
 fastlane/test_output
 fastlane/report.xml
+fastlane/README.md
 fastlane/.env
 .bundle
 vendor

@@ -18,7 +18,7 @@ public extension UIFont { var ui: UIFont { return withSize(pointSize.ui) } }
 // swiftlint:disable:next type_name
 public class UI {
 
-  public static var baseWidths: [UIUserInterfaceIdiom : CGFloat] = [:] {
+  public static var baseWidths: [UIUserInterfaceIdiom: CGFloat] = [:] {
     didSet {
       scaleFactor = calculateScale()
     }

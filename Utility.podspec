@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Utility"
-  s.version      = "0.1.4"
+  s.version      = "0.1.7"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
   s.summary      = "Utility components"
   s.homepage     = "https://github.com/dDomovoj/Utility"
@@ -13,8 +13,8 @@ Pod::Spec.new do |s|
 
   s.subspec 'Default' do |ss|
     ss.dependency 'Utility/Core'
-    ss.dependency 'Utility/Formatter'
-    ss.dependency 'Utility/Operators'
+    ss.dependency 'Utility/FormatterPool'
+    ss.dependency 'Utility/Vectors'
     ss.dependency 'Utility/String'
     ss.dependency 'Utility/UI'
     ss.dependency 'Utility/UIExtension'
@@ -24,23 +24,16 @@ Pod::Spec.new do |s|
     ss.source_files = 'Utility/Source/Core/*.swift'
   end
 
-  s.subspec 'Formatter' do |ss|
-    ss.source_files = 'Utility/Source/Formatter/*.swift'
-  end
-
   s.subspec 'Geometry' do |ss|
     ss.source_files = 'Utility/Source/Geometry/*.swift'
     ss.dependency 'Utility/Core'
-    ss.dependency 'Utility/Operators'
+    ss.dependency 'Utility/Vectors'
   end
 
-  s.subspec 'Operators' do |ss|
-    ss.source_files = 'Utility/Source/Operators/*.swift'
+  s.subspec 'Vectors' do |ss|
+    ss.source_files = 'Utility/Source/Vectors/*.swift'
+    # ss.dependency 'Interpolate'
   end
-
-  # s.subspec 'Other' do |ss|
-  #   ss.source_files = 'Utility/Other/*.swift'
-  # end
 
   s.subspec 'String' do |ss|
     ss.source_files = 'Utility/Source/String/*.swift'
@@ -53,6 +46,28 @@ Pod::Spec.new do |s|
 
   s.subspec 'UIExtension' do |ss|
     ss.source_files = 'Utility/Source/UIExtension/*.swift'
+  end
+
+  # Other
+
+  s.subspec 'Associatable' do |ss|
+    ss.source_files = 'Utility/Source/Other/Associatable.swift'
+  end
+
+  s.subspec 'Boxed' do |ss|
+    ss.source_files = 'Utility/Source/Other/Boxed.swift'
+  end
+
+  s.subspec 'Flowable' do |ss|
+    ss.source_files = 'Utility/Source/Other/Flowable.swift'
+  end
+
+  s.subspec 'FormatterPool' do |ss|
+    ss.source_files = 'Utility/Source/Other/FormatterPool.swift'
+  end
+
+  s.subspec 'Updateable' do |ss|
+    ss.source_files = 'Utility/Source/Other/Updateable.swift'
   end
 
 end

@@ -28,4 +28,19 @@ public extension CGFloat {
   public func isFuzzyEqual(to value: CGFloat, epsilon: CGFloat = .epsilon) -> Bool {
     return fabs(self - value) <= epsilon
   }
+
+  /** Formatted representation
+
+   @code
+
+   let someFloat = 3.14159265359, someFloatFormat = ".3"
+   println("The floating point number \(someFloat) formatted with \"\(someFloatFormat)\"
+   looks like \(someFloat.format(someFloatFormat))")
+   // The floating point number 3.14159265359 formatted with ".3" looks like 3.142
+
+   @endcode
+   */
+  func formatted(_ format: String) -> String {
+    return String(format: "%\(format)f", self)
+  }
 }

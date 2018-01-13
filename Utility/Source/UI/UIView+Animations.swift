@@ -30,7 +30,7 @@ public extension UIView {
     setHidden(hidden, duration: duration, force: force, completion: completion)
   }
 
-  public func setHidden(_ hidden: Bool, duration: TimeInterval = 0.0, force: Bool = false,
+  public func setHidden(_ hidden: Bool, duration: TimeInterval, force: Bool = false,
                         completion: (() -> Void)? = nil) {
     if hidden {
       hide(animationDuration: duration, force: force, completion: completion)
@@ -40,7 +40,7 @@ public extension UIView {
   }
 
   private func hide(animationDuration: TimeInterval = 0.0, force: Bool = false,
-                   completion: (() -> Void)? = nil) {
+                    completion: (() -> Void)? = nil) {
     guard (!isHidden && !hiding) || showing || force else {
       completion?()
       return
