@@ -36,7 +36,7 @@ public struct Associated<T> {
 public extension Associated where T: AnyObject {
 
   public func set<U: Any>(_ value: U?, for associativeKey: UnsafeRawPointer,
-                   policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC) {
+                          policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC) {
     Associator.set(value, in: base, for: associativeKey, policy: policy)
   }
 
