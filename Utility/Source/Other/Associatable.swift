@@ -43,6 +43,15 @@ public extension Associated where T: AnyObject {
   public func value<U>(for associativeKey: UnsafeRawPointer) -> U? {
     return Associator.value(from: base, for: associativeKey)
   }
+
+  public func readonlyValue<U>(for associativeKey: UnsafeRawPointer, initialValue: U) -> U {
+    let value: U? = self.value(for: associativeKey)
+    if let value = value {
+      return value
+    }
+    set(initialValue, for: associativeKey)
+    return initialValue
+  }
 }
 
 // MARK: - Associator
