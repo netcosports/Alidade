@@ -52,6 +52,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Associatable' do |ss|
     ss.source_files = 'Utility/Source/Other/Associatable.swift'
+    ss.dependency 'Utility/Boxed'
   end
 
   s.subspec 'Boxed' do |ss|
