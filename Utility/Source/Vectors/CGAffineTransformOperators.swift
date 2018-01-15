@@ -14,3 +14,11 @@ public func + (left: CGAffineTransform, right: CGAffineTransform) -> CGAffineTra
 public prefix func ! (transform: CGAffineTransform) -> CGAffineTransform {
   return transform.inverted()
 }
+
+public func << (left: CGPoint, right: CGAffineTransform) -> CGPoint {
+  return left.applying(right)
+}
+
+public func << (left: CGRect, right: CGAffineTransform) -> CGRect {
+  return left.applying(right)
+}
