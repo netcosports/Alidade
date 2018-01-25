@@ -79,8 +79,7 @@ final private class Associator {
     return nil
   }
 
-  // Actually no: it returns false for value types
   private class func isRefType<T: Any>(_ value: T) -> Bool {
-    return type(of: value).self is AnyObject
+    return type(of: value).self is AnyClass
   }
 }
