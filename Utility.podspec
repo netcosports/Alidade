@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Utility"
-  s.version      = "0.1.7"
+  s.version      = "0.1.9"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
   s.summary      = "Utility components"
   s.homepage     = "https://github.com/dDomovoj/Utility"
