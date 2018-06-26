@@ -1,14 +1,18 @@
 Pod::Spec.new do |s|
-
   s.name         = "Alidade"
   s.version      = "0.2.0"
-  s.license      = { :type => "MIT", :file => "LICENSE.md" }
   s.summary      = "Utility components"
+
   s.homepage     = "https://github.com/netcosports/Alidade"
-  s.author       = "dDomovoj"
-  s.source       = { :git => "https://github.com/netcosports/Alidade.git", :tag => s.version }
+  s.license      = { :type => "MIT" }
+  s.author = { 
+    'Dmitry Duleba' => 'dmitry.duleba@netcosports.com'
+  }
+  s.source       = { :git => "https://github.com/netcosports/Alidade.git", :tag => s.version.to_s }
+  s.framework = ["UIKit", "Foundation"]
 
   s.ios.deployment_target = "9.0"
+  
   s.default_subspec = 'Default'
 
   s.subspec 'Default' do |ss|
