@@ -62,15 +62,20 @@ private extension UI {
   }
 
   static func value(_ value: CGSize) -> CGSize {
-    return (value * scaleFactor).ceiled
+    return CGSize(width: value.width * scaleFactor,
+                  height: value.height * scaleFactor).ceiled
   }
 
   static func value(_ value: CGPoint) -> CGPoint {
-    return (value * scaleFactor).ceiled
+    return CGPoint(x: value.x * scaleFactor,
+                   y: value.y * scaleFactor).ceiled
   }
 
   static func value(_ value: UIEdgeInsets) -> UIEdgeInsets {
-    return value * scaleFactor
+    return UIEdgeInsets(top: value.top * scaleFactor,
+                        left: value.left * scaleFactor,
+                        bottom: value.bottom * scaleFactor,
+                        right: value.right * scaleFactor)
   }
 
   static func value(_ value: UIOffset) -> UIOffset {

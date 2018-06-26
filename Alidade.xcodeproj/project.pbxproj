@@ -15,7 +15,7 @@
 		5C8ABDA520015620003FA5DD /* Flowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABDA420015620003FA5DD /* Flowable.swift */; };
 		5C8ABDAD20016F44003FA5DD /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABDAC20016F44003FA5DD /* Tests.swift */; };
 		5C8ABDAF20016F44003FA5DD /* Alidade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE91F31D1F948AA8002FCE7E /* Alidade.framework */; };
-		CE91F3221F948AA8002FCE7E /* Utility.h in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3201F948AA8002FCE7E /* Utility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE91F3221F948AA8002FCE7E /* Alidade.h in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3201F948AA8002FCE7E /* Alidade.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE91F3991F948FA5002FCE7E /* BoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3731F948F9C002FCE7E /* BoolExtension.swift */; };
 		CE91F39A1F948FA5002FCE7E /* Boxed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3741F948F9C002FCE7E /* Boxed.swift */; };
 		CE91F39C1F948FA5002FCE7E /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3761F948F9C002FCE7E /* Geometry.swift */; };
@@ -106,7 +106,7 @@
 		B4498AFDD1BCA001F7CE9416 /* Pods-Utility.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utility.release.xcconfig"; path = "Pods/Target Support Files/Pods-Utility/Pods-Utility.release.xcconfig"; sourceTree = "<group>"; };
 		BA5C86273C71089F0DC59A12 /* Pods-Utility.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utility.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Utility/Pods-Utility.debug.xcconfig"; sourceTree = "<group>"; };
 		CE91F31D1F948AA8002FCE7E /* Alidade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alidade.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE91F3201F948AA8002FCE7E /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		CE91F3201F948AA8002FCE7E /* Alidade.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Alidade.h; sourceTree = "<group>"; };
 		CE91F3211F948AA8002FCE7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE91F3731F948F9C002FCE7E /* BoolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolExtension.swift; sourceTree = "<group>"; };
 		CE91F3741F948F9C002FCE7E /* Boxed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxed.swift; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				CE91F3701F948F9C002FCE7E /* Source */,
-				CE91F3201F948AA8002FCE7E /* Utility.h */,
+				CE91F3201F948AA8002FCE7E /* Alidade.h */,
 				CE91F3211F948AA8002FCE7E /* Info.plist */,
 			);
 			path = Alidade;
@@ -363,7 +363,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE91F3221F948AA8002FCE7E /* Utility.h in Headers */,
+				CE91F3221F948AA8002FCE7E /* Alidade.h in Headers */,
 				CEC90CA11F94BB9B00FA7643 /* BoolExtension.swift in Headers */,
 				CEC90CA21F94BB9B00FA7643 /* Boxed.swift in Headers */,
 				CEC90CA41F94BB9B00FA7643 /* Geometry.swift in Headers */,

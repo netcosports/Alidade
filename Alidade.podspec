@@ -29,9 +29,9 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Geometry' do |ss|
-    ss.source_files = 'Alidade/Source/Geometry/*.swift'
     ss.dependency 'Alidade/Core'
     ss.dependency 'Alidade/Vectors'
+    ss.source_files = 'Alidade/Source/Geometry/*.swift'
   end
 
   s.subspec 'Vectors' do |ss|
@@ -40,11 +40,12 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'String' do |ss|
-    ss.source_files = 'Alidade/Source/String/*.swift'
     ss.dependency 'Alidade/Core'
+    ss.source_files = 'Alidade/Source/String/*.swift'
   end
 
   s.subspec 'UI' do |ss|
+    ss.dependency 'Alidade/Core'
     ss.source_files = 'Alidade/Source/UI/**/*.swift'
   end
 
@@ -55,12 +56,13 @@ Pod::Spec.new do |s|
   # Other
 
   s.subspec 'Associatable' do |ss|
-    ss.source_files = 'Alidade/Source/Other/Associatable.swift'
     ss.dependency 'Alidade/Boxed'
+    ss.framework = ["ObjectiveC"]
+    ss.source_files = 'Alidade/Source/Other/Associatable.swift'
   end
 
   s.subspec 'Boxed' do |ss|
-    ss.source_files = 'AlidUtilityade/Source/Other/Boxed.swift'
+    ss.source_files = 'Alidade/Source/Other/Boxed.swift'
   end
 
   s.subspec 'Flowable' do |ss|
