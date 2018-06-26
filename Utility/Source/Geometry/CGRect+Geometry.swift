@@ -10,6 +10,7 @@ import Foundation
 
 public extension CGRect {
 
+  //swiftlint:disable identifier_name
   public func intersection(with ray: Geometry.Ray) -> CGPoint? {
     let p0 = CGPoint(x: minX, y: minY)
     let p1 = CGPoint(x: minX, y: maxY)
@@ -22,10 +23,11 @@ public extension CGRect {
     let l3 = Geometry.Line(p0: p3, p1: p0)
 
     let intersection = [l0, l1, l2, l3]
-      .flatMap { ray.intersection(with: $0) }
+      .compactMap { ray.intersection(with: $0) }
       .map { (Geometry.Segment(p0: $0, p1: ray.start).length, $0) }
       .min { $0.0 < $1.0 }
       .map { $1 }
     return intersection
   }
+  //swiftlint:enable identifier_name
 }

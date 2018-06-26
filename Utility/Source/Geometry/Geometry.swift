@@ -1,5 +1,6 @@
 import Foundation
 
+// swiftlint:disable identifier_name
 public struct Geometry {
 
   public struct Ray {
@@ -24,7 +25,6 @@ public struct Geometry {
   }
 
   public struct Line {
-    // swiftlint:disable identifier_name
     public let p0: CGPoint
     public let p1: CGPoint
 
@@ -37,7 +37,6 @@ public struct Geometry {
       p0 = ray.start
       p1 = p0 + ray.direction
     }
-    // swiftlint:enable identifier_name
 
     public func intersection(with line: Line) -> CGPoint? {
       let p2 = line.p0
@@ -55,7 +54,6 @@ public struct Geometry {
   }
 
   public struct Segment {
-    // swiftlint:disable identifier_name
     public let p0: CGPoint
     public let p1: CGPoint
 
@@ -63,7 +61,6 @@ public struct Geometry {
       self.p0 = p0
       self.p1 = p1
     }
-    // swiftlint:enable identifier_name
 
     public var length: CGFloat {
       return sqrt((p1.x - p0.x) * (p1.x - p0.x) + (p1.y - p0.y) * (p1.y - p0.y))

@@ -29,7 +29,7 @@ public final class FormatterPool {
     return cache
   }()
 
-  public static func formatter<T: Formatter>(_ type: T.Type, format: T.Format, locale: Locale = .current) -> T {
+  public static func formatter<T: Formatter>(format: T.Format, locale: Locale = .current) -> T {
     let key = T.hashValue(format: format, locale: locale)
     if let formatter = cache.object(forKey: key as AnyObject) as? T {
       return formatter

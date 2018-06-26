@@ -52,7 +52,6 @@ public extension UIColor {
     public var blue: CGFloat
     public var alpha: CGFloat
 
-    // swiftlint:disable identifier_name
     static public func == (l: RGBA, r: RGBA) -> Bool {
       return l.red == r.red && l.green == r.green && l.blue == r.blue && l.alpha == r.alpha
     }
@@ -63,10 +62,10 @@ public extension UIColor {
       blue = b.normalized
       alpha = a.normalized
     }
-    // swiftlint:enable identifier_name
 
     public var debugDescription: String {
-      return "r: %.2\(red)), g: %.2\(green), b: %.2\(blue), a: %.2\(alpha)"
+      //swiftlint:disable:next line_length
+      return "r: \(String(format: "%.2f", red)), g: \(String(format: "%.2f", green)), b: \(String(format: "%.2f", blue)), a: \(String(format: "%.2f", alpha))"
     }
 
     public func hslaValue() -> HSLA {

@@ -1,23 +1,23 @@
 Pod::Spec.new do |s|
 
-  s.name         = "Utility"
-  s.version      = "0.1.9"
+  s.name         = "Alidade"
+  s.version      = "0.2.0"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
   s.summary      = "Utility components"
-  s.homepage     = "https://github.com/dDomovoj/Utility"
+  s.homepage     = "https://github.com/netcosports/Alidade"
   s.author       = "dDomovoj"
-  s.source       = { :git => "https://github.com/dDomovoj/Utility.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/netcosports/Alidade.git", :tag => s.version }
 
   s.ios.deployment_target = "9.0"
   s.default_subspec = 'Default'
 
   s.subspec 'Default' do |ss|
-    ss.dependency 'Utility/Core'
-    ss.dependency 'Utility/FormatterPool'
-    ss.dependency 'Utility/Vectors'
-    ss.dependency 'Utility/String'
-    ss.dependency 'Utility/UI'
-    ss.dependency 'Utility/UIExtension'
+    ss.dependency 'Alidade/Core'
+    ss.dependency 'Alidade/FormatterPool'
+    ss.dependency 'Alidade/Vectors'
+    ss.dependency 'Alidade/String'
+    ss.dependency 'Alidade/UI'
+    ss.dependency 'Alidade/UIExtension'
   end
 
   s.subspec 'Core' do |ss|
@@ -26,8 +26,8 @@ Pod::Spec.new do |s|
 
   s.subspec 'Geometry' do |ss|
     ss.source_files = 'Utility/Source/Geometry/*.swift'
-    ss.dependency 'Utility/Core'
-    ss.dependency 'Utility/Vectors'
+    ss.dependency 'Alidade/Core'
+    ss.dependency 'Alidade/Vectors'
   end
 
   s.subspec 'Vectors' do |ss|
@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'String' do |ss|
     ss.source_files = 'Utility/Source/String/*.swift'
-    ss.dependency 'Utility/Core'
+    ss.dependency 'Alidade/Core'
   end
 
   s.subspec 'UI' do |ss|
@@ -52,11 +52,11 @@ Pod::Spec.new do |s|
 
   s.subspec 'Associatable' do |ss|
     ss.source_files = 'Utility/Source/Other/Associatable.swift'
-    ss.dependency 'Utility/Boxed'
+    ss.dependency 'Alidade/Boxed'
   end
 
   s.subspec 'Boxed' do |ss|
-    ss.source_files = 'Utility/Source/Other/Boxed.swift'
+    ss.source_files = 'AlidUtilityade/Source/Other/Boxed.swift'
   end
 
   s.subspec 'Flowable' do |ss|
@@ -65,10 +65,6 @@ Pod::Spec.new do |s|
 
   s.subspec 'FormatterPool' do |ss|
     ss.source_files = 'Utility/Source/Other/FormatterPool.swift'
-  end
-
-  s.subspec 'Updateable' do |ss|
-    ss.source_files = 'Utility/Source/Other/Updateable.swift'
   end
 
 end

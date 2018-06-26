@@ -37,7 +37,6 @@
 		CE91F3B41F948FB3002FCE7E /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3941F948F9C002FCE7E /* LineView.swift */; };
 		CE91F3B51F948FB3002FCE7E /* PathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3951F948F9C002FCE7E /* PathView.swift */; };
 		CE91F3B61F948FB3002FCE7E /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3961F948F9C002FCE7E /* RadialGradientLayer.swift */; };
-		CE91F3B71F948FB3002FCE7E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE91F3971F948F9C002FCE7E /* TestView.swift */; };
 		CEC90CA11F94BB9B00FA7643 /* BoolExtension.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3731F948F9C002FCE7E /* BoolExtension.swift */; };
 		CEC90CA21F94BB9B00FA7643 /* Boxed.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3741F948F9C002FCE7E /* Boxed.swift */; };
 		CEC90CA41F94BB9B00FA7643 /* Geometry.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3761F948F9C002FCE7E /* Geometry.swift */; };
@@ -58,7 +57,6 @@
 		CEC90CBC1F94BB9B00FA7643 /* LineView.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3941F948F9C002FCE7E /* LineView.swift */; };
 		CEC90CBD1F94BB9B00FA7643 /* PathView.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3951F948F9C002FCE7E /* PathView.swift */; };
 		CEC90CBE1F94BB9B00FA7643 /* RadialGradientLayer.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3961F948F9C002FCE7E /* RadialGradientLayer.swift */; };
-		CEC90CBF1F94BB9B00FA7643 /* TestView.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE91F3971F948F9C002FCE7E /* TestView.swift */; };
 		CEE0CAA81F9F434E00EE9B2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CAA71F9F434E00EE9B2E /* AppDelegate.swift */; };
 		CEE0CAAA1F9F434E00EE9B2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0CAA91F9F434E00EE9B2E /* ViewController.swift */; };
 		CEE0CAAD1F9F434E00EE9B2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE0CAAB1F9F434E00EE9B2E /* Main.storyboard */; };
@@ -128,7 +126,6 @@
 		CE91F3941F948F9C002FCE7E /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		CE91F3951F948F9C002FCE7E /* PathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathView.swift; sourceTree = "<group>"; };
 		CE91F3961F948F9C002FCE7E /* RadialGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientLayer.swift; sourceTree = "<group>"; };
-		CE91F3971F948F9C002FCE7E /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		CEE0CAA51F9F434E00EE9B2E /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE0CAA71F9F434E00EE9B2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE0CAA91F9F434E00EE9B2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -278,7 +275,6 @@
 				CE91F3941F948F9C002FCE7E /* LineView.swift */,
 				CE91F3951F948F9C002FCE7E /* PathView.swift */,
 				CE91F3961F948F9C002FCE7E /* RadialGradientLayer.swift */,
-				CE91F3971F948F9C002FCE7E /* TestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -382,7 +378,6 @@
 				CEC90CBC1F94BB9B00FA7643 /* LineView.swift in Headers */,
 				CEC90CBD1F94BB9B00FA7643 /* PathView.swift in Headers */,
 				CEC90CBE1F94BB9B00FA7643 /* RadialGradientLayer.swift in Headers */,
-				CEC90CBF1F94BB9B00FA7643 /* TestView.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +449,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = NetcoSports;
 				TargetAttributes = {
 					5C8ABDA920016F44003FA5DD = {
@@ -605,7 +600,6 @@
 				5C6972922002D2B2001A5051 /* Associatable.swift in Sources */,
 				CE91F3B51F948FB3002FCE7E /* PathView.swift in Sources */,
 				CE91F3B61F948FB3002FCE7E /* RadialGradientLayer.swift in Sources */,
-				CE91F3B71F948FB3002FCE7E /* TestView.swift in Sources */,
 				CEE0CACE1F9F79FB00EE9B2E /* UIEdgeInsetsExtension.swift in Sources */,
 				5C5442AC200A7FE900E1E326 /* DoubleExtension.swift in Sources */,
 				CEE637FC1FBC746E00BCF9C9 /* ViewControllerContainer.swift in Sources */,
@@ -720,6 +714,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -727,6 +722,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -781,6 +777,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -788,6 +785,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

@@ -21,6 +21,7 @@ public extension CGPoint {
 
   public var clampNormal: CGPoint { return clamp(CGPoint.zero, CGPoint(x: 1.0, y: 1.0)) }
 
+  //swiftlint:disable identifier_name
   public func clamp(_ min: CGPoint, _ max: CGPoint) -> CGPoint {
     var p = self
     if p.x > max.x { p.x = max.x }
@@ -29,6 +30,7 @@ public extension CGPoint {
     if p.y < min.y { p.y = min.y }
     return p
   }
+  //swiftlint:enable identifier_name
 
   public func isFuzzyEqual(to point: CGPoint, epsilon: CGFloat = .epsilon) -> Bool {
     return point.x.isFuzzyEqual(to: x, epsilon: epsilon)

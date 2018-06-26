@@ -71,10 +71,10 @@ final private class Associator {
   }
 
   class func value<T>(from object: AnyObject, for associativeKey: UnsafeRawPointer) -> T? {
-    if let v = objc_getAssociatedObject(object, associativeKey) as? T {
-      return v
-    } else if let v = objc_getAssociatedObject(object, associativeKey) as? Boxed<T> {
-      return v.value
+    if let value = objc_getAssociatedObject(object, associativeKey) as? T {
+      return value
+    } else if let value = objc_getAssociatedObject(object, associativeKey) as? Boxed<T> {
+      return value.value
     }
     return nil
   }

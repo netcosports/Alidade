@@ -19,7 +19,7 @@ public extension Array {
   }
 }
 
-public extension Array where Element : Equatable {
+public extension Array where Element: Equatable {
 
   public mutating func remove(_ element: Element) {
     if let index = index(of: element) {
