@@ -50,6 +50,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'UIExtension' do |ss|
+    ss.dependency 'Alidade/Core'
     ss.source_files = 'Alidade/Source/UIExtension/*.swift'
   end
 

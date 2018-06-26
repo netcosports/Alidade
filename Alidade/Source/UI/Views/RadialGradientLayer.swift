@@ -41,7 +41,7 @@ public class RadialGradientLayer: CALayer {
     let locations = viewModel.points.map { $0.position.clamp(0.0, 1.0) }
     let colorSpace = CGColorSpaceCreateDeviceRGB()
     CGGradient(colorsSpace: colorSpace, colors: colors as CFArray, locations: locations).flatMap {
-      let center = bounds.size.pointValue * 0.5
+      let center = CGPoint(x: bounds.midX, y: bounds.midY)
       let radius = min(bounds.width / 2.0, bounds.height / 2.0)
       let options = CGGradientDrawingOptions.drawsAfterEndLocation
       ctx.drawRadialGradient($0, startCenter: center, startRadius: 0.0,
