@@ -25,37 +25,37 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Core' do |ss|
-    ss.source_files = 'Utility/Source/Core/*.swift'
+    ss.source_files = 'Alidade/Source/Core/*.swift'
   end
 
   s.subspec 'Geometry' do |ss|
-    ss.source_files = 'Utility/Source/Geometry/*.swift'
+    ss.source_files = 'Alidade/Source/Geometry/*.swift'
     ss.dependency 'Alidade/Core'
     ss.dependency 'Alidade/Vectors'
   end
 
   s.subspec 'Vectors' do |ss|
-    ss.source_files = 'Utility/Source/Vectors/*.swift'
+    ss.source_files = 'Alidade/Source/Vectors/*.swift'
     # ss.dependency 'Interpolate'
   end
 
   s.subspec 'String' do |ss|
-    ss.source_files = 'Utility/Source/String/*.swift'
+    ss.source_files = 'Alidade/Source/String/*.swift'
     ss.dependency 'Alidade/Core'
   end
 
   s.subspec 'UI' do |ss|
-    ss.source_files = 'Utility/Source/UI/**/*.swift'
+    ss.source_files = 'Alidade/Source/UI/**/*.swift'
   end
 
   s.subspec 'UIExtension' do |ss|
-    ss.source_files = 'Utility/Source/UIExtension/*.swift'
+    ss.source_files = 'Alidade/Source/UIExtension/*.swift'
   end
 
   # Other
 
   s.subspec 'Associatable' do |ss|
-    ss.source_files = 'Utility/Source/Other/Associatable.swift'
+    ss.source_files = 'Alidade/Source/Other/Associatable.swift'
     ss.dependency 'Alidade/Boxed'
   end
 
@@ -64,11 +64,11 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Flowable' do |ss|
-    ss.source_files = 'Utility/Source/Other/Flowable.swift'
+    ss.source_files = 'Alidade/Source/Other/Flowable.swift'
   end
 
   s.subspec 'FormatterPool' do |ss|
-    ss.source_files = 'Utility/Source/Other/FormatterPool.swift'
+    ss.source_files = 'Alidade/Source/Other/FormatterPool.swift'
   end
 
 end
