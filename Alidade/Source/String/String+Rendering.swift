@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 private let stringSizeCache: NSCache = { () -> NSCache<AnyObject, AnyObject> in
   let cache = NSCache<AnyObject, AnyObject>()

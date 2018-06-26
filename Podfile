@@ -4,6 +4,6 @@ inhibit_all_warnings!
 
 source 'git@github.com:CocoaPods/Specs.git'
 
-target 'Utility' do
+target 'Alidade' do
     pod 'SwiftLint'
 end

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 //swiftlint:disable identifier_name file_length
 public protocol Vectorable {

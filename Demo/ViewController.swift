@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Utility
+import Alidade
 
 class ViewController: UIViewController {
 
