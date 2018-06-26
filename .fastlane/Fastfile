@@ -88,5 +88,5 @@ lane :tag do |options|
 end
 
 private_lane :podspec do
-  'Astrarium.podspec'
+  'Alidade.podspec'
 end
