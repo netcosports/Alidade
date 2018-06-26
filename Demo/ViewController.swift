@@ -11,6 +11,14 @@ import Alidade
 
 class ViewController: UIViewController {
 
+  enum Const {
+    static var value: UInt8 = 0
+  }
+
+  var value: CGFloat? {
+    return associated.value(for: &Const.value)
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
     Demo().run()

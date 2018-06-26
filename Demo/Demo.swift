@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Utility
+import Alidade
 import CoreGraphics
 
 class Demo {

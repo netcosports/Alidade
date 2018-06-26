@@ -58,7 +58,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Associatable' do |ss|
     ss.dependency 'Alidade/Boxed'
-    ss.framework = ["ObjectiveC"]
+    ss.framework = "ObjectiveC"
     ss.source_files = 'Alidade/Source/Other/Associatable.swift'
   end
 
