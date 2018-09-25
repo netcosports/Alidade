@@ -6,7 +6,7 @@
 //  Copyright © 2018 NetcoSports. All rights reserved.
 //
 
-import ObjectiveC
+import Foundation
 
 // MARK: - Associatable
 
