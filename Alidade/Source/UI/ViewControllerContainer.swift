@@ -39,11 +39,11 @@ public extension ViewControllerContainer where Base: UIViewController {
   public func add(_ childViewController: UIViewController?, to containerView: UIView, animated: Bool) {
     guard let childViewController = childViewController else { return }
 
-    base.addChildViewController(childViewController)
+    base.addChild(childViewController)
     childViewController.beginAppearanceTransition(true, animated: animated)
     containerView.addSubview(childViewController.view)
     childViewController.view.fillSuperview()
-    childViewController.didMove(toParentViewController: base)
+    childViewController.didMove(toParent: base)
     if !animated {
       childViewController.endAppearanceTransition()
     }
@@ -52,10 +52,10 @@ public extension ViewControllerContainer where Base: UIViewController {
   public func remove(_ childViewController: UIViewController?, animated: Bool) {
     guard let childViewController = childViewController else { return }
 
-    childViewController.willMove(toParentViewController: nil)
+    childViewController.willMove(toParent: nil)
     childViewController.view.removeFromSuperview()
     childViewController.beginAppearanceTransition(false, animated: animated)
-    childViewController.removeFromParentViewController()
+    childViewController.removeFromParent()
     if !animated {
       childViewController.endAppearanceTransition()
     }
@@ -70,7 +70,7 @@ extension UIView {
     }
 
     translatesAutoresizingMaskIntoConstraints = false
-    let attributes: [NSLayoutAttribute] = [.width, .height, .top, .leading]
+    let attributes: [NSLayoutConstraint.Attribute] = [.width, .height, .top, .leading]
     attributes
       .map { NSLayoutConstraint(item: self, attribute: $0, relatedBy: .equal,
                                 toItem: superview, attribute: $0, multiplier: 1.0, constant: 0.0) }

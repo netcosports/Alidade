@@ -11,7 +11,7 @@ import Foundation
 private let htmlToPlainStringCache: NSCache = { () -> NSCache<AnyObject, AnyObject> in
   let cache = NSCache<AnyObject, AnyObject>()
   let selector = #selector(NSCache<AnyObject, AnyObject>.removeAllObjects)
-  let name = NSNotification.Name.UIApplicationDidReceiveMemoryWarning
+  let name = UIApplication.didReceiveMemoryWarningNotification
   NotificationCenter.default.addObserver(cache, selector: selector, name: name, object: nil)
   return cache
 }()

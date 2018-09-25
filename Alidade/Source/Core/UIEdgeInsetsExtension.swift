@@ -82,11 +82,11 @@ public extension UIEdgeInsets {
   }
 
   func inset(rect: CGRect) -> CGRect {
-    return UIEdgeInsetsInsetRect(rect, self)
+    return rect.inset(by: self)
   }
 
   func inset(size: CGSize) -> CGSize {
     let rect = CGRect(origin: .zero, size: size)
-    return UIEdgeInsetsInsetRect(rect, self).size
+    return rect.inset(by: self).size
   }
 }
