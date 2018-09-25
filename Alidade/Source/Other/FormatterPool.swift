@@ -3,6 +3,7 @@ import Foundation
 public protocol Formatter: class {
 
   associatedtype Format
+  associatedtype PoolInstance: Formatter
 
   var format: Format { get set }
   var locale: Locale! { get set }
@@ -10,6 +11,7 @@ public protocol Formatter: class {
   init()
 
   static func hashValue(format: Format, locale: Locale) -> Int
+  static func formatter(format: Format, locale: Locale) -> PoolInstance
 }
 
 public extension Locale {
@@ -17,7 +19,7 @@ public extension Locale {
   public static let enUSPosix = Locale(identifier: "en_US_POSIX")
 }
 
-public final class FormatterPool {
+fileprivate final class FormatterPool {
 
   private init() { }
 
@@ -29,7 +31,7 @@ public final class FormatterPool {
     return cache
   }()
 
-  public static func formatter<T: Formatter>(format: T.Format, locale: Locale = .current) -> T {
+  fileprivate static func formatter<T: Formatter>(format: T.Format, locale: Locale = .current) -> T {
     let key = T.hashValue(format: format, locale: locale)
     if let formatter = cache.object(forKey: key as AnyObject) as? T {
       return formatter
@@ -47,6 +49,7 @@ public final class FormatterPool {
 extension DateFormatter: Formatter {
 
   public typealias Format = String
+  public typealias PoolInstance = DateFormatter
 
   public var format: String {
     get { return dateFormat }
@@ -56,20 +59,29 @@ extension DateFormatter: Formatter {
   public static func hashValue(format: Format, locale: Locale = .current) -> Int {
     return format.hashValue ^ locale.identifier.hashValue
   }
+
+  public static func formatter(format: String, locale: Locale = .current) -> DateFormatter {
+    return FormatterPool.formatter(format: format, locale: locale)
+  }
 }
 
 // MARK: - NumberFormatter
 
 extension NumberFormatter: Formatter {
 
+  public typealias PoolInstance = NumberFormatter
   public typealias Format = Style
+
+  public var format: Style {
+    get { return numberStyle }
+    set { numberStyle = newValue }
+  }
 
   public static func hashValue(format: Format, locale: Locale = .current) -> Int {
     return format.hashValue ^ locale.identifier.hashValue
   }
 
-  public var format: Style {
-    get { return numberStyle }
-    set { numberStyle = newValue }
+  public static func formatter(format: NumberFormatter.Style, locale: Locale = .current) -> NumberFormatter {
+    return FormatterPool.formatter(format: format, locale: locale)
   }
 }
