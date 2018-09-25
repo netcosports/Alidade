@@ -11,7 +11,7 @@ public protocol Formatter: class {
   init()
 
   static func hashValue(format: Format, locale: Locale) -> Int
-  static func formatter(format: Format, locale: Locale) -> PoolInstance
+  static func cached(format: Format, locale: Locale) -> PoolInstance
 }
 
 public extension Locale {
@@ -60,7 +60,7 @@ extension DateFormatter: Formatter {
     return format.hashValue ^ locale.identifier.hashValue
   }
 
-  public static func formatter(format: String, locale: Locale = .current) -> DateFormatter {
+  public static func cached(format: String, locale: Locale = .current) -> DateFormatter {
     return FormatterPool.formatter(format: format, locale: locale)
   }
 }
@@ -81,7 +81,7 @@ extension NumberFormatter: Formatter {
     return format.hashValue ^ locale.identifier.hashValue
   }
 
-  public static func formatter(format: NumberFormatter.Style, locale: Locale = .current) -> NumberFormatter {
+  public static func cached(format: NumberFormatter.Style, locale: Locale = .current) -> NumberFormatter {
     return FormatterPool.formatter(format: format, locale: locale)
   }
 }
