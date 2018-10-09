@@ -2,7 +2,8 @@ import Foundation
 
 public extension Int {
 
-  static func random(max: UInt32 = .max) -> Int { return Int(truncatingIfNeeded: arc4random_uniform(max)) }
+  @available(iOS, deprecated, message: "Deprecated in swift 4.2")
+  static func random(max: Int = .max) -> Int { return Int.random(in: 0..<max) }
 
   var isEven: Bool { return self % 2 == 0 }
 

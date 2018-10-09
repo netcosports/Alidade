@@ -1,10 +1,11 @@
 import UIKit
+import Foundation
 
 public extension CGFloat {
 
-  public static let epsilon: CGFloat = 1e-10
+  public static let epsilon: CGFloat = CGFloat(ulpOfOne)
 
-  public static var random: CGFloat { return CGFloat(arc4random_uniform(1000)) / 1000.0 }
+  public static var random: CGFloat { return CGFloat.random(in: 0...1) }
 
   public static var pixel: CGFloat { return 1.0 / UIScreen.main.scale }
 
@@ -25,8 +26,8 @@ public extension CGFloat {
     return value
   }
 
-  public func isFuzzyEqual(to value: CGFloat, epsilon: CGFloat = .epsilon) -> Bool {
-    return fabs(self - value) <= epsilon
+  public func isFuzzyEqual(to value: CGFloat, epsilon: CGFloat = CGFloat(ulpOfOne)) -> Bool {
+    return abs(self - value) <= epsilon
   }
 
   /** Formatted representation

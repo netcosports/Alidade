@@ -2,5 +2,6 @@ import Foundation
 
 public extension Bool {
 
-  static var random: Bool { return arc4random_uniform(2) == 0 }
+  @available(iOS, deprecated, message: "Deprecated in swift 4.2")
+  static var random: Bool { return random() }
 }
