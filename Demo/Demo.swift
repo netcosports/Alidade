@@ -13,7 +13,7 @@ import CoreGraphics
 class Demo {
 
   func run() {
-    UI.baseWidths = [.phone: 640.0]
+    UI.setBaseWidths([.phone: 640])
     print(640.ui)
   }
 }

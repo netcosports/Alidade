@@ -10,6 +10,8 @@ import Foundation
 
 public extension Double {
 
+  var cgFloat: CGFloat { return CGFloat(self) }
+
   /** Formatted representation
 
    @code

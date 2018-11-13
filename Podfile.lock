@@ -1,16 +1,40 @@
 PODS:
+  - Alidade (0.4.2):
+    - Alidade/Default (= 0.4.2)
+  - Alidade/Core (0.4.2)
+  - Alidade/Default (0.4.2):
+    - Alidade/Core
+    - Alidade/FormatterPool
+    - Alidade/String
+    - Alidade/UI
+    - Alidade/UIExtension
+    - Alidade/Vectors
+  - Alidade/FormatterPool (0.4.2)
+  - Alidade/String (0.4.2):
+    - Alidade/Core
+  - Alidade/UI (0.4.2):
+    - Alidade/Core
+  - Alidade/UIExtension (0.4.2):
+    - Alidade/Core
+  - Alidade/Vectors (0.4.2)
   - SwiftLint (0.26.0)
 
 DEPENDENCIES:
+  - Alidade (from `~/Documents/Libraries/Alidade`)
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - SwiftLint
 
+EXTERNAL SOURCES:
+  Alidade:
+    :path: "~/Documents/Libraries/Alidade"
+
 SPEC CHECKSUMS:
+  Alidade: 623c093084a8ccab9f4b03b33cce0bf2839b7e19
   SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
 
-PODFILE CHECKSUM: e018f1be7f4cd5874084824779d13feea7a25ddd
+PODFILE CHECKSUM: b97a89155a6097ad0f1fe9fe64f9d7d4e37f77da
 
 COCOAPODS: 1.5.3

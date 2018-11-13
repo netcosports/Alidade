@@ -10,6 +10,8 @@ import Foundation
 
 public extension Float {
 
+  var cgFloat: CGFloat { return CGFloat(self) }
+
   /** Formatted representation
 
    @code

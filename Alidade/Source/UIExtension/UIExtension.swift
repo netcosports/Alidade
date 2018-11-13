@@ -1,86 +1,62 @@
 import UIKit
 import Foundation
 
-public extension CGSize { var ui: CGSize { return UI.value(self) } }
-public extension UIOffset { var ui: UIOffset { return UI.value(self) } }
-public extension UIEdgeInsets { var ui: UIEdgeInsets { return UI.value(self) } }
-public extension CGPoint { var ui: CGPoint { return UI.value(self) } }
+//swiftlint:disable line_length type_name identifier_name
 
-public extension Int { var ui: CGFloat { return UI.value(self) } }
-public extension UInt { var ui: CGFloat { return UI.value(self) } }
+// MARK: - UI
 
-public extension FloatingPoint where Self == Double { var ui: CGFloat { return UI.value(CGFloat(self)) } }
-public extension FloatingPoint where Self == Float { var ui: CGFloat { return UI.value(CGFloat(self)) } }
-public extension FloatingPoint where Self == CGFloat { var ui: CGFloat { return UI.value(self) } }
+public enum UI {
 
-public extension UIFont { var ui: UIFont { return withSize(pointSize.ui) } }
-
-// swiftlint:disable:next type_name
-public class UI {
-
-  public static var baseWidths: [UIUserInterfaceIdiom: CGFloat] = [:] {
-    didSet {
-      scaleFactor = calculateScale()
-    }
+  public enum Intent: Hashable {
+    case general
+    case module(Module)
   }
 
-  public private(set) static var scaleFactor: CGFloat = calculateScale()
+  public typealias Widths = [UIUserInterfaceIdiom: CGFloat]
+  private typealias IntentWidths = [Intent: Widths]
 
-  private static func calculateScale() -> CGFloat {
+  private static var intentBaseWidths = IntentWidths()
+  private static var intentScaleFactor = [Intent: CGFloat]()
+
+  public static func baseWidths(for intent: Intent = .general) -> Widths {
+    return intentBaseWidths[intent] ?? [:]
+  }
+
+  public static func setBaseWidths(_ widths: Widths, for intent: Intent = .general) {
+    intentBaseWidths[intent] = widths
+    intentScaleFactor[intent] = calculateScale(for: intent)
+  }
+
+  public static func scaleFactor(for intent: Intent = .general) -> CGFloat {
+    if let scale = intentScaleFactor[intent] {
+      return scale
+    }
+
+    let scale = calculateScale(for: intent)
+    intentScaleFactor[intent] = scale
+    return scale
+  }
+
+}
+
+// MARK: - Private.UI
+
+private extension UI {
+
+  static func calculateScale(for intent: Intent) -> CGFloat {
     let size = UIScreen.main.bounds.size
     let width = min(size.width, size.height)
     let idiom = UIDevice.current.userInterfaceIdiom
     let result: CGFloat
     let baseWidth: CGFloat
+    let intentWidths = intentBaseWidths[intent] ?? [:]
     switch idiom {
-    case .pad: baseWidth = baseWidths[idiom] ?? 1536.0
-    case .phone: baseWidth = baseWidths[idiom] ?? 640.0
+    case .pad: baseWidth = intentWidths[idiom] ?? 1536.0
+    case .phone: baseWidth = intentWidths[idiom] ?? 640.0
     default: baseWidth = width
     }
     result = width / baseWidth
     return result
   }
 
-  private init() { }
-}
-
-private extension UI {
-
-  static func value(_ value: CGFloat) -> CGFloat {
-    let absValue = abs(value)
-    let sign = value.sign
-    guard absValue > 1.0 else { return value }
-    return floor(absValue * scaleFactor) * sign
-  }
-
-  static func value(_ value: Int) -> CGFloat {
-    return UI.value(CGFloat(value))
-  }
-
-  static func value(_ value: UInt) -> CGFloat {
-    return UI.value(CGFloat(value))
-  }
-
-  static func value(_ value: CGSize) -> CGSize {
-    return CGSize(width: value.width * scaleFactor,
-                  height: value.height * scaleFactor).ceiled
-  }
-
-  static func value(_ value: CGPoint) -> CGPoint {
-    return CGPoint(x: value.x * scaleFactor,
-                   y: value.y * scaleFactor).ceiled
-  }
-
-  static func value(_ value: UIEdgeInsets) -> UIEdgeInsets {
-    return UIEdgeInsets(top: value.top * scaleFactor,
-                        left: value.left * scaleFactor,
-                        bottom: value.bottom * scaleFactor,
-                        right: value.right * scaleFactor)
-  }
-
-  static func value(_ value: UIOffset) -> UIOffset {
-    let offset = UIOffset(horizontal: value.horizontal * scaleFactor,
-                          vertical: value.vertical * scaleFactor)
-    return offset
-  }
 }
