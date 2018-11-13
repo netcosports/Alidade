@@ -8,9 +8,21 @@
 
 import Foundation
 
-extension NSObject: Flowable { }
+extension NSObject: Flowable, Initiable { }
 
 public protocol Flowable { }
+public protocol Initiable {
+
+  init()
+}
+
+extension Flowable where Self: Initiable {
+
+  public init(with constructor: (Self) -> Void) {
+    self.init()
+    constructor(self)
+  }
+}
 
 public extension Flowable {
 
