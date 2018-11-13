@@ -1,22 +1,22 @@
 PODS:
-  - Alidade (0.4.2):
-    - Alidade/Default (= 0.4.2)
-  - Alidade/Core (0.4.2)
-  - Alidade/Default (0.4.2):
+  - Alidade (0.5.0):
+    - Alidade/Default (= 0.5.0)
+  - Alidade/Core (0.5.0)
+  - Alidade/Default (0.5.0):
     - Alidade/Core
     - Alidade/FormatterPool
     - Alidade/String
     - Alidade/UI
     - Alidade/UIExtension
     - Alidade/Vectors
-  - Alidade/FormatterPool (0.4.2)
-  - Alidade/String (0.4.2):
+  - Alidade/FormatterPool (0.5.0)
+  - Alidade/String (0.5.0):
     - Alidade/Core
-  - Alidade/UI (0.4.2):
+  - Alidade/UI (0.5.0):
     - Alidade/Core
-  - Alidade/UIExtension (0.4.2):
+  - Alidade/UIExtension (0.5.0):
     - Alidade/Core
-  - Alidade/Vectors (0.4.2)
+  - Alidade/Vectors (0.5.0)
   - SwiftLint (0.26.0)
 
 DEPENDENCIES:
@@ -32,7 +32,7 @@ EXTERNAL SOURCES:
     :path: "~/Documents/Libraries/Alidade"
 
 SPEC CHECKSUMS:
-  Alidade: 623c093084a8ccab9f4b03b33cce0bf2839b7e19
+  Alidade: 3220dbb84a69b23920ffc67bfa2db21b714c3113
   SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
 
 PODFILE CHECKSUM: b97a89155a6097ad0f1fe9fe64f9d7d4e37f77da
