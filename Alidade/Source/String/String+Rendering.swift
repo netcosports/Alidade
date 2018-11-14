@@ -3,7 +3,6 @@
 //  Utility
 //
 //  Created by Dmitry Duleba on 10/24/17.
-//  Copyright © 2017 NetcoSports. All rights reserved.
 //
 
 import Foundation

@@ -73,4 +73,8 @@ Pod::Spec.new do |s|
     ss.source_files = 'Alidade/Source/Other/FormatterPool.swift'
   end
 
+  s.subspec 'Logging' do |ss|
+    ss.source_files = 'Alidade/Source/Other/Logging.swift'
+  end
+
 end

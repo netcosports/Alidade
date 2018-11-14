@@ -3,7 +3,6 @@
 //  Tests
 //
 //  Created by Dmitry Duleba on 1/6/18.
-//  Copyright © 2018 NetcoSports. All rights reserved.
 //
 
 import XCTest

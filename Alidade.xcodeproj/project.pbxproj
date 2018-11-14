@@ -15,6 +15,8 @@
 		5C8ABDA520015620003FA5DD /* Flowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABDA420015620003FA5DD /* Flowable.swift */; };
 		5C8ABDAD20016F44003FA5DD /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABDAC20016F44003FA5DD /* Tests.swift */; };
 		5C8ABDAF20016F44003FA5DD /* Alidade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE91F31D1F948AA8002FCE7E /* Alidade.framework */; };
+		CE089442219C483F00C935E7 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE089441219C483F00C935E7 /* Logging.swift */; };
+		CE089443219C4AA900C935E7 /* Logging.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE089441219C483F00C935E7 /* Logging.swift */; };
 		CE7F3730219AD0DE00C3B310 /* UIScalable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F372F219AD0DE00C3B310 /* UIScalable.swift */; };
 		CE7F3731219AD0F500C3B310 /* UIScalable.swift in Headers */ = {isa = PBXBuildFile; fileRef = CE7F372F219AD0DE00C3B310 /* UIScalable.swift */; };
 		CE7F3733219AD31200C3B310 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F3732219AD31200C3B310 /* Module.swift */; };
@@ -113,6 +115,7 @@
 		9BC69E82E4AAA77BFCA8CF86 /* Pods-Alidade.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alidade.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alidade/Pods-Alidade.debug.xcconfig"; sourceTree = "<group>"; };
 		B4498AFDD1BCA001F7CE9416 /* Pods-Utility.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utility.release.xcconfig"; path = "Pods/Target Support Files/Pods-Utility/Pods-Utility.release.xcconfig"; sourceTree = "<group>"; };
 		BA5C86273C71089F0DC59A12 /* Pods-Utility.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utility.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Utility/Pods-Utility.debug.xcconfig"; sourceTree = "<group>"; };
+		CE089441219C483F00C935E7 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		CE7F372F219AD0DE00C3B310 /* UIScalable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScalable.swift; sourceTree = "<group>"; };
 		CE7F3732219AD31200C3B310 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		CE91F31D1F948AA8002FCE7E /* Alidade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alidade.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -350,6 +353,7 @@
 		CEE0CAD51F9F878300EE9B2E /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				CE089441219C483F00C935E7 /* Logging.swift */,
 				5C6972912002D2B2001A5051 /* Associatable.swift */,
 				CE91F3741F948F9C002FCE7E /* Boxed.swift */,
 				5C8ABDA420015620003FA5DD /* Flowable.swift */,
@@ -380,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE91F3221F948AA8002FCE7E /* Alidade.h in Headers */,
+				CE089443219C4AA900C935E7 /* Logging.swift in Headers */,
 				CE7F3734219AD32600C3B310 /* Module.swift in Headers */,
 				CE7F3731219AD0F500C3B310 /* UIScalable.swift in Headers */,
 				CEC90CA11F94BB9B00FA7643 /* BoolExtension.swift in Headers */,
@@ -656,6 +661,7 @@
 				CE91F3B51F948FB3002FCE7E /* PathView.swift in Sources */,
 				CE91F3B61F948FB3002FCE7E /* RadialGradientLayer.swift in Sources */,
 				CEE0CACE1F9F79FB00EE9B2E /* UIEdgeInsetsExtension.swift in Sources */,
+				CE089442219C483F00C935E7 /* Logging.swift in Sources */,
 				5C5442AC200A7FE900E1E326 /* DoubleExtension.swift in Sources */,
 				CEE637FC1FBC746E00BCF9C9 /* ViewControllerContainer.swift in Sources */,
 				CE91F3A51F948FAC002FCE7E /* FormatterPool.swift in Sources */,
