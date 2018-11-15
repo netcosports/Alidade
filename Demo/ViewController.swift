@@ -24,14 +24,8 @@ class ViewController: UIViewController {
   }
 
   let gradientView = GradientView {
-    $0.direction = .right
-    ($0.layer as? CAGradientLayer)?.with {
-      if #available(iOS 12.0, *) {
-        $0.type = .conic
-      }
-      $0.startPoint = CGPoint(0.5, 0.5)
-      $0.endPoint = CGPoint(0.5, 0.0)
-    }
+    $0.colors = [.red, .orange, .yellow, .green, .cyan, .blue, .purple]
+    $0.locations = (0..<7).map { CGFloat($0) / 6.0 }
   }
 
   override func loadView() {
@@ -51,6 +45,6 @@ class ViewController: UIViewController {
     lineView.frame = CGRect(origin: CGPoint(120.ui, top),
                             size: CGSize(400.ui, 1.0))
     gradientView.frame = CGRect(origin: CGPoint(50.ui, top + 20.ui),
-                                size: CGSize(540.ui, 200.ui))
+                                size: CGSize(540.ui, 10.ui))
   }
 }
