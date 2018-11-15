@@ -74,6 +74,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Logging' do |ss|
+    ss.dependency 'Alidade/Core'
     ss.source_files = 'Alidade/Source/Other/Logging.swift'
   end
 
