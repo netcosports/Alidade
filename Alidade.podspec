@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name         = "Alidade"
-  s.version      = "0.6.0"
+  s.version      = "1.0.0"
   s.summary      = "Utility components"
 
   s.homepage     = "https://github.com/netcosports/Alidade"
-  s.license      = { :type => "MIT" }
+  s.license      = { :type => "GNU" }
   s.author = { 
     'Dmitry Duleba' => 'dmitryduleba@gmail.com'
   }
@@ -22,6 +22,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Alidade/String'
     ss.dependency 'Alidade/UI'
     ss.dependency 'Alidade/UIExtension'
+    ss.dependency 'Alidade/Logging'
   end
 
   s.subspec 'Core' do |ss|
