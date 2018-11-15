@@ -72,8 +72,7 @@ end
 lane :push do |options|
   pod_push(
     path: podspec,
-    allow_warnings: true,
-    sources: sources
+    allow_warnings: true
   )
 end
 
