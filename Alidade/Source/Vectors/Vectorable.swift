@@ -253,6 +253,30 @@ public prefix func - <T>(lhs: T) -> T where T: Vector2D {
 
 // MARK: - 2-to-1 Operations
 
+extension Vector2D {
+
+  public static func += <T>(lhs: inout Self, rhs: T) where T: Vector1D {
+    lhs.x += rhs.x
+    lhs.y += rhs.x
+  }
+
+  public static func -= <T>(lhs: inout Self, rhs: T) where T: Vector1D {
+    lhs.x -= rhs.x
+    lhs.y -= rhs.x
+  }
+
+  public static func *= <T>(lhs: inout Self, rhs: T) where T: Vector1D {
+    lhs.x *= rhs.x
+    lhs.y *= rhs.x
+  }
+
+  public static func /= <T>(lhs: inout Self, rhs: T) where T: Vector1D {
+    lhs.x /= rhs.x
+    lhs.y /= rhs.x
+  }
+
+}
+
 public func + <T, U>(lhs: T, rhs: U) -> T where T: Vector2D, U: Vector1D {
   return .init(x: lhs.x + rhs.x, y: lhs.y + rhs.x)
 }
@@ -287,6 +311,30 @@ public func / <T, U>(lhs: U, rhs: T) -> T where T: Vector2D, U: Vector1D {
 
 // MARK: - 2-to-2 Operations
 
+extension Vector2D {
+
+  public static func += <T>(lhs: inout Self, rhs: T) where T: Vector2D {
+    lhs.x += rhs.x
+    lhs.y += rhs.y
+  }
+
+  public static func -= <T>(lhs: inout Self, rhs: T) where T: Vector2D {
+    lhs.x -= rhs.x
+    lhs.y -= rhs.y
+  }
+
+  public static func *= <T>(lhs: inout Self, rhs: T) where T: Vector2D {
+    lhs.x *= rhs.x
+    lhs.y *= rhs.y
+  }
+
+  public static func /= <T>(lhs: inout Self, rhs: T) where T: Vector2D {
+    lhs.x /= rhs.x
+    lhs.y /= rhs.y
+  }
+
+}
+
 public func + <T, U>(lhs: T, rhs: U) -> T where T: Vector2D, U: Vector2D {
   return .init(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
 }
@@ -310,6 +358,34 @@ public prefix func - <T>(lhs: T) -> T where T: Vector3D {
 }
 
 // MARK: - 3-to-1 Operations
+
+extension Vector3D {
+
+  public static func += <T>(lhs: inout Self, rhs: T) where T: Vector1D {
+    lhs.x += rhs.x
+    lhs.y += rhs.x
+    lhs.z += rhs.x
+  }
+
+  public static func -= <T>(lhs: inout Self, rhs: T) where T: Vector1D {
+    lhs.x -= rhs.x
+    lhs.y -= rhs.x
+    lhs.z -= rhs.x
+  }
+
+  public static func *= <T>(lhs: inout Self, rhs: T) where T: Vector1D {
+    lhs.x *= rhs.x
+    lhs.y *= rhs.x
+    lhs.z *= rhs.x
+  }
+
+  public static func /= <T>(lhs: inout Self, rhs: T) where T: Vector1D {
+    lhs.x /= rhs.x
+    lhs.y /= rhs.x
+    lhs.z /= rhs.x
+  }
+
+}
 
 public func + <T, U>(lhs: T, rhs: U) -> T where T: Vector3D, U: Vector1D {
   return .init(x: lhs.x + rhs.x, y: lhs.y + rhs.x, z: lhs.z + rhs.x)
@@ -357,6 +433,26 @@ private func n1Operation<T, U>(_ lhs: T, _ rhs: U, transform: Transform) -> T wh
   return nnOperation(lhs, rhs, transform: transform)
 }
 
+extension Vectorable {
+
+  public static func += <T>(lhs: inout Self, rhs: T) where T: Vector1D {
+    lhs = n1Operation(lhs, rhs) { $0 + $1 }
+  }
+
+  public static func -= <T>(lhs: inout Self, rhs: T) where T: Vector1D {
+    lhs = n1Operation(lhs, rhs) { $0 - $1 }
+  }
+
+  public static func *= <T>(lhs: inout Self, rhs: T) where T: Vector1D {
+    lhs = n1Operation(lhs, rhs) { $0 * $1 }
+  }
+
+  public static func /= <T>(lhs: inout Self, rhs: T) where T: Vector1D {
+    lhs = n1Operation(lhs, rhs) { $0 / $1 }
+  }
+
+}
+
 public func + <T, U>(lhs: T, rhs: U) -> T where T: Vectorable, U: Vector1D {
   return n1Operation(lhs, rhs) { $0 + $1 }
 }
@@ -397,6 +493,26 @@ private func nnOperation<T, U>(_ lhs: T, _ rhs: U, transform: Transform) -> T wh
   var result = T.init()
   result.vector = zip(lhs.vector, rhs.vector).map(transform)
   return result
+}
+
+extension Vectorable {
+
+  public static func += <T>(lhs: inout Self, rhs: T) where T: Vectorable {
+    lhs = nnOperation(lhs, rhs) { $0 + $1 }
+  }
+
+  public static func -= <T>(lhs: inout Self, rhs: T) where T: Vectorable {
+    lhs = nnOperation(lhs, rhs) { $0 - $1 }
+  }
+
+  public static func *= <T>(lhs: inout Self, rhs: T) where T: Vectorable {
+    lhs = nnOperation(lhs, rhs) { $0 * $1 }
+  }
+
+  public static func /= <T>(lhs: inout Self, rhs: T) where T: Vectorable {
+    lhs = nnOperation(lhs, rhs) { $0 / $1 }
+  }
+
 }
 
 public func + <T, U>(lhs: T, rhs: U) -> T where T: Vectorable, U: Vectorable {

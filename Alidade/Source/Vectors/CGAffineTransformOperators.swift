@@ -2,9 +2,14 @@ import UIKit
 
 public extension CGAffineTransform {
 
-  var translation: CGPoint {
+  public var translation: CGPoint {
     return CGPoint(x: tx, y: ty)
   }
+
+  public static func +=(left: inout CGAffineTransform, right: CGAffineTransform) {
+    left = left.concatenating(right)
+  }
+
 }
 
 public func + (left: CGAffineTransform, right: CGAffineTransform) -> CGAffineTransform {
@@ -13,12 +18,4 @@ public func + (left: CGAffineTransform, right: CGAffineTransform) -> CGAffineTra
 
 public prefix func ! (transform: CGAffineTransform) -> CGAffineTransform {
   return transform.inverted()
-}
-
-public func << (left: CGPoint, right: CGAffineTransform) -> CGPoint {
-  return left.applying(right)
-}
-
-public func << (left: CGRect, right: CGAffineTransform) -> CGRect {
-  return left.applying(right)
 }

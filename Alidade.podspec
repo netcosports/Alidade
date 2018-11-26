@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name         = "Alidade"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Utility components"
 
   s.homepage     = "https://github.com/netcosports/Alidade"
-  s.license      = { :type => "GNU" }
+  s.license      = { :type => "MIT" }
   s.author = { 
     'Dmitry Duleba' => 'dmitryduleba@gmail.com'
   }
