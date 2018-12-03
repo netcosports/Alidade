@@ -3,29 +3,34 @@ import CoreGraphics
 
 // MARK: - LineView
 
-public class LineView: UIView {
+open class LineView: UIView {
 
-  public var startPosition = CGPoint(x: 0.0, y: 0.5) { didSet { setNeedsDisplay() } }
-  public var endPosition = CGPoint(x: 1.0, y: 0.5) { didSet { setNeedsDisplay() } }
-  public var lineWidth: CGFloat = 1.0 { didSet { setNeedsDisplay() } }
-  public var lineCap: CGLineCap = .butt { didSet { setNeedsDisplay() } }
-  public var lineJoin: CGLineJoin = .miter { didSet { setNeedsDisplay() } }
-  public var pattern: [CGFloat] = [] { didSet { setNeedsDisplay() } }
-  public var color: UIColor = .black { didSet { setNeedsDisplay() } }
+  open var startPosition = CGPoint(x: 0.0, y: 0.5) { didSet { setNeedsDisplay() } }
+  open var endPosition = CGPoint(x: 1.0, y: 0.5) { didSet { setNeedsDisplay() } }
+  open var lineWidth: CGFloat = 1.0 { didSet { setNeedsDisplay() } }
+  open var lineCap: CGLineCap = .butt { didSet { setNeedsDisplay() } }
+  open var lineJoin: CGLineJoin = .miter { didSet { setNeedsDisplay() } }
+  open var pattern: [CGFloat] = [] { didSet { setNeedsDisplay() } }
+  open var color: UIColor = .black { didSet { setNeedsDisplay() } }
 
   public override init(frame: CGRect) {
     super.init(frame: frame)
-    translatesAutoresizingMaskIntoConstraints = false
-    setup()
+    internalSetup()
   }
 
   required public init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
+    super.init(coder: aDecoder)
+    internalSetup()
   }
 
-  override public func draw(_ rect: CGRect) {
+  override open func draw(_ rect: CGRect) {
     color.setStroke()
     path(in: rect).stroke()
+  }
+
+  internal func internalSetup() {
+    translatesAutoresizingMaskIntoConstraints = false
+    setup()
   }
 
 }

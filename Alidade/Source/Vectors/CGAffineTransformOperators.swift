@@ -6,7 +6,7 @@ public extension CGAffineTransform {
     return CGPoint(x: tx, y: ty)
   }
 
-  public static func +=(left: inout CGAffineTransform, right: CGAffineTransform) {
+  public static func += (left: inout CGAffineTransform, right: CGAffineTransform) {
     left = left.concatenating(right)
   }
 

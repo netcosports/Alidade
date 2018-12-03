@@ -19,35 +19,40 @@ public extension GradientView {
       self.end = end.clampNormal
     }
   }
-  
+
 }
 
 // MARK: - GradientView
 
-public class GradientView: UIView {
+open class GradientView: UIView {
 
-  public var colors: [UIColor] = [.white, .black] { didSet { didUpdateColors() } }
-  public var locations: [CGFloat] = [0, 1] { didSet { didUpdateColors() } }
-  public var direction: Direction = .right { didSet { didUpdateDirection() } }
+  open var colors: [UIColor] = [.white, .black] { didSet { didUpdateColors() } }
+  open var locations: [CGFloat] = [0, 1] { didSet { didUpdateColors() } }
+  open var direction: Direction = .right { didSet { didUpdateDirection() } }
 
   private var gradientLayer: CAGradientLayer? { return layer as? CAGradientLayer }
 
-  override public func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+  override open func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
     return nil
   }
 
-  override public class var layerClass: AnyClass {
+  override open class var layerClass: AnyClass {
     return CAGradientLayer.self
   }
 
   public override init(frame: CGRect) {
     super.init(frame: frame)
-    translatesAutoresizingMaskIntoConstraints = false
-    setup()
+    internalSetup()
   }
 
   required public init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
+    super.init(coder: aDecoder)
+    internalSetup()
+  }
+
+  internal func internalSetup() {
+    translatesAutoresizingMaskIntoConstraints = false
+    setup()
   }
 
 }

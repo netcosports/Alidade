@@ -1,26 +1,29 @@
 PODS:
-  - Alidade (0.5.0):
-    - Alidade/Default (= 0.5.0)
-  - Alidade/Core (0.5.0)
-  - Alidade/Default (0.5.0):
+  - Alidade (1.0.1):
+    - Alidade/Default (= 1.0.1)
+  - Alidade/Core (1.0.1)
+  - Alidade/Default (1.0.1):
     - Alidade/Core
     - Alidade/FormatterPool
+    - Alidade/Logging
     - Alidade/String
     - Alidade/UI
     - Alidade/UIExtension
     - Alidade/Vectors
-  - Alidade/FormatterPool (0.5.0)
-  - Alidade/String (0.5.0):
+  - Alidade/FormatterPool (1.0.1)
+  - Alidade/Logging (1.0.1):
     - Alidade/Core
-  - Alidade/UI (0.5.0):
+  - Alidade/String (1.0.1):
     - Alidade/Core
-  - Alidade/UIExtension (0.5.0):
+  - Alidade/UI (1.0.1):
     - Alidade/Core
-  - Alidade/Vectors (0.5.0)
+  - Alidade/UIExtension (1.0.1):
+    - Alidade/Core
+  - Alidade/Vectors (1.0.1)
   - SwiftLint (0.26.0)
 
 DEPENDENCIES:
-  - Alidade (from `~/Documents/Libraries/Alidade`)
+  - Alidade (from `./`)
   - SwiftLint
 
 SPEC REPOS:
@@ -29,12 +32,12 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Alidade:
-    :path: "~/Documents/Libraries/Alidade"
+    :path: "./"
 
 SPEC CHECKSUMS:
-  Alidade: 3220dbb84a69b23920ffc67bfa2db21b714c3113
+  Alidade: 3fca8702350cb0cb1142253ffe689ffa347b6981
   SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
 
-PODFILE CHECKSUM: b97a89155a6097ad0f1fe9fe64f9d7d4e37f77da
+PODFILE CHECKSUM: 74b47aefe7706eaed94c3fe4f6ad97037b0b139f
 
 COCOAPODS: 1.5.3
