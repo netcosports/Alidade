@@ -180,3 +180,25 @@ extension DateComponentsFormatter: Formatter {
   }
 
 }
+
+// MARK: - DateIntervalFormatter
+
+extension DateIntervalFormatter: LocalizedFormatter {
+
+  public typealias PoolInstance = DateIntervalFormatter
+  public typealias Format = String
+
+  public var format: Format {
+    get { return dateTemplate }
+    set { dateTemplate = newValue }
+  }
+
+  public static func hashValue(format: String, locale: Locale = .current) -> Int {
+    return format.hashValue ^ locale.hashValue
+  }
+
+  public static func cached(format: Format, locale: Locale = .current) -> DateIntervalFormatter {
+    return FormatterPool.formatter(format: format, locale: locale)
+  }
+
+}
