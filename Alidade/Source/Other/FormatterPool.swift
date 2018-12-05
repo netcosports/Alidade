@@ -224,7 +224,7 @@ extension EnergyFormatter: Formatter {
   }
 
   public static func hashValue(format: Format) -> Int {
-    return format.style.hashValue ^ format.isEnergy.hashValue ^ 428936712512
+    return format.style.hashValue ^ format.isEnergy.hashValue ^ 95753320
   }
 
   public static func cached(format: Format) -> EnergyFormatter {
@@ -254,7 +254,7 @@ extension LengthFormatter: Formatter {
   }
 
   public static func hashValue(format: Format) -> Int {
-    return format.style.hashValue ^ format.isPersonHeight.hashValue ^ 28946123027
+    return format.style.hashValue ^ format.isPersonHeight.hashValue ^ 4580030
   }
 
   public static func cached(format: Format) -> LengthFormatter {
@@ -284,7 +284,7 @@ extension MassFormatter: Formatter {
   }
 
   public static func hashValue(format: Format) -> Int {
-    return format.style.hashValue ^ format.isPersonMass.hashValue ^ 903482378145
+    return format.style.hashValue ^ format.isPersonMass.hashValue ^ 159488697
   }
 
   public static func cached(format: Format) -> MassFormatter {
@@ -309,7 +309,7 @@ extension PersonNameComponentsFormatter: Formatter {
   }
 
   public static func hashValue(format: Format) -> Int {
-    return format.style.hashValue ^ format.isPhonetic.hashValue ^ 3878671253029
+    return format.style.hashValue ^ format.isPhonetic.hashValue ^ 175347280
   }
 
   public static func cached(format: Format) -> PersonNameComponentsFormatter {
