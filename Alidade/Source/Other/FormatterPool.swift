@@ -1,17 +1,39 @@
 import Foundation
 
+// MARK: - LocalizedFormatter
+
+public protocol LocalizedFormatter: Formatter {
+
+  var locale: Locale! { get set }
+
+  static func hashValue(format: Format, locale: Locale) -> Int
+  static func cached(format: Format, locale: Locale) -> PoolInstance
+}
+
+public extension LocalizedFormatter {
+
+  public static func hashValue(format: Format) -> Int {
+    return hashValue(format: format, locale: .current)
+  }
+
+  public static func cached(format: Format) -> PoolInstance {
+    return cached(format: format, locale: .current)
+  }
+}
+
+// MARK: - Formatter
+
 public protocol Formatter: class {
 
   associatedtype Format
   associatedtype PoolInstance: Formatter
 
   var format: Format { get set }
-  var locale: Locale! { get set }
 
   init()
 
-  static func hashValue(format: Format, locale: Locale) -> Int
-  static func cached(format: Format, locale: Locale) -> PoolInstance
+  static func hashValue(format: Format) -> Int
+  static func cached(format: Format) -> PoolInstance
 }
 
 public extension Locale {
@@ -31,7 +53,18 @@ fileprivate final class FormatterPool {
     return cache
   }()
 
-  fileprivate static func formatter<T: Formatter>(format: T.Format, locale: Locale = .current) -> T {
+  fileprivate static func formatter<T: Formatter>(format: T.Format) -> T {
+    let key = T.hashValue(format: format)
+    if let formatter = cache.object(forKey: key as AnyObject) as? T {
+      return formatter
+    }
+    let formatter = T.init()
+    formatter.format = format
+    cache.setObject(formatter, forKey: key as AnyObject)
+    return formatter
+  }
+
+  fileprivate static func formatter<T: LocalizedFormatter>(format: T.Format, locale: Locale = .current) -> T {
     let key = T.hashValue(format: format, locale: locale)
     if let formatter = cache.object(forKey: key as AnyObject) as? T {
       return formatter
@@ -46,10 +79,10 @@ fileprivate final class FormatterPool {
 
 // MARK: - DateFormatter
 
-extension DateFormatter: Formatter {
+extension DateFormatter: LocalizedFormatter {
 
-  public typealias Format = String
   public typealias PoolInstance = DateFormatter
+  public typealias Format = String
 
   public var format: String {
     get { return dateFormat }
@@ -63,11 +96,12 @@ extension DateFormatter: Formatter {
   public static func cached(format: String, locale: Locale = .current) -> DateFormatter {
     return FormatterPool.formatter(format: format, locale: locale)
   }
+
 }
 
 // MARK: - NumberFormatter
 
-extension NumberFormatter: Formatter {
+extension NumberFormatter: LocalizedFormatter {
 
   public typealias PoolInstance = NumberFormatter
   public typealias Format = Style
@@ -84,4 +118,35 @@ extension NumberFormatter: Formatter {
   public static func cached(format: NumberFormatter.Style, locale: Locale = .current) -> NumberFormatter {
     return FormatterPool.formatter(format: format, locale: locale)
   }
+
+}
+
+// MARK: - ByteCountFormatter
+
+extension ByteCountFormatter: Formatter {
+
+  public typealias PoolInstance = ByteCountFormatter
+  public struct Format {
+    let units: Units
+    let style: CountStyle
+
+    public init(units: Units = .useAll, style: CountStyle = .file) {
+      self.units = units
+      self.style = style
+    }
+  }
+
+  public var format: Format {
+    get { return .init(units: allowedUnits, style: countStyle) }
+    set { allowedUnits = newValue.units; countStyle = newValue.style }
+  }
+
+  public static func hashValue(format: Format) -> Int {
+    return format.style.hashValue ^ format.units.rawValue.hashValue
+  }
+
+  public static func cached(format: Format) -> ByteCountFormatter {
+    return FormatterPool.formatter(format: format)
+  }
+
 }
