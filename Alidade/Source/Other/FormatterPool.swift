@@ -315,7 +315,31 @@ extension PersonNameComponentsFormatter: Formatter {
   public static func cached(format: Format) -> PersonNameComponentsFormatter {
     return FormatterPool.formatter(format: format)
   }
-  
+
 }
 
 // MARK: - MeasurementFormatter
+
+@available(iOS 10.0, *)
+extension MeasurementFormatter: LocalizedFormatter {
+
+  public typealias PoolInstance = MeasurementFormatter
+  public struct Format {
+    public var units: UnitOptions
+    public var style: UnitStyle
+  }
+
+  public var format: Format {
+    get { return .init(units: unitOptions, style: unitStyle) }
+    set { unitOptions = newValue.units; unitStyle = newValue.style }
+  }
+
+  public static func hashValue(format: Format, locale: Locale = .current) -> Int {
+    return format.units.rawValue.hashValue ^ format.style.hashValue ^ locale.hashValue
+  }
+
+  public static func cached(format: Format, locale: Locale = .current) -> MeasurementFormatter {
+    return FormatterPool.formatter(format: format, locale: locale)
+  }
+
+}
