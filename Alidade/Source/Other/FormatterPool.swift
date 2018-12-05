@@ -202,3 +202,25 @@ extension DateIntervalFormatter: LocalizedFormatter {
   }
 
 }
+
+// MARK: - EnergyFormatter
+
+extension EnergyFormatter: Formatter {
+
+  public typealias PoolInstance = EnergyFormatter
+  public typealias Format = UnitStyle
+
+  public var format: Format {
+    get { return unitStyle }
+    set { unitStyle = newValue }
+  }
+
+  public static func hashValue(format: Format) -> Int {
+    return format.hashValue ^ 428936712512
+  }
+
+  public static func cached(format: Format) -> EnergyFormatter {
+    return FormatterPool.formatter(format: format)
+  }
+
+}
