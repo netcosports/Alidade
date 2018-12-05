@@ -40,9 +40,9 @@ private_lane :new_version do |options|
   end
 
   if options[:increase]
-    message = "Increased #{options[:path]} version #{lane_context[SharedValues::PODSPEC_VERSION_NUMBER]}"
+    message = "- [bump] #{options[:path]} version #{lane_context[SharedValues::PODSPEC_VERSION_NUMBER]}"
   else
-    message = "Changed #{options[:path]} version #{lane_context[SharedValues::PODSPEC_VERSION_NUMBER]}"
+    message = "- [change] #{options[:path]} version #{lane_context[SharedValues::PODSPEC_VERSION_NUMBER]}"
   end
 
   git_commit(
