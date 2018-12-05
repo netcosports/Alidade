@@ -127,8 +127,8 @@ extension ByteCountFormatter: Formatter {
 
   public typealias PoolInstance = ByteCountFormatter
   public struct Format {
-    let units: Units
-    let style: CountStyle
+    public var units: Units
+    public var style: CountStyle
 
     public init(units: Units = .useAll, style: CountStyle = .file) {
       self.units = units
@@ -157,8 +157,8 @@ extension DateComponentsFormatter: Formatter {
 
   public typealias PoolInstance = DateComponentsFormatter
   public struct Format {
-    let units: NSCalendar.Unit
-    let style: UnitsStyle
+    public var units: NSCalendar.Unit
+    public var style: UnitsStyle
 
     public init(units: NSCalendar.Unit = .init(rawValue: 0), style: UnitsStyle = .positional) {
       self.units = units
@@ -209,10 +209,10 @@ extension EnergyFormatter: Formatter {
 
   public typealias PoolInstance = EnergyFormatter
   public struct Format {
-    let style: UnitStyle
-    let isEnergy: Bool
+    public var style: UnitStyle
+    public var isEnergy: Bool
 
-    init(style: UnitStyle = .medium, isEnergy: Bool = false) {
+    public init(style: UnitStyle = .medium, isEnergy: Bool = false) {
       self.style = style
       self.isEnergy = isEnergy
     }
@@ -239,10 +239,10 @@ extension LengthFormatter: Formatter {
 
   public typealias PoolInstance = LengthFormatter
   public struct Format {
-    let style: UnitStyle
-    let isPersonHeight: Bool
+    public var style: UnitStyle
+    public var isPersonHeight: Bool
 
-    init(style: UnitStyle = .medium, isPersonHeight: Bool = false) {
+    public init(style: UnitStyle = .medium, isPersonHeight: Bool = false) {
       self.style = style
       self.isPersonHeight = isPersonHeight
     }
@@ -269,10 +269,10 @@ extension MassFormatter: Formatter {
 
   public typealias PoolInstance = MassFormatter
   public struct Format {
-    let style: UnitStyle
-    let isPersonMass: Bool
+    public var style: UnitStyle
+    public var isPersonMass: Bool
 
-    init(style: UnitStyle = .medium, isPersonMass: Bool = false) {
+    public init(style: UnitStyle = .medium, isPersonMass: Bool = false) {
       self.style = style
       self.isPersonMass = isPersonMass
     }
@@ -292,3 +292,30 @@ extension MassFormatter: Formatter {
   }
 
 }
+
+// MARK: - PersonNameComponentsFormatter
+
+extension PersonNameComponentsFormatter: Formatter {
+
+  public typealias PoolInstance = PersonNameComponentsFormatter
+  public struct Format {
+    public var style: Style
+    public var isPhonetic: Bool
+  }
+
+  public var format: Format {
+    get { return .init(style: style, isPhonetic: isPhonetic) }
+    set { style = newValue.style; isPhonetic = newValue.isPhonetic }
+  }
+
+  public static func hashValue(format: Format) -> Int {
+    return format.style.hashValue ^ format.isPhonetic.hashValue ^ 3878671253029
+  }
+
+  public static func cached(format: Format) -> PersonNameComponentsFormatter {
+    return FormatterPool.formatter(format: format)
+  }
+  
+}
+
+// MARK: - MeasurementFormatter
