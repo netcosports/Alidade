@@ -262,3 +262,33 @@ extension LengthFormatter: Formatter {
   }
 
 }
+
+// MARK: - MassFormatter
+
+extension MassFormatter: Formatter {
+
+  public typealias PoolInstance = MassFormatter
+  public struct Format {
+    let style: UnitStyle
+    let isPersonMass: Bool
+
+    init(style: UnitStyle = .medium, isPersonMass: Bool = false) {
+      self.style = style
+      self.isPersonMass = isPersonMass
+    }
+  }
+
+  public var format: Format {
+    get { return .init(style: unitStyle, isPersonMass: isForPersonMassUse) }
+    set { unitStyle = newValue.style; isForPersonMassUse = newValue.isPersonMass }
+  }
+
+  public static func hashValue(format: Format) -> Int {
+    return format.style.hashValue ^ format.isPersonMass.hashValue ^ 903482378145
+  }
+
+  public static func cached(format: Format) -> MassFormatter {
+    return FormatterPool.formatter(format: format)
+  }
+
+}
