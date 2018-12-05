@@ -9,7 +9,8 @@ import Foundation
 
 public extension Float {
 
-  var cgFloat: CGFloat { return CGFloat(self) }
+  //swiftlint:disable:next identifier_name
+  var cg: CGFloat { return CGFloat(self) }
 
   /** Formatted representation
 

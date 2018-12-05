@@ -5,7 +5,7 @@ inhibit_all_warnings!
 source 'git@github.com:CocoaPods/Specs.git'
 
 target 'Demo' do
-    pod 'Alidade'
+    pod 'Alidade', :path => './'
 end
 
 target 'Alidade' do

@@ -32,6 +32,14 @@ public extension CGPoint {
   }
   //swiftlint:enable identifier_name
 
+  public func distanceSquared(to point: CGPoint) -> CGFloat {
+    return (point.x - x) * (point.x - x) + (point.y - y) * (point.y - y)
+  }
+
+  public func distance(to point: CGPoint) -> CGFloat {
+    return distanceSquared(to: point).squareRoot()
+  }
+
   public func isFuzzyEqual(to point: CGPoint, epsilon: CGFloat = .epsilon) -> Bool {
     return point.x.isFuzzyEqual(to: x, epsilon: epsilon)
       && point.y.isFuzzyEqual(to: y, epsilon: epsilon)

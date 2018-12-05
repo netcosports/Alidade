@@ -38,14 +38,14 @@ extension CGFloat: UIScalable {
 
 extension Double: UIScalable {
   public typealias UIValue = CGFloat
-  public var ui: UIValue { return UI.value(cgFloat, for: .general) }
-  public func uiValue(for intent: UI.Intent) -> UIValue { return UI.value(cgFloat, for: intent) }
+  public var ui: UIValue { return UI.value(cg, for: .general) }
+  public func uiValue(for intent: UI.Intent) -> UIValue { return UI.value(cg, for: intent) }
 }
 
 extension Float: UIScalable {
   public typealias UIValue = CGFloat
-  public var ui: UIValue { return UI.value(cgFloat, for: .general) }
-  public func uiValue(for intent: UI.Intent) -> UIValue { return UI.value(cgFloat, for: intent) }
+  public var ui: UIValue { return UI.value(cg, for: .general) }
+  public func uiValue(for intent: UI.Intent) -> UIValue { return UI.value(cg, for: intent) }
 }
 
 extension CGPoint: UIScalable {

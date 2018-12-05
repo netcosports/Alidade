@@ -7,6 +7,9 @@ public extension Int {
 
   var isEven: Bool { return self % 2 == 0 }
 
+  //swiftlint:disable:next identifier_name
+  var cg: CGFloat { return CGFloat(self) }
+
   func cycleClamp(_ min: Int, _ max: Int) -> Int {
     if self >= min && self <= max { return self }
     let range = max - min

@@ -1,8 +1,8 @@
 PODS:
-  - Alidade (1.0.1):
-    - Alidade/Default (= 1.0.1)
-  - Alidade/Core (1.0.1)
-  - Alidade/Default (1.0.1):
+  - Alidade (1.0.2):
+    - Alidade/Default (= 1.0.2)
+  - Alidade/Core (1.0.2)
+  - Alidade/Default (1.0.2):
     - Alidade/Core
     - Alidade/FormatterPool
     - Alidade/Logging
@@ -10,16 +10,16 @@ PODS:
     - Alidade/UI
     - Alidade/UIExtension
     - Alidade/Vectors
-  - Alidade/FormatterPool (1.0.1)
-  - Alidade/Logging (1.0.1):
+  - Alidade/FormatterPool (1.0.2)
+  - Alidade/Logging (1.0.2):
     - Alidade/Core
-  - Alidade/String (1.0.1):
+  - Alidade/String (1.0.2):
     - Alidade/Core
-  - Alidade/UI (1.0.1):
+  - Alidade/UI (1.0.2):
     - Alidade/Core
-  - Alidade/UIExtension (1.0.1):
+  - Alidade/UIExtension (1.0.2):
     - Alidade/Core
-  - Alidade/Vectors (1.0.1)
+  - Alidade/Vectors (1.0.2)
   - SwiftLint (0.26.0)
 
 DEPENDENCIES:
@@ -35,7 +35,7 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  Alidade: 3fca8702350cb0cb1142253ffe689ffa347b6981
+  Alidade: 4d3ab32555184f4eed4b17d6a961742c7a94d871
   SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
 
 PODFILE CHECKSUM: 74b47aefe7706eaed94c3fe4f6ad97037b0b139f

@@ -20,4 +20,15 @@ public extension CGSize {
   public var ceiled: CGSize { return CGSize(width: ceil(width), height: ceil(height)) }
 
   public var floored: CGSize { return CGSize(width: floor(width), height: floor(height)) }
+
+  public var integral: CGSize { return CGRect(size: self).integral.size }
+
+  public var standartized: CGSize { return CGRect(size: self).standardized.size }
+
+  public var isEmpty: Bool { return CGRect(size: self).isEmpty }
+
+  public var isNull: Bool { return CGRect(size: self).isNull }
+
+  public var isInfinite: Bool { return CGRect(size: self).isInfinite }
+
 }

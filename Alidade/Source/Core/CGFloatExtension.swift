@@ -13,10 +13,6 @@ public extension CGFloat {
 
   public var normalized: CGFloat { return clamp(0.0, 1.0) }
 
-  public func clamp(_ min: CGFloat, _ max: CGFloat) -> CGFloat {
-    return CGFloat.minimum(CGFloat.maximum(self, min), max)
-  }
-
   public func cycleClamp(_ min: CGFloat, _ max: CGFloat) -> CGFloat {
     if self >= min && self <= max { return self }
     let range = max - min
