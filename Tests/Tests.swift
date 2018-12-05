@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import Utility
+import Alidade
 
 let range = 0..<10000
 
@@ -33,8 +33,6 @@ class Tests: XCTestCase {
     XCTAssert(CGPoint(1, 2) == CGPoint(x: 1, y: 2))
     XCTAssert(Double(2) + CGFloat(1) == Double(3))
     XCTAssert(UIEdgeInsets(0, 2, 3, 4) * 2 == UIEdgeInsets(0, 4, 6, 8))
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results
   }
 
   func testPerformanceExample() {

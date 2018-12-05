@@ -6,8 +6,14 @@ source 'git@github.com:CocoaPods/Specs.git'
 
 target 'Demo' do
     pod 'Alidade', :path => './'
+    pod 'SwiftLint'
 end
 
 target 'Alidade' do
+    pod 'SwiftLint'
+end
+
+target 'Tests' do 
+    pod 'Nimble'
     pod 'SwiftLint'
 end

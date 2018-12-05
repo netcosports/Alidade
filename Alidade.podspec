@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Default' do |ss|
     ss.dependency 'Alidade/Core'
+    ss.dependency 'Alidade/Date'
     ss.dependency 'Alidade/FormatterPool'
     ss.dependency 'Alidade/Vectors'
     ss.dependency 'Alidade/String'
@@ -27,6 +28,11 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'Alidade/Source/Core/*.swift'
+  end
+
+  s.subspec 'Date' do |ss|
+    ss.dependency 'Alidade/FormatterPool'
+    ss.source_files = 'Alidade/Source/Date/*.swift'
   end
 
   s.subspec 'Geometry' do |ss|

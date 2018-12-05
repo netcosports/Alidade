@@ -13,11 +13,11 @@ public protocol LocalizedFormatter: Formatter {
 public extension LocalizedFormatter {
 
   public static func hashValue(format: Format) -> Int {
-    return hashValue(format: format, locale: .current)
+    return hashValue(format: format, locale: .autoupdatingCurrent)
   }
 
   public static func cached(format: Format) -> PoolInstance {
-    return cached(format: format, locale: .current)
+    return cached(format: format, locale: .autoupdatingCurrent)
   }
 }
 
@@ -89,11 +89,11 @@ extension DateFormatter: LocalizedFormatter {
     set { dateFormat = newValue }
   }
 
-  public static func hashValue(format: Format, locale: Locale = .current) -> Int {
+  public static func hashValue(format: Format, locale: Locale = .autoupdatingCurrent) -> Int {
     return format.hashValue ^ locale.identifier.hashValue
   }
 
-  public static func cached(format: String, locale: Locale = .current) -> DateFormatter {
+  public static func cached(format: String, locale: Locale = .autoupdatingCurrent) -> DateFormatter {
     return FormatterPool.formatter(format: format, locale: locale)
   }
 
@@ -111,11 +111,11 @@ extension NumberFormatter: LocalizedFormatter {
     set { numberStyle = newValue }
   }
 
-  public static func hashValue(format: Format, locale: Locale = .current) -> Int {
+  public static func hashValue(format: Format, locale: Locale = .autoupdatingCurrent) -> Int {
     return format.hashValue ^ locale.identifier.hashValue
   }
 
-  public static func cached(format: NumberFormatter.Style, locale: Locale = .current) -> NumberFormatter {
+  public static func cached(format: NumberFormatter.Style, locale: Locale = .autoupdatingCurrent) -> NumberFormatter {
     return FormatterPool.formatter(format: format, locale: locale)
   }
 
@@ -193,11 +193,11 @@ extension DateIntervalFormatter: LocalizedFormatter {
     set { dateTemplate = newValue }
   }
 
-  public static func hashValue(format: String, locale: Locale = .current) -> Int {
+  public static func hashValue(format: String, locale: Locale = .autoupdatingCurrent) -> Int {
     return format.hashValue ^ locale.hashValue
   }
 
-  public static func cached(format: Format, locale: Locale = .current) -> DateIntervalFormatter {
+  public static func cached(format: Format, locale: Locale = .autoupdatingCurrent) -> DateIntervalFormatter {
     return FormatterPool.formatter(format: format, locale: locale)
   }
 
@@ -334,11 +334,11 @@ extension MeasurementFormatter: LocalizedFormatter {
     set { unitOptions = newValue.units; unitStyle = newValue.style }
   }
 
-  public static func hashValue(format: Format, locale: Locale = .current) -> Int {
+  public static func hashValue(format: Format, locale: Locale = .autoupdatingCurrent) -> Int {
     return format.units.rawValue.hashValue ^ format.style.hashValue ^ locale.hashValue
   }
 
-  public static func cached(format: Format, locale: Locale = .current) -> MeasurementFormatter {
+  public static func cached(format: Format, locale: Locale = .autoupdatingCurrent) -> MeasurementFormatter {
     return FormatterPool.formatter(format: format, locale: locale)
   }
 
