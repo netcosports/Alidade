@@ -208,18 +208,56 @@ extension DateIntervalFormatter: LocalizedFormatter {
 extension EnergyFormatter: Formatter {
 
   public typealias PoolInstance = EnergyFormatter
-  public typealias Format = UnitStyle
+  public struct Format {
+    let style: UnitStyle
+    let isEnergy: Bool
+
+    init(style: UnitStyle = .medium, isEnergy: Bool = false) {
+      self.style = style
+      self.isEnergy = isEnergy
+    }
+  }
 
   public var format: Format {
-    get { return unitStyle }
-    set { unitStyle = newValue }
+    get { return .init(style: unitStyle, isEnergy: isForFoodEnergyUse) }
+    set { unitStyle = newValue.style; isForFoodEnergyUse = newValue.isEnergy }
   }
 
   public static func hashValue(format: Format) -> Int {
-    return format.hashValue ^ 428936712512
+    return format.style.hashValue ^ format.isEnergy.hashValue ^ 428936712512
   }
 
   public static func cached(format: Format) -> EnergyFormatter {
+    return FormatterPool.formatter(format: format)
+  }
+
+}
+
+// MARK: - LengthFormatter
+
+extension LengthFormatter: Formatter {
+
+  public typealias PoolInstance = LengthFormatter
+  public struct Format {
+    let style: UnitStyle
+    let isPersonHeight: Bool
+
+    init(style: UnitStyle = .medium, isPersonHeight: Bool = false) {
+      self.style = style
+      self.isPersonHeight = isPersonHeight
+    }
+  }
+
+  public var format: Format {
+    get { return .init(style: unitStyle, isPersonHeight: isForPersonHeightUse) }
+    set { unitStyle = newValue.style; isForPersonHeightUse = newValue.isPersonHeight }
+  }
+
+  public static func hashValue(format: Format) -> Int {
+    return format.style.hashValue ^ format.isPersonHeight.hashValue ^ 28946123027
+  }
+
+  public static func cached(format: Format) -> LengthFormatter {
     return FormatterPool.formatter(format: format)
   }
 
