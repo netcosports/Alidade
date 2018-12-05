@@ -150,3 +150,33 @@ extension ByteCountFormatter: Formatter {
   }
 
 }
+
+// MARK: - DateComponentsFormatter
+
+extension DateComponentsFormatter: Formatter {
+
+  public typealias PoolInstance = DateComponentsFormatter
+  public struct Format {
+    let units: NSCalendar.Unit
+    let style: UnitsStyle
+
+    public init(units: NSCalendar.Unit = .init(rawValue: 0), style: UnitsStyle = .positional) {
+      self.units = units
+      self.style = style
+    }
+  }
+
+  public var format: Format {
+    get { return .init(units: allowedUnits, style: unitsStyle) }
+    set { allowedUnits = newValue.units; unitsStyle = newValue.style }
+  }
+
+  public static func hashValue(format: Format) -> Int {
+    return format.style.hashValue ^ format.units.rawValue.hashValue
+  }
+
+  public static func cached(format: Format) -> DateComponentsFormatter {
+    return FormatterPool.formatter(format: format)
+  }
+
+}
