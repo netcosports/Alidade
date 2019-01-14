@@ -1,10 +1,10 @@
 PODS:
-  - Alidade (1.1.1):
-    - Alidade/Default (= 1.1.1)
-  - Alidade/Core (1.1.1)
-  - Alidade/Date (1.1.1):
+  - Alidade (1.2.0):
+    - Alidade/Default (= 1.2.0)
+  - Alidade/Core (1.2.0)
+  - Alidade/Date (1.2.0):
     - Alidade/FormatterPool
-  - Alidade/Default (1.1.1):
+  - Alidade/Default (1.2.0):
     - Alidade/Core
     - Alidade/Date
     - Alidade/FormatterPool
@@ -13,16 +13,16 @@ PODS:
     - Alidade/UI
     - Alidade/UIExtension
     - Alidade/Vectors
-  - Alidade/FormatterPool (1.1.1)
-  - Alidade/Logging (1.1.1):
+  - Alidade/FormatterPool (1.2.0)
+  - Alidade/Logging (1.2.0):
     - Alidade/Core
-  - Alidade/String (1.1.1):
+  - Alidade/String (1.2.0):
     - Alidade/Core
-  - Alidade/UI (1.1.1):
+  - Alidade/UI (1.2.0):
     - Alidade/Core
-  - Alidade/UIExtension (1.1.1):
+  - Alidade/UIExtension (1.2.0):
     - Alidade/Core
-  - Alidade/Vectors (1.1.1)
+  - Alidade/Vectors (1.2.0)
   - Nimble (7.3.1)
   - SwiftLint (0.26.0)
 
@@ -41,7 +41,7 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  Alidade: ddd58df9fa23cef68d7516700fedd4a976c4e43b
+  Alidade: 78c473f8b9563ddabd78eaf6ba89ad73752d80f6
   Nimble: 04f732da099ea4d153122aec8c2a88fd0c7219ae
   SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
 

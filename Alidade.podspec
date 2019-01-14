@@ -17,7 +17,6 @@ Pod::Spec.new do |s|
 
   s.subspec 'Default' do |ss|
     ss.dependency 'Alidade/Core'
-    ss.dependency 'Alidade/Date'
     ss.dependency 'Alidade/FormatterPool'
     ss.dependency 'Alidade/Vectors'
     ss.dependency 'Alidade/String'

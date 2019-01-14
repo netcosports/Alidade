@@ -11,12 +11,13 @@ public extension Int {
   var cg: CGFloat { return CGFloat(self) }
 
   func cycleClamp(_ min: Int, _ max: Int) -> Int {
+    guard max > min else { return cycleClamp(max, min) }
     if self >= min && self <= max { return self }
-    let range = max - min
-    let value = self % range
-    if value < min { return value + range }
-    if value > max { return value - range }
-    return value
+
+    let range = max - min + 1
+    let mod = self % range
+    if mod < 0 { return mod + range }
+    return mod
   }
 
   /** Formatted representation

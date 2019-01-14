@@ -38,4 +38,5 @@ class Tests: XCTestCase {
   func testPerformanceExample() {
     measure { }
   }
+
 }
