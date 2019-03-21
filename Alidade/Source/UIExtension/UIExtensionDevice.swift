@@ -26,6 +26,24 @@ public extension UI.Device {
     return UIDevice.current.userInterfaceIdiom == .phone &&
         UIScreen.main.nativeBounds.height == 2436
   }()
+  
+  public static let isIPhoneXR: Bool = {
+    return UIDevice.current.userInterfaceIdiom == .phone &&
+      UIScreen.main.nativeBounds.height == 1792
+  }()
+
+  public static let isIPhoneXS: Bool = {
+    return isIPhoneX
+  }()
+
+  public static let isIPhoneXSMax: Bool = {
+    return UIDevice.current.userInterfaceIdiom == .phone &&
+      UIScreen.main.nativeBounds.height == 2688
+  }()
+  
+  public static let isIPhoneXSeries: Bool = {
+    return isIPhoneX || isIPhoneXR || isIPhoneXS || isIPhoneXSMax
+  }()
 }
 
 public extension UI.Device {

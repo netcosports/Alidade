@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Alidade"
-  s.version      = "1.2.0"
+  s.version      = "1.2.2"
   s.summary      = "Utility components"
 
   s.homepage     = "https://github.com/netcosports/Alidade"
@@ -17,7 +17,6 @@ Pod::Spec.new do |s|
 
   s.subspec 'Default' do |ss|
     ss.dependency 'Alidade/Core'
-    ss.dependency 'Alidade/Date'
     ss.dependency 'Alidade/FormatterPool'
     ss.dependency 'Alidade/Vectors'
     ss.dependency 'Alidade/String'

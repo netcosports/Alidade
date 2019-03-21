@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		460E80D221EC74E30010F4D5 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460E80D121EC74E30010F4D5 /* IntTests.swift */; };
 		4C544D6448BB92F2D474BAD9 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28E5B09976A3B3F3D71C2E74 /* Pods_Tests.framework */; };
 		5C30E6001FA0D8C600591CAA /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C30E5FF1FA0D8C600591CAA /* Demo.swift */; };
 		5C5442AC200A7FE900E1E326 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5442AB200A7FE900E1E326 /* DoubleExtension.swift */; };
@@ -112,6 +113,7 @@
 		28E5B09976A3B3F3D71C2E74 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		386F9B524E7F0AF9ACA8008D /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3C70356363D2543582D568A3 /* Pods_Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		460E80D121EC74E30010F4D5 /* IntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
 		487DF70427D4ED24096AF528 /* Pods-Alidade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alidade.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alidade/Pods-Alidade.release.xcconfig"; sourceTree = "<group>"; };
 		5C30E5FF1FA0D8C600591CAA /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
 		5C5442AB200A7FE900E1E326 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				5C8ABDAC20016F44003FA5DD /* Tests.swift */,
+				460E80D121EC74E30010F4D5 /* IntTests.swift */,
 				5C748C2B21B87D6500BEF59B /* DateTests.swift */,
 				5C8ABDAE20016F44003FA5DD /* Info.plist */,
 			);
@@ -631,7 +634,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alidade/Alidade.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -642,7 +645,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C5E67DC87E97375B2EC468B9 /* [CP] Check Pods Manifest.lock */ = {
@@ -675,7 +678,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Tests/Pods-Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Tests/Pods-Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -686,7 +689,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tests/Pods-Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tests/Pods-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FEB0F59FFB045502BA4D025A /* [CP] Check Pods Manifest.lock */ = {
@@ -718,6 +721,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				460E80D221EC74E30010F4D5 /* IntTests.swift in Sources */,
 				5C8ABDAD20016F44003FA5DD /* Tests.swift in Sources */,
 				5C748C2C21B87D6500BEF59B /* DateTests.swift in Sources */,
 			);
