@@ -3,17 +3,17 @@ import Foundation
 
 public extension CGFloat {
 
-  public static let epsilon: CGFloat = CGFloat(ulpOfOne)
+  static let epsilon: CGFloat = CGFloat(ulpOfOne)
 
-  public static var random: CGFloat { return CGFloat.random(in: 0...1) }
+  static var random: CGFloat { return CGFloat.random(in: 0...1) }
 
-  public static var pixel: CGFloat { return 1.0 / UIScreen.main.scale }
+  static var pixel: CGFloat { return 1.0 / UIScreen.main.scale }
 
-  public var sign: CGFloat { return self < 0.0 ? -1.0 : 1.0 }
+  var sign: CGFloat { return self < 0.0 ? -1.0 : 1.0 }
 
-  public var normalized: CGFloat { return clamp(0.0, 1.0) }
+  var normalized: CGFloat { return clamp(0.0, 1.0) }
 
-  public func cycleClamp(_ min: CGFloat, _ max: CGFloat) -> CGFloat {
+  func cycleClamp(_ min: CGFloat, _ max: CGFloat) -> CGFloat {
     if self >= min && self <= max { return self }
     let range = max - min
     let value = truncatingRemainder(dividingBy: range)
@@ -22,7 +22,7 @@ public extension CGFloat {
     return value
   }
 
-  public func isFuzzyEqual(to value: CGFloat, epsilon: CGFloat = CGFloat(ulpOfOne)) -> Bool {
+  func isFuzzyEqual(to value: CGFloat, epsilon: CGFloat = CGFloat(ulpOfOne)) -> Bool {
     return abs(self - value) <= epsilon
   }
 

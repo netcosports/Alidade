@@ -26,12 +26,12 @@ extension Flowable where Self: Initiable {
 public extension Flowable {
 
   @discardableResult
-  public func with(_ transformer: (Self) -> Void) -> Self {
+  func with(_ transformer: (Self) -> Void) -> Self {
     transformer(self)
     return self
   }
 
-  public func map<U>(_ transformer: (Self) throws -> U) rethrows -> U {
+  func map<U>(_ transformer: (Self) throws -> U) rethrows -> U {
     return try transformer(self)
   }
 }
@@ -39,7 +39,7 @@ public extension Flowable {
 public extension Optional where Wrapped: Any {
 
   @discardableResult
-  public func with(_ transformer: (Wrapped) -> Void) -> Optional {
+  func with(_ transformer: (Wrapped) -> Void) -> Optional {
     flatMap { transformer($0) }
     return self
   }

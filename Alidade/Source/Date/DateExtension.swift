@@ -11,7 +11,7 @@ import Foundation
 
 public extension Date {
 
-  public enum Context {
+  enum Context {
 
     public static var calendar = Calendar.autoupdatingCurrent
 
@@ -22,7 +22,7 @@ public extension Date {
 
 public extension Date {
 
-  public func start(of unit: Calendar.Component) -> Date {
+  func start(of unit: Calendar.Component) -> Date {
     var date = Date()
     var interval: TimeInterval = 0
     guard Context.calendar.dateInterval(of: unit, start: &date, interval: &interval, for: self) else {
@@ -33,7 +33,7 @@ public extension Date {
     return date
   }
 
-  public func end(of unit: Calendar.Component) -> Date {
+  func end(of unit: Calendar.Component) -> Date {
     var date = Date()
     var interval: TimeInterval = 0
     guard Context.calendar.dateInterval(of: unit, start: &date, interval: &interval, for: self) else {
@@ -51,8 +51,8 @@ public extension Date {
 
 public extension Date {
 
-  public init(year: Int, month: Int, day: Int = 1, hour: Int = 0, minute: Int = 0, second: Int = 0,
-              nanosecond: Int = 0, `in` timeZone: TimeZone? = nil) {
+  init(year: Int, month: Int, day: Int = 1, hour: Int = 0, minute: Int = 0, second: Int = 0,
+       nanosecond: Int = 0, `in` timeZone: TimeZone? = nil) {
     var components = DateComponents(calendar: Context.calendar)
     components.year = year
     components.month = month
@@ -69,39 +69,39 @@ public extension Date {
     self.init(timeIntervalSinceReferenceDate: result.timeIntervalSinceReferenceDate)
   }
 
-  public static var yesterday: Date {
+  static var yesterday: Date {
     return today - 1.days
   }
 
-  public var yesterday: Date {
+  var yesterday: Date {
     return self - 1.days
   }
 
-  public static var today: Date {
+  static var today: Date {
     return Date().start(of: .day)
   }
 
-  public static var tomorrow: Date {
+  static var tomorrow: Date {
     return today + 1.days
   }
 
-  public var tomorrow: Date {
+  var tomorrow: Date {
     return self + 1.days
   }
 
-  public var isInYesterday: Bool {
+  var isInYesterday: Bool {
     return Context.calendar.isDateInYesterday(self)
   }
 
-  public var isInToday: Bool {
+  var isInToday: Bool {
     return Context.calendar.isDateInToday(self)
   }
 
-  public var isInTomorrow: Bool {
+  var isInTomorrow: Bool {
     return Context.calendar.isDateInTomorrow(self)
   }
 
-  public func isSameDay(as date: Date) -> Bool {
+  func isSameDay(as date: Date) -> Bool {
     return Context.calendar.isDate(self, inSameDayAs: date)
   }
 
@@ -117,7 +117,7 @@ public extension TimeZone {
 
 public extension Date {
 
-  public static func date(fromString str: String, dateFormatter formatter: DateFormatter, timezone: String? = nil) ->
+  static func date(fromString str: String, dateFormatter formatter: DateFormatter, timezone: String? = nil) ->
     Date? {
       if let timezone = timezone {
         formatter.timeZone = TimeZone(abbreviation: timezone)
@@ -126,7 +126,7 @@ public extension Date {
       return formatter.date(from: str)
   }
 
-  public static func date(fromString str: String, format: String, timezone: String? = nil, locale: Locale? = nil) ->
+  static func date(fromString str: String, format: String, timezone: String? = nil, locale: Locale? = nil) ->
     Date? {
       let dateFormatter = DateFormatter()
       dateFormatter.dateFormat = format
@@ -139,11 +139,11 @@ public extension Date {
       return date(fromString: str, dateFormatter: dateFormatter, timezone: timezone)
   }
 
-  public func toString(formatter: DateFormatter) -> String {
+  func toString(formatter: DateFormatter) -> String {
     return formatter.string(from: self)
   }
 
-  public func toString(format: String = "yyyy-MM-dd HH:mm:ss", locale: Locale? = nil) -> String {
+  func toString(format: String = "yyyy-MM-dd HH:mm:ss", locale: Locale? = nil) -> String {
     let formatter = DateFormatter()
     formatter.dateFormat = format
     formatter.locale = locale != nil ? locale : Locale.enUSPosix
@@ -154,11 +154,11 @@ public extension Date {
 
 public extension String {
 
-  public func toDate(dateFormatter formatter: DateFormatter, timeZone: String? = nil) -> Date? {
+  func toDate(dateFormatter formatter: DateFormatter, timeZone: String? = nil) -> Date? {
     return Date.date(fromString: self, dateFormatter: formatter, timezone: timeZone)
   }
 
-  public func toDate(format: String, timeZone: String? = nil, locale: Locale? = nil) -> Date? {
+  func toDate(format: String, timeZone: String? = nil, locale: Locale? = nil) -> Date? {
     return Date.date(fromString: self, format: format, timezone: timeZone, locale: locale)
   }
 
@@ -168,43 +168,43 @@ public extension String {
 
 public extension Int {
 
-  public var seconds: DateComponents {
+  var seconds: DateComponents {
     var components = DateComponents()
     components.second = self
     return components
   }
 
-  public var minutes: DateComponents {
+  var minutes: DateComponents {
     var components = DateComponents()
     components.minute = self
     return components
   }
 
-  public var hours: DateComponents {
+  var hours: DateComponents {
     var components = DateComponents()
     components.hour = self
     return components
   }
 
-  public var days: DateComponents {
+  var days: DateComponents {
     var components = DateComponents()
     components.day = self
     return components
   }
 
-  public var weeks: DateComponents {
+  var weeks: DateComponents {
     var components = DateComponents()
     components.weekOfYear = self
     return components
   }
 
-  public var months: DateComponents {
+  var months: DateComponents {
     var components = DateComponents()
     components.month = self
     return components
   }
 
-  public var years: DateComponents {
+  var years: DateComponents {
     var components = DateComponents()
     components.year = self
     return components
@@ -217,38 +217,38 @@ public extension Int {
 public enum Weekday: Int {
   case monday = 0, tuesday, wednesday, thursday, friday, saturday, sunday
 
-  public var foundationValue: Int {
+  var foundationValue: Int {
     return (rawValue + 1) % 7 + 1
   }
 }
 
 public extension Date {
 
-  public var second: Int {
+  var second: Int {
     return Date.Context.calendar.component(.second, from: self)
   }
 
-  public var minute: Int {
+  var minute: Int {
     return Date.Context.calendar.component(.minute, from: self)
   }
 
-  public var hour: Int {
+  var hour: Int {
     return Date.Context.calendar.component(.hour, from: self)
   }
 
-  public var day: Int {
+  var day: Int {
     return Date.Context.calendar.component(.day, from: self)
   }
 
-  public var month: Int {
+  var month: Int {
     return Date.Context.calendar.component(.month, from: self)
   }
 
-  public var year: Int {
+  var year: Int {
     return Date.Context.calendar.component(.year, from: self)
   }
 
-  public var weekday: Weekday {
+  var weekday: Weekday {
     guard let weekday = Weekday(rawValue: (Date.Context.calendar.component(.weekday, from: self) + 12) % 7) else {
       assertionFailure()
       return .monday
@@ -310,7 +310,7 @@ public func & (lhs: DateComponents, rhs: DateComponents) -> DateComponents {
 
 public extension Date {
 
-  public func difference(date: Date, unitFlags: Set<Calendar.Component>) -> DateComponents? {
+  func difference(date: Date, unitFlags: Set<Calendar.Component>) -> DateComponents? {
     return Date.Context.calendar.dateComponents(unitFlags, from: self, to: date)
   }
 

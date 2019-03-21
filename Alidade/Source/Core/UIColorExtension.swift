@@ -46,7 +46,7 @@ public extension UIColor {
 
 public extension UIColor {
 
-  public struct RGBA: Equatable, CustomDebugStringConvertible {
+  struct RGBA: Equatable, CustomDebugStringConvertible {
     public var red: CGFloat
     public var green: CGFloat
     public var blue: CGFloat
@@ -103,7 +103,7 @@ public extension UIColor {
     }
   }
 
-  public func rgbaValue() -> RGBA {
+  func rgbaValue() -> RGBA {
     var r, g, b, a: CGFloat
     (r, g, b, a) = (0.0, 0.0, 0.0, 0.0)
     getRed(&r, green: &g, blue: &b, alpha: &a)
@@ -115,7 +115,7 @@ public extension UIColor {
 
 public extension UIColor {
 
-  public struct HSLA: Equatable, CustomDebugStringConvertible {
+  struct HSLA: Equatable, CustomDebugStringConvertible {
     public var hue: CGFloat
     public var saturation: CGFloat
     public var luminance: CGFloat
@@ -177,7 +177,7 @@ public extension UIColor {
 
 public extension UIColor {
 
-  public struct HSBA: Equatable, CustomDebugStringConvertible {
+  struct HSBA: Equatable, CustomDebugStringConvertible {
     public var hue: CGFloat
     public var saturation: CGFloat
     public var brightness: CGFloat
@@ -196,7 +196,7 @@ public extension UIColor {
     }
     // swiftlint:enable identifier_name
 
-    public func color() -> UIColor {
+    func color() -> UIColor {
       let color = UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: alpha)
       return color
     }
@@ -206,11 +206,11 @@ public extension UIColor {
     }
   }
 
-  public func hsbaValue() -> HSBA {
+  func hsbaValue() -> HSBA {
     return rgbaValue().hsbaValue()
   }
 
-  public func hslaValue() -> HSLA {
+  func hslaValue() -> HSLA {
     return rgbaValue().hslaValue()
   }
 }

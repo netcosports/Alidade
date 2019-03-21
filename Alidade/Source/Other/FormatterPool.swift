@@ -12,11 +12,11 @@ public protocol LocalizedFormatter: Formatter {
 
 public extension LocalizedFormatter {
 
-  public static func hashValue(format: Format) -> Int {
+  static func hashValue(format: Format) -> Int {
     return hashValue(format: format, locale: .autoupdatingCurrent)
   }
 
-  public static func cached(format: Format) -> PoolInstance {
+  static func cached(format: Format) -> PoolInstance {
     return cached(format: format, locale: .autoupdatingCurrent)
   }
 }
@@ -38,7 +38,7 @@ public protocol Formatter: class {
 
 public extension Locale {
 
-  public static let enUSPosix = Locale(identifier: "en_US_POSIX")
+  static let enUSPosix = Locale(identifier: "en_US_POSIX")
 }
 
 fileprivate final class FormatterPool {

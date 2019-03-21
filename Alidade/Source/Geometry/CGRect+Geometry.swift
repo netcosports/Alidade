@@ -11,7 +11,7 @@ import UIKit
 public extension CGRect {
 
   //swiftlint:disable identifier_name
-  public func intersection(with ray: Geometry.Ray) -> CGPoint? {
+  func intersection(with ray: Geometry.Ray) -> CGPoint? {
     let p0 = CGPoint(x: minX, y: minY)
     let p1 = CGPoint(x: minX, y: maxY)
     let p2 = CGPoint(x: maxX, y: maxY)
@@ -30,4 +30,5 @@ public extension CGRect {
     return intersection
   }
   //swiftlint:enable identifier_name
+
 }

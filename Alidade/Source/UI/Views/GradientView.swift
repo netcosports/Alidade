@@ -4,7 +4,7 @@ import UIKit
 
 public extension GradientView {
 
-  public struct Direction {
+  struct Direction {
 
     public static let up = Direction(start: CGPoint(x: 0.5, y: 1.0), end: CGPoint(x: 0.5, y: 0.0))
     public static let down = Direction(start: CGPoint(x: 0.5, y: 0.0), end: CGPoint(x: 0.5, y: 1.0))

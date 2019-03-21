@@ -16,7 +16,7 @@ public protocol Associatable {
 
 public extension Associatable where Self: AnyObject {
 
-  public var associated: Associated<AnyObject> { return Associated(base: self) }
+  var associated: Associated<AnyObject> { return Associated(base: self) }
 }
 
 extension NSObject: Associatable { }
@@ -34,16 +34,16 @@ public struct Associated<T> {
 
 public extension Associated where T: AnyObject {
 
-  public func set<U: Any>(_ value: U?, for associativeKey: UnsafeRawPointer,
-                          policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC) {
+  func set<U: Any>(_ value: U?, for associativeKey: UnsafeRawPointer,
+                   policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC) {
     Associator.set(value, in: base, for: associativeKey, policy: policy)
   }
 
-  public func value<U>(for associativeKey: UnsafeRawPointer) -> U? {
+  func value<U>(for associativeKey: UnsafeRawPointer) -> U? {
     return Associator.value(from: base, for: associativeKey)
   }
 
-  public func readonlyValue<U>(for associativeKey: UnsafeRawPointer, initialValue: () -> U) -> U {
+  func readonlyValue<U>(for associativeKey: UnsafeRawPointer, initialValue: () -> U) -> U {
     let value: U? = self.value(for: associativeKey)
     if let value = value {
       return value

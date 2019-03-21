@@ -9,11 +9,11 @@ import Foundation
 
 public extension NSObject {
 
-  public func fullClassName(shoulShowModuleName: Bool = false, dso: UnsafeRawPointer = #dsohandle) -> String {
+  func fullClassName(shoulShowModuleName: Bool = false, dso: UnsafeRawPointer = #dsohandle) -> String {
     return type(of: self).fullClassName(shoulShowModuleName: shoulShowModuleName, dso: dso)
   }
 
-  public class func fullClassName(shoulShowModuleName: Bool = false, dso: UnsafeRawPointer = #dsohandle) -> String {
+  class func fullClassName(shoulShowModuleName: Bool = false, dso: UnsafeRawPointer = #dsohandle) -> String {
     let moduleName = Module(dso).name
     var name = description()
     if let moduleRange = name.range(of: moduleName), moduleRange.lowerBound > name.startIndex {
@@ -35,6 +35,6 @@ public extension NSObject {
 
 public extension Error {
 
-  public func log() { print("❌ \(localizedDescription)") }
+  func log() { print("❌ \(localizedDescription)") }
 
 }

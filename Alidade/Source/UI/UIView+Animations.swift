@@ -24,14 +24,14 @@ public extension UIView {
 
   // MARK: - Functions
 
-  public func setHidden(_ hidden: Bool, animated: Bool = false, force: Bool = false,
-                        completion: (() -> Void)? = nil) {
+  func setHidden(_ hidden: Bool, animated: Bool = false, force: Bool = false,
+                 completion: (() -> Void)? = nil) {
     let duration = animated ? 0.3 : 0.0
     setHidden(hidden, duration: duration, force: force, completion: completion)
   }
 
-  public func setHidden(_ hidden: Bool, duration: TimeInterval, force: Bool = false,
-                        completion: (() -> Void)? = nil) {
+  func setHidden(_ hidden: Bool, duration: TimeInterval, force: Bool = false,
+                 completion: (() -> Void)? = nil) {
     if hidden {
       hide(animationDuration: duration, force: force, completion: completion)
     } else {

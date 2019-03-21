@@ -18,19 +18,19 @@ private let stringSizeCache: NSCache = { () -> NSCache<AnyObject, AnyObject> in
 
 public extension String {
 
-  public func sizeWith(fixedWidth: CGFloat, with font: UIFont) -> CGSize {
+  func sizeWith(fixedWidth: CGFloat, with font: UIFont) -> CGSize {
     let string = NSAttributedString(string: self, attributes: [.font: font])
     let result = string.sizeWith(fixedWidth: fixedWidth)
     return result
   }
 
-  public func sizeWith(fixedHeight: CGFloat, with font: UIFont) -> CGSize {
+  func sizeWith(fixedHeight: CGFloat, with font: UIFont) -> CGSize {
     let string = NSAttributedString(string: self, attributes: [.font: font])
     let result = string.sizeWith(fixedHeight: fixedHeight)
     return result
   }
 
-  public func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
+  func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
     let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
     let options: NSStringDrawingOptions = [.usesFontLeading, .usesLineFragmentOrigin]
     let boundingBox = self.boundingRect(with: constraintRect, options: options, attributes: [.font: font], context: nil)
@@ -91,4 +91,5 @@ public extension NSAttributedString {
     _ = layoutManager.glyphRange(for: textContainer)
     return layoutManager.usedRect(for: textContainer).integral.size
   }
+
 }

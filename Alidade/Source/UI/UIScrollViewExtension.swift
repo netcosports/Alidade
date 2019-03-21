@@ -2,19 +2,19 @@ import UIKit
 
 public extension UIScrollView {
 
-  public enum Position {
+  enum Position {
     case top
     case left
     case right
     case bottom
   }
 
-  public func isCurrently(at position: Position) -> Bool {
+  func isCurrently(at position: Position) -> Bool {
     let offset = contentOffset(for: position)
     return offset == self.contentOffset
   }
 
-  public func scroll(to position: Position, animated: Bool) {
+  func scroll(to position: Position, animated: Bool) {
     let offset = contentOffset(for: position)
     setContentOffset(offset, animated: animated)
   }

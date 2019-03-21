@@ -20,18 +20,18 @@ public protocol Vectorable {
 
 public extension Vectorable {
 
-  public init(_ value: Vector1D) {
-    self.init(value.x)
-  }
+//  init(_ value: Vector1D) {
+//    self.init(value.x)
+//  }
 
-  public init(_ values: [Vector1D]) {
+  init(_ values: [Vector1D]) {
     self.init()
     vector = values.map { $0.x }
   }
 
-  public init(_ values: Vector1D...) {
-    self.init(values)
-  }
+//  init(_ values: Vector1D...) {
+//    self.init(values)
+//  }
 
   fileprivate init(_ cgFloatValue: CGFloat) {
     self.init()
@@ -93,14 +93,14 @@ public protocol Vector3D: Vector2D {
 
 public extension Vector3D {
 
-  public static var length: Int { return 3 }
+  static var length: Int { return 3 }
 
-  public var vector: [CGFloat] {
+  var vector: [CGFloat] {
     get { return [x, y, z] }
     set { x = newValue[0]; y = newValue[1]; z = newValue[2] }
   }
 
-  public init(x: CGFloat, y: CGFloat, z: CGFloat) {
+  init(x: CGFloat, y: CGFloat, z: CGFloat) {
     self.init()
     self.x = x
     self.y = y

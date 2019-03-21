@@ -41,11 +41,11 @@ public protocol Updateable: class {
 
 public extension Updateable {
 
-  public func setNeedsUpdate() {
+  func setNeedsUpdate() {
     updater.add(self)
   }
 
-  public func updateIfNeeded() {
+  func updateIfNeeded() {
     update()
   }
 }
