@@ -4,7 +4,6 @@
 //
 //  Created by Vladimir Burdukov on 8/26/16.
 //  Added by Dmitry Duleba on 12/6/18.
-//  Copyright © 2018 NetcoSports. All rights reserved.
 //
 
 import Foundation
@@ -217,7 +216,7 @@ public extension Int {
 public enum Weekday: Int {
   case monday = 0, tuesday, wednesday, thursday, friday, saturday, sunday
 
-  var foundationValue: Int {
+  public var foundationValue: Int {
     return (rawValue + 1) % 7 + 1
   }
 }

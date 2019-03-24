@@ -17,8 +17,6 @@ public extension CGPoint {
 
   var length: CGFloat { return sqrt(x * x + y * y) }
 
-  var sizeValue: CGSize { return CGSize(width: x, height: y) }
-
   var clampNormal: CGPoint { return clamp(CGPoint.zero, CGPoint(x: 1.0, y: 1.0)) }
 
   //swiftlint:disable identifier_name
@@ -45,7 +43,4 @@ public extension CGPoint {
       && point.y.isFuzzyEqual(to: y, epsilon: epsilon)
   }
 
-  var hashValue: Int {
-    return x.hashValue ^ y.hashValue
-  }
 }

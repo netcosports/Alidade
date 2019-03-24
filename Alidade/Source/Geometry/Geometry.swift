@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 // swiftlint:disable identifier_name
-public struct Geometry {
+public enum Geometry {
 
   public struct Ray {
     public let start: CGPoint

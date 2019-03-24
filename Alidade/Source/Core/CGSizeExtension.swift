@@ -9,11 +9,7 @@ public extension CGSize {
 
   init(side: Double) { self.init(width: side, height: side) }
 
-  var pointValue: CGPoint { return CGPoint(x: width, y: height) }
-
   var rectValue: CGRect { return CGRect(origin: .zero, size: self) }
-
-  var hashValue: Int { return width.hashValue ^ height.hashValue }
 
   var rounded: CGSize { return CGSize(width: width.rounded(), height: height.rounded()) }
 
@@ -30,5 +26,9 @@ public extension CGSize {
   var isNull: Bool { return CGRect(size: self).isNull }
 
   var isInfinite: Bool { return CGRect(size: self).isInfinite }
+
+  var minSide: CGFloat { return min(width, height) }
+
+  var maxSide: CGFloat { return max(width, height) }
 
 }

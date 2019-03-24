@@ -40,11 +40,11 @@ class ViewController: UIViewController {
   }
 
   override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-    let top = view.safeAreaLayoutGuide.layoutFrame.minY
-    lineView.frame = CGRect(origin: CGPoint(120.ui, top),
-                            size: CGSize(400.ui, 1.0))
-    gradientView.frame = CGRect(origin: CGPoint(50.ui, top + 20.ui),
-                                size: CGSize(540.ui, 10.ui))
+//    super.viewDidLayoutSubviews()
+//    let top = view.safeAreaLayoutGuide.layoutFrame.minY
+//    lineView.frame = CGRect(origin: CGPoint([120.ui, top]),
+//                            size: CGSize([400.ui, 1.0]))
+//    gradientView.frame = CGRect(origin: CGPoint([50.ui, top + 20.ui]),
+//                                size: CGSize([540.ui, 10.ui]))
   }
 }

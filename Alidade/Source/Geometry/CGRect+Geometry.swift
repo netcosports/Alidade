@@ -1,6 +1,6 @@
 //
 //  CGRect+Geometry.swift
-//  Utility
+//  Alidade
 //
 //  Created by Dmitry Duleba on 10/24/17.
 //

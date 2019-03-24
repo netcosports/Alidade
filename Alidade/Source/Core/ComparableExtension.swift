@@ -1,4 +1,5 @@
 import Foundation
+import struct UIKit.CGFloat
 
 public extension Comparable {
 

@@ -20,7 +20,7 @@ PODS:
   - Alidade/UIExtension (5.0.0):
     - Alidade/Core
   - Alidade/Vectors (5.0.0)
-  - Nimble (7.3.1)
+  - Nimble (8.0.1)
   - SwiftLint (0.26.0)
 
 DEPENDENCIES:
@@ -39,9 +39,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alidade: 8a1873b4800db101684ae39944f8a0483c3a2529
-  Nimble: 04f732da099ea4d153122aec8c2a88fd0c7219ae
+  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
   SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
 
-PODFILE CHECKSUM: 289a6614f2678d18a1d77e59b32d1cd2a09d182f
+PODFILE CHECKSUM: ca9f2a9deb601727618dfc2a8e9d483d00f1d275
 
 COCOAPODS: 1.5.3
