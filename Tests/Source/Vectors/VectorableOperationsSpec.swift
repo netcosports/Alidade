@@ -7,6 +7,7 @@
 
 import XCTest
 import Nimble
+@testable import Alidade
 
 //swiftlint:disable identifier_name
 class VectorableOperationsSpec: XCTestCase {
@@ -52,12 +53,18 @@ class VectorableOperationsSpec: XCTestCase {
   func testAddPerformance() {
     let generator = PointsGenerator()
     measure {
-      for _ in 0...1000 {
+      for _ in 0...1_000 {
         let p0 = generator.randomSIMDPoint()
         let p1 = generator.randomSIMDPoint()
         _ = p0 + p1
       }
     }
+  }
+
+  func testInterintegerOperations() {
+    let point = CGPoint([3, -4])
+    expect(point * 2.int).to(equal(CGPoint([6, -8])))
+    expect(point * Double(2)).to(equal(CGPoint([6, -8])))
   }
 
 }

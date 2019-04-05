@@ -1,30 +1,8 @@
 PODS:
-  - Alidade (5.0.0):
-    - Alidade/Default (= 5.0.0)
-  - Alidade/Core (5.0.0)
-  - Alidade/Default (5.0.0):
-    - Alidade/Core
-    - Alidade/FormatterPool
-    - Alidade/Logging
-    - Alidade/String
-    - Alidade/UI
-    - Alidade/UIExtension
-    - Alidade/Vectors
-  - Alidade/FormatterPool (5.0.0)
-  - Alidade/Logging (5.0.0):
-    - Alidade/Core
-  - Alidade/String (5.0.0):
-    - Alidade/Core
-  - Alidade/UI (5.0.0):
-    - Alidade/Core
-  - Alidade/UIExtension (5.0.0):
-    - Alidade/Core
-  - Alidade/Vectors (5.0.0)
   - Nimble (8.0.1)
   - SwiftLint (0.26.0)
 
 DEPENDENCIES:
-  - Alidade (from `./`)
   - Nimble
   - SwiftLint
 
@@ -33,15 +11,10 @@ SPEC REPOS:
     - Nimble
     - SwiftLint
 
-EXTERNAL SOURCES:
-  Alidade:
-    :path: "./"
-
 SPEC CHECKSUMS:
-  Alidade: 8a1873b4800db101684ae39944f8a0483c3a2529
   Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
   SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
 
-PODFILE CHECKSUM: ca9f2a9deb601727618dfc2a8e9d483d00f1d275
+PODFILE CHECKSUM: 6f1bbd33f9d3a56ab53a99981fa660ebfc6b0a04
 
 COCOAPODS: 1.5.3

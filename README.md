@@ -9,7 +9,7 @@ Utility components
 ## Installation
 
 ```ruby
-pod 'Alidade', '~> 1.2'
+pod 'Alidade', '~> 5.0.0'
 ```
 
 ## Subspecs
@@ -24,24 +24,14 @@ Basic extenstion for basic swift types, like: `CGRect`, `CGPoint`, `Sequence`, `
 guard let model = models[safe: index] else { return }
 ```
 
-### Date
-
-Date manipulating utils and operators for different cases like:
-- Dates comparison, the comparison only by component
-- Easy component access
-- String formatting
-- Components modification
-
-```swift
-let tomorrow = Date() + DateComponents(day: 1)
-```
-
 ### Geometry
 
-Some useful basic geometry concepts such as `Ray`, `Line` or Segment;
+Some useful basic geometry concepts such as `Ray`, `Line` or `Segment`;
 
 ### Vectors
 
+Added SIMD vectors type conformance to some CoreGraphics and UI structs: CGPoint, CGRect, UIEdgeInsets, etc.
+Also 
 Useful operators set for manipulating basic UIKit/CoreGraphics types as multi-dimensional vectors. 
 For example CGRect and UIEdgeInsets both are 4d vectors. It lets client do the following:
 
@@ -49,6 +39,10 @@ For example CGRect and UIEdgeInsets both are 4d vectors. It lets client do the f
 let rect: CGRect
 let insets: UIEdgeInsets
 let rectWithInsets = rect + insets
+let bounds = CGRect([0, 0, 640, 1136])
+let size = CGSize([120, 60])
+let origin = bounds.midpoint - (size * 0.5).pointValue
+let frame = CGRect(origin: origin, size: size)
 ```
 
 ### String
@@ -93,17 +87,45 @@ let width: CGFloat = 180.uiValue(for: Module.intent)
 ### Boxed
 
 Box container for mutability properties in immutable containers:
+N.B.! makes runtime increase retain count for Boxed object every time when struct with Boxed object passed via param into function
 
 ```swift
-public class Boxed<T> {
-  public var value: T?
-  public init(_ value: T? = nil) {
-    self.value = value
-  }
-  public func flatMap<U>(_ transform: (T) -> U?) -> U? {
-    return value.flatMap(transform)
-  }
- }
+struct SomeData {
+  let a = 1
+  var b = 2.0
+  let c = Boxed(false)
+}
+
+let immutable = SomeData()
+immutable.a = 2 // is forbidden
+
+var mutable = SomeData()
+mutable.b = 2.0 // is valid for mutable instances
+
+// is valid for both cases
+immutable.c.value = false 
+mutable.c.value = true
+```
+
+### Associatable
+
+Makes using ObjC runtime association easier:
+
+```swift
+private enum SomeClassYouWantToExtendViaObjcAssociationConst {
+
+    static var propertyName = 0
+
+}
+
+extension SomeClassYouWantToExtendViaObjcAssociation {
+
+    var readwriteValue: PropertyType? {
+        get { return associated.value(for: &SomeClassYouWantToExtendViaObjcAssociationConst.propertyName) }
+        set { associated.set(newValue, for: &SomeClassYouWantToExtendViaObjcAssociationConst.propertyName) }
+    }
+
+}
 ```
 
 ### Flowable
@@ -122,4 +144,11 @@ let label = UILabel {
 Tools for creation and cache different types of formatters. For 
 Dates, DateInterval, Length, PersonNameComponents etc. 
 
-
+```swift
+  let date = Date()
+  let locale = Locale.current
+  let template = "EEEEEEE, d MMM"
+  let dateFormat = DateFormatter.dateFormat(fromTemplate: template, options: 0, locale: locale) ?? template
+  let dateString = DateFormatter.cached(format: dateFormat, locale: locale)
+      .string(from: date)
+```

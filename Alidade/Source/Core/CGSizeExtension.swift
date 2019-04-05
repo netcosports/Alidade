@@ -11,12 +11,6 @@ public extension CGSize {
 
   var rectValue: CGRect { return CGRect(origin: .zero, size: self) }
 
-  var rounded: CGSize { return CGSize(width: width.rounded(), height: height.rounded()) }
-
-  var ceiled: CGSize { return CGSize(width: ceil(width), height: ceil(height)) }
-
-  var floored: CGSize { return CGSize(width: floor(width), height: floor(height)) }
-
   var integral: CGSize { return CGRect(size: self).integral.size }
 
   var standartized: CGSize { return CGRect(size: self).standardized.size }

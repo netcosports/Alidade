@@ -11,12 +11,6 @@ public extension CGPoint {
 
   var rounded: CGPoint { return CGPoint(x: x.rounded(), y: y.rounded()) }
 
-  var ceiled: CGPoint { return CGPoint(x: ceil(x), y: ceil(y)) }
-
-  var floored: CGPoint { return CGPoint(x: floor(x), y: floor(y)) }
-
-  var length: CGFloat { return sqrt(x * x + y * y) }
-
   var clampNormal: CGPoint { return clamp(CGPoint.zero, CGPoint(x: 1.0, y: 1.0)) }
 
   //swiftlint:disable identifier_name

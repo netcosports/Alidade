@@ -7,6 +7,7 @@
 
 import XCTest
 import Nimble
+@testable import Alidade
 
 //swiftlint:disable identifier_name
 class VectorableRepresentationSpec: XCTestCase {

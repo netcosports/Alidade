@@ -2,7 +2,9 @@ import Foundation
 
 public extension Int {
 
-  var isEven: Bool { return self % 2 == 0 }
+  var isOdd: Bool { return !isMultiple(of: 2) }
+
+  var isEven: Bool { return isMultiple(of: 2) }
 
   //swiftlint:disable:next identifier_name
   var cg: CGFloat { return CGFloat(self) }
@@ -25,9 +27,13 @@ public extension SignedInteger {
 
 }
 
-public extension BinaryInteger where Self: CVarArg {
+public extension BinaryInteger {
 
   var int: Int { return Int(self) }
+
+}
+
+public extension BinaryInteger where Self: CVarArg {
 
   /** Formatted representation
 

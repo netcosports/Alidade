@@ -32,7 +32,6 @@ class VectorableOperatorsTests: XCTestCase {
   func testCGPointBasicOperations() {
     let p0 = CGPoint(x: 3, y: 4)
     let p1 = CGPoint(x: 4, y: 5)
-
     expect(p0 + p1).to(equal(CGPoint(x: 7, y: 9)))
   }
 
