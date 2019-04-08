@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		460E80D221EC74E30010F4D5 /* IntExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460E80D121EC74E30010F4D5 /* IntExtensionSpec.swift */; };
 		464EE90222576270008EC790 /* VectorableScalarConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE90122576270008EC790 /* VectorableScalarConvertible.swift */; };
+		464EE904225B28F0008EC790 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE903225B28F0008EC790 /* CALayerExtension.swift */; };
+		464EE907225B29CE008EC790 /* CAAnimationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE906225B29CE008EC790 /* CAAnimationExtension.swift */; };
+		464EE909225B2B1C008EC790 /* UIResponderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE908225B2B1C008EC790 /* UIResponderExtension.swift */; };
+		464EE90B225B2B7F008EC790 /* BezierExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE90A225B2B7F008EC790 /* BezierExtractor.swift */; };
 		4C544D6448BB92F2D474BAD9 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28E5B09976A3B3F3D71C2E74 /* Pods_Tests.framework */; };
 		5C5442AE200A7FF500E1E326 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5442AD200A7FF500E1E326 /* FloatExtension.swift */; };
 		5C6972922002D2B2001A5051 /* Associatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6972912002D2B2001A5051 /* Associatable.swift */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -72,6 +76,10 @@
 		3C70356363D2543582D568A3 /* Pods_Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		460E80D121EC74E30010F4D5 /* IntExtensionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensionSpec.swift; sourceTree = "<group>"; };
 		464EE90122576270008EC790 /* VectorableScalarConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorableScalarConvertible.swift; sourceTree = "<group>"; };
+		464EE903225B28F0008EC790 /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
+		464EE906225B29CE008EC790 /* CAAnimationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAAnimationExtension.swift; sourceTree = "<group>"; };
+		464EE908225B2B1C008EC790 /* UIResponderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponderExtension.swift; sourceTree = "<group>"; };
+		464EE90A225B2B7F008EC790 /* BezierExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierExtractor.swift; sourceTree = "<group>"; };
 		487DF70427D4ED24096AF528 /* Pods-Alidade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alidade.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alidade/Pods-Alidade.release.xcconfig"; sourceTree = "<group>"; };
 		5C5442AD200A7FF500E1E326 /* FloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
 		5C6972912002D2B2001A5051 /* Associatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Associatable.swift; sourceTree = "<group>"; };
@@ -148,6 +156,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		464EE905225B29BE008EC790 /* CoreAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				464EE903225B28F0008EC790 /* CALayerExtension.swift */,
+				464EE906225B29CE008EC790 /* CAAnimationExtension.swift */,
+			);
+			path = CoreAnimation;
+			sourceTree = "<group>";
+		};
 		5C28540722458E2A009975EE /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +247,7 @@
 		CE91F3701F948F9C002FCE7E /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				464EE905225B29BE008EC790 /* CoreAnimation */,
 				CE91F3711F948F9C002FCE7E /* Core */,
 				CEE0CAA01F9F414C00EE9B2E /* Geometry */,
 				CEE0CAD51F9F878300EE9B2E /* Other */,
@@ -257,6 +275,7 @@
 				CE91F37B1F948F9C002FCE7E /* StringExtension.swift */,
 				CE91F3891F948F9C002FCE7E /* UIColorExtension.swift */,
 				CEE0CACD1F9F79FB00EE9B2E /* UIEdgeInsetsExtension.swift */,
+				464EE908225B2B1C008EC790 /* UIResponderExtension.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -327,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				CE089441219C483F00C935E7 /* Logging.swift */,
+				464EE90A225B2B7F008EC790 /* BezierExtractor.swift */,
 				5C6972912002D2B2001A5051 /* Associatable.swift */,
 				CE91F3741F948F9C002FCE7E /* Boxed.swift */,
 				5C8ABDA420015620003FA5DD /* Flowable.swift */,
@@ -589,11 +609,13 @@
 				CEE0CACE1F9F79FB00EE9B2E /* UIEdgeInsetsExtension.swift in Sources */,
 				CE089442219C483F00C935E7 /* Logging.swift in Sources */,
 				CEE637FC1FBC746E00BCF9C9 /* ViewControllerContainer.swift in Sources */,
+				464EE90B225B2B7F008EC790 /* BezierExtractor.swift in Sources */,
 				CE91F3A51F948FAC002FCE7E /* FormatterPool.swift in Sources */,
 				464EE90222576270008EC790 /* VectorableScalarConvertible.swift in Sources */,
 				CE91F3A71F948FAC002FCE7E /* CGPointExtension.swift in Sources */,
 				CE91F3A81F948FAC002FCE7E /* CGRectExtension.swift in Sources */,
 				CE91F3A91F948FAC002FCE7E /* ComparableExtension.swift in Sources */,
+				464EE907225B29CE008EC790 /* CAAnimationExtension.swift in Sources */,
 				CE91F3AB1F948FAC002FCE7E /* UIColorExtension.swift in Sources */,
 				CE91F3AE1F948FAC002FCE7E /* UIScrollViewExtension.swift in Sources */,
 				CEE0CABE1F9F685E00EE9B2E /* CGSizeExtension.swift in Sources */,
@@ -605,7 +627,9 @@
 				CEE0CABA1F9F44A700EE9B2E /* String+HTML.swift in Sources */,
 				CE7F3733219AD31200C3B310 /* Module.swift in Sources */,
 				CE91F39A1F948FA5002FCE7E /* Boxed.swift in Sources */,
+				464EE904225B28F0008EC790 /* CALayerExtension.swift in Sources */,
 				CEE0CAC31F9F703C00EE9B2E /* CGAffineTransformExtension.swift in Sources */,
+				464EE909225B2B1C008EC790 /* UIResponderExtension.swift in Sources */,
 				CE91F39C1F948FA5002FCE7E /* Geometry.swift in Sources */,
 				CE91F39F1F948FA5002FCE7E /* SequenceExtension.swift in Sources */,
 				CEE0CABC1F9F48B200EE9B2E /* String+Rendering.swift in Sources */,

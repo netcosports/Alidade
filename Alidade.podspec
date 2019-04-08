@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Default' do |ss|
     ss.dependency 'Alidade/Core'
+    ss.dependency 'Alidade/CoreAnimation'
     ss.dependency 'Alidade/FormatterPool'
     ss.dependency 'Alidade/Vectors'
     ss.dependency 'Alidade/String'
@@ -29,6 +30,10 @@ Pod::Spec.new do |s|
     ss.source_files = 'Alidade/Source/Core/*.swift'
   end
 
+  s.subspec 'CoreAnimation' do |ss| 
+    ss.source_files = 'Alidade/Source/CoreAnimation/*.swift'
+  end
+
   s.subspec 'Geometry' do |ss|
     ss.dependency 'Alidade/Core'
     ss.dependency 'Alidade/Vectors'
@@ -37,7 +42,6 @@ Pod::Spec.new do |s|
 
   s.subspec 'Vectors' do |ss|
     ss.dependency 'Alidade/Core'
-    # ss.dependency 'Interpolate'
     ss.source_files = 'Alidade/Source/Vectors/*.swift'
   end
 
@@ -65,6 +69,10 @@ Pod::Spec.new do |s|
 
   s.subspec 'Boxed' do |ss|
     ss.source_files = 'Alidade/Source/Other/Boxed.swift'
+  end
+
+  s.subspec 'BezierExtractor' do |ss|
+    ss.source_files = 'Alidade/Source/Other/BezierExtractor.swift'
   end
 
   s.subspec 'Flowable' do |ss|

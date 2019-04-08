@@ -9,12 +9,22 @@ public extension Float {
   //swiftlint:disable:next identifier_name
   var cg: CGFloat { return CGFloat(self) }
 
+  var int: Int { return Int(self) }
+
 }
 
 public extension Double {
 
   //swiftlint:disable:next identifier_name
   var cg: CGFloat { return CGFloat(self) }
+
+  var int: Int { return Int(self) }
+
+}
+
+public extension CGFloat {
+
+  var int: Int { return Int(self) }
 
 }
 

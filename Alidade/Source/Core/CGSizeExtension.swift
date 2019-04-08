@@ -29,4 +29,6 @@ public extension CGSize {
 
   var maxSide: CGFloat { return max(width, height) }
 
+  var aspectRatio: CGFloat { return height != 0 ? width / height : 0.0 }
+
 }
