@@ -8,18 +8,18 @@ public protocol GeometrySupportable { }
 
 public struct GeometryExtension<Base> {
 
-    let base: Base
+  let base: Base
 
-    init(_ base: Base) {
-        self.base = base
-    }
+  init(_ base: Base) {
+    self.base = base
+  }
 
 }
 
 public extension GeometrySupportable {
 
-    var geometry: GeometryExtension<Self> {
-        return GeometryExtension(self)
-    }
+  var geometry: GeometryExtension<Self> {
+    return GeometryExtension(self)
+  }
 
 }
