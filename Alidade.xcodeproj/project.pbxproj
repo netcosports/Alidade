@@ -13,6 +13,8 @@
 		464EE907225B29CE008EC790 /* CAAnimationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE906225B29CE008EC790 /* CAAnimationExtension.swift */; };
 		464EE909225B2B1C008EC790 /* UIResponderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE908225B2B1C008EC790 /* UIResponderExtension.swift */; };
 		464EE90B225B2B7F008EC790 /* BezierExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE90A225B2B7F008EC790 /* BezierExtractor.swift */; };
+		464EE90D225B2CAB008EC790 /* GradientEmbeddedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE90C225B2CAB008EC790 /* GradientEmbeddedView.swift */; };
+		464EE90F225B2D57008EC790 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE90E225B2D57008EC790 /* UIView+Shadow.swift */; };
 		4C544D6448BB92F2D474BAD9 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28E5B09976A3B3F3D71C2E74 /* Pods_Tests.framework */; };
 		5C5442AE200A7FF500E1E326 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5442AD200A7FF500E1E326 /* FloatExtension.swift */; };
 		5C6972922002D2B2001A5051 /* Associatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6972912002D2B2001A5051 /* Associatable.swift */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -80,6 +82,8 @@
 		464EE906225B29CE008EC790 /* CAAnimationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAAnimationExtension.swift; sourceTree = "<group>"; };
 		464EE908225B2B1C008EC790 /* UIResponderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponderExtension.swift; sourceTree = "<group>"; };
 		464EE90A225B2B7F008EC790 /* BezierExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierExtractor.swift; sourceTree = "<group>"; };
+		464EE90C225B2CAB008EC790 /* GradientEmbeddedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientEmbeddedView.swift; sourceTree = "<group>"; };
+		464EE90E225B2D57008EC790 /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		487DF70427D4ED24096AF528 /* Pods-Alidade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alidade.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alidade/Pods-Alidade.release.xcconfig"; sourceTree = "<group>"; };
 		5C5442AD200A7FF500E1E326 /* FloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
 		5C6972912002D2B2001A5051 /* Associatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Associatable.swift; sourceTree = "<group>"; };
@@ -285,6 +289,7 @@
 			children = (
 				CE91F38C1F948F9C002FCE7E /* UIScrollViewExtension.swift */,
 				CE91F38D1F948F9C002FCE7E /* UIView+Animations.swift */,
+				464EE90E225B2D57008EC790 /* UIView+Shadow.swift */,
 				CE91F38E1F948F9C002FCE7E /* UIViewExtension.swift */,
 				CEE637FB1FBC746E00BCF9C9 /* ViewControllerContainer.swift */,
 				CE91F3921F948F9C002FCE7E /* Views */,
@@ -296,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				CE91F3931F948F9C002FCE7E /* GradientView.swift */,
+				464EE90C225B2CAB008EC790 /* GradientEmbeddedView.swift */,
 				CE91F3941F948F9C002FCE7E /* LineView.swift */,
 				CE91F3951F948F9C002FCE7E /* PathView.swift */,
 				CE91F3961F948F9C002FCE7E /* RadialGradientLayer.swift */,
@@ -596,6 +602,7 @@
 				CE7F3730219AD0DE00C3B310 /* UIScalable.swift in Sources */,
 				CE91F3B11F948FB3002FCE7E /* Updateable.swift in Sources */,
 				CE91F3B21F948FB3002FCE7E /* UIExtension.swift in Sources */,
+				464EE90F225B2D57008EC790 /* UIView+Shadow.swift in Sources */,
 				5CF5CC012246407A00AFEB2A /* VectorableOperations.swift in Sources */,
 				CE91F3B31F948FB3002FCE7E /* GradientView.swift in Sources */,
 				5C8ABDA3200155DB003FA5DD /* Vectorable.swift in Sources */,
@@ -609,6 +616,7 @@
 				CEE0CACE1F9F79FB00EE9B2E /* UIEdgeInsetsExtension.swift in Sources */,
 				CE089442219C483F00C935E7 /* Logging.swift in Sources */,
 				CEE637FC1FBC746E00BCF9C9 /* ViewControllerContainer.swift in Sources */,
+				464EE90D225B2CAB008EC790 /* GradientEmbeddedView.swift in Sources */,
 				464EE90B225B2B7F008EC790 /* BezierExtractor.swift in Sources */,
 				CE91F3A51F948FAC002FCE7E /* FormatterPool.swift in Sources */,
 				464EE90222576270008EC790 /* VectorableScalarConvertible.swift in Sources */,
