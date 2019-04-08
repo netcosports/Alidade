@@ -1,7 +1,4 @@
 //
-//  VectorableOperations.swift
-//  Alidade
-//
 //  Created by Dmitry Duleba on 3/23/19.
 //
 

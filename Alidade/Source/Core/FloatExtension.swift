@@ -1,7 +1,4 @@
 //
-//  FloatExtension.swift
-//  Alidade
-//
 //  Created by Dmitry Duleba on 1/13/18.
 //
 

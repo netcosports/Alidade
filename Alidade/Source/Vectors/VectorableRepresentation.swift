@@ -1,7 +1,4 @@
 //
-//  VectorableRepresentation.swift
-//  Alidade
-//
 //  Created by Dmitry Duleba on 3/22/19.
 //
 

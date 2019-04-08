@@ -1,7 +1,4 @@
 //
-//  NSObject+Logging.swift
-//  Alidade
-//
 //  Created by Dmitry Duleba on 11/14/18.
 //
 

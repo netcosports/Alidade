@@ -1,7 +1,4 @@
 //
-//  String+Rendering.swift
-//  Alidade
-//
 //  Created by Dmitry Duleba on 10/24/17.
 //
 
@@ -104,6 +101,5 @@ private extension NSAttributedString {
     _ = layoutManager.glyphRange(for: textContainer)
     return layoutManager.usedRect(for: textContainer).integral.size
   }
-
 
 }

@@ -1,7 +1,4 @@
 //
-//  Flowable.swift
-//  Alidade
-//
 //  Created by Dmitry Duleba on 1/6/18.
 //
 

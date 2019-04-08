@@ -1,7 +1,4 @@
 //
-//  Associatable.swift
-//  Alidade
-//
 //  Created by Dmitry Duleba on 1/8/18.
 //
 

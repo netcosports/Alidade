@@ -1,8 +1,5 @@
 //
-//  VectorableScalarConvertible.swift
-//  Alidade
-//
-//  Created by AP Dzmitry Duleba on 4/5/19.
+//  Created by Dmitry Duleba on 4/5/19.
 //
 
 import Foundation

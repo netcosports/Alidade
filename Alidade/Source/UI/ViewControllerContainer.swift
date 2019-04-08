@@ -1,7 +1,4 @@
 //
-//  UIViewController.swift
-//  Alidade
-//
 //  Created by Dmitry Duleba on 11/15/17.
 //
 

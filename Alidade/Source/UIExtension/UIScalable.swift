@@ -1,7 +1,4 @@
 //
-//  UIScalable.swift
-//  Alidade
-//
 //  Created by Dmitry Duleba on 11/13/18.
 //
 
