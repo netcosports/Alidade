@@ -88,4 +88,9 @@ Pod::Spec.new do |s|
     ss.source_files = 'Alidade/Source/Other/Logging.swift'
   end
 
+  s.subspec 'FunctionalAnimation' do |s|
+    ss.dependency 'Alidade/Core'
+    ss.source_files = 'Alidade/Source/Other/FunctionalAnimation/**/*.swift'
+  end
+
 end
