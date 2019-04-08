@@ -37,6 +37,17 @@ public extension FloatingPoint where Self: CVarArg {
 
 }
 
+infix operator ~== : ComparisonPrecedence
+infix operator ~!= : ComparisonPrecedence
+
+public func ~== (lhs: CGFloat, rhs: CGFloat) -> Bool {
+  return lhs.isFuzzyEqual(to: rhs)
+}
+
+public func ~!= (lhs: CGFloat, rhs: CGFloat) -> Bool {
+  return !lhs.isFuzzyEqual(to: rhs)
+}
+
 public extension CGFloat {
 
   static let epsilon: CGFloat = CGFloat(ulpOfOne)
@@ -58,7 +69,7 @@ public extension CGFloat {
     return value
   }
 
-  func isFuzzyEqual(to value: CGFloat, epsilon: CGFloat = CGFloat(ulpOfOne)) -> Bool {
+  func isFuzzyEqual(to value: CGFloat, epsilon: CGFloat = .epsilon) -> Bool {
     return abs(self - value) <= epsilon
   }
 

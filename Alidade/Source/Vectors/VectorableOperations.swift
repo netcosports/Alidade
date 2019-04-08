@@ -5,9 +5,11 @@
 import Foundation
 import UIKit
 
+// MARK: - SIMD2
+
 public extension SIMD where Scalar == CGFloat, MaskStorage == SIMD2<Scalar.SIMDMaskScalar> {
 
-  typealias NativeType = CGFloat.NativeType
+//  typealias NativeType = CGFloat.NativeType
 
   var abs: Self { return Self.abs(self) }
 
@@ -19,9 +21,9 @@ public extension SIMD where Scalar == CGFloat, MaskStorage == SIMD2<Scalar.SIMDM
     return Self.round(self, rule: rule)
   }
 
-  var length: Scalar { return (self[0] * self[0] + self[1] * self[1]).squareRoot() }
+  var length: Scalar { return Self.length(self) }
 
-  var lengthSquared: Scalar { return self[0] * self[0] + self[1] * self[1] }
+  var lengthSquared: Scalar { return Self.lengthSquared(self) }
 
   func clamp(_ min: Scalar, _ max: Scalar) -> Self {
     return Self.clamp(self, min: min, max: max)
@@ -70,6 +72,15 @@ public extension SIMD where Scalar == CGFloat, MaskStorage == SIMD2<Scalar.SIMDM
   }
 
   @inline(__always)
+  static internal func length(_ x: Self) -> Scalar {
+    return dot(x, x).squareRoot()
+  }
+  @inline(__always)
+  static internal func lengthSquared(_ x: Self) -> Scalar {
+    return dot(x, x)
+  }
+
+  @inline(__always)
   static internal func clamp(_ x: Self, min: Scalar, max: Scalar) -> Self {
     return Self.init(arrayLiteral: x[0].clamp(min, max), x[1].clamp(min, max))
   }
@@ -98,6 +109,33 @@ public extension SIMD where Scalar == CGFloat, MaskStorage == SIMD2<Scalar.SIMDM
   @inline(__always)
   static internal func dot(_ x: Self, _ y: Self) -> Scalar {
     return x[0] * y[0] + x[1] * y[1]
+  }
+
+}
+
+// MARK: - SIMD
+
+// swiftlint:disable identifier_name
+
+public func ~== <T>(lhs: T, rhs: T) -> Bool where T: SIMD, T.Scalar == CGFloat {
+  return lhs.isFuzzyEqual(to: rhs)
+}
+
+public func ~!= <T>(lhs: T, rhs: T) -> Bool where T: SIMD, T.Scalar == CGFloat {
+  return !lhs.isFuzzyEqual(to: rhs)
+}
+
+public extension SIMD where Scalar == CGFloat {
+
+  typealias NativeType = CGFloat.NativeType
+
+  func isFuzzyEqual(to value: Self, epsilon: CGFloat = .epsilon) -> Bool {
+    for i in 0..<scalarCount {
+      if !self[i].isFuzzyEqual(to: value[i], epsilon: epsilon) {
+        return false
+      }
+    }
+    return true
   }
 
 }
