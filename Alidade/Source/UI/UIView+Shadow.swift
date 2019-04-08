@@ -7,11 +7,11 @@ import UIKit
 public extension UIView {
 
   struct Shadow {
-    var color: UIColor?
-    var blur: CGFloat = 10
-    var opacity: CGFloat = 1
-    var offset: CGPoint = .zero
-    var path: CGPath?
+    public var color: UIColor?
+    public var blur: CGFloat = 10
+    public var opacity: CGFloat = 1
+    public var offset: CGPoint = .zero
+    public var path: CGPath?
 
     public static func sketch(color: UIColor? = nil,
                               alpha: CGFloat = 0.5,
