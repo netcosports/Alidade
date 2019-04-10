@@ -9,8 +9,6 @@ import UIKit
 
 public extension SIMD where Scalar == CGFloat, MaskStorage == SIMD2<Scalar.SIMDMaskScalar> {
 
-//  typealias NativeType = CGFloat.NativeType
-
   var abs: Self { return Self.abs(self) }
 
   var ceiled: Self { return Self.ceil(self) }
