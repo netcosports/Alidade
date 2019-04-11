@@ -26,7 +26,7 @@ public extension UIView {
         let rect = bounds.insetBy(dx: -spread, dy: spread)
         path = UIBezierPath(rect: rect).cgPath
       }
-      return Shadow(color: color, blur: blur, opacity: alpha, offset: CGPoint(x: x, y: y), path: path)
+      return Shadow(color: color, blur: blur * 0.5, opacity: alpha, offset: CGPoint(x: x, y: y), path: path)
     }
 
   }
