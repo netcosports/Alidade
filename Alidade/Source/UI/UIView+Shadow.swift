@@ -8,9 +8,9 @@ public extension UIView {
 
   struct Shadow {
     public var color: UIColor?
-    public var blur: CGFloat = 10
-    public var opacity: CGFloat = 1
-    public var offset: CGPoint = .zero
+    public var blur: CGFloat
+    public var opacity: CGFloat
+    public var offset: CGPoint
     public var path: CGPath?
 
     public static func sketch(color: UIColor? = nil,
@@ -27,6 +27,15 @@ public extension UIView {
         path = UIBezierPath(rect: rect).cgPath
       }
       return Shadow(color: color, blur: blur * 0.5, opacity: alpha, offset: CGPoint(x: x, y: y), path: path)
+    }
+
+    public init(color: UIColor? = nil, blur: CGFloat = 10.0, opacity: CGFloat = 1.0,
+                offset: CGPoint = .zero, path: CGPath? = nil) {
+      self.color = color
+      self.blur = blur
+      self.opacity = opacity
+      self.offset = offset
+      self.path = path
     }
 
   }
