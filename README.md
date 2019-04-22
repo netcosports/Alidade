@@ -60,6 +60,16 @@ func addSubviews(_ subviews: UIView...)
 
 Custom views: `GradientView`, `PathView`
 
+Accessor for setting shadow:
+```swift
+view.shadow = .init(color: shadowColor, blur: 10.0, opacity: 0.5, offset: .zero, path: nil)
+```
+
+Sketch/Zeplin shadow also:
+```swift
+view.shadow = .sketch(color: shadowColor, alpha: 0.5, bounds: shadowBounds, x: 0.0, y: 10.0, blur: 10.0, spread: 0.0)
+```
+
 ### UIExtension
 
 Most useful is `UIScalable` protocol to let you work in the same proportions with the provided design. 
