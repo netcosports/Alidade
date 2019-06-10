@@ -25,9 +25,9 @@ public extension CGSize {
 
   var isInfinite: Bool { return CGRect(size: self).isInfinite }
 
-  var minSide: CGFloat { return min(width, height) }
+  var minSide: CGFloat { return Swift.min(width, height) }
 
-  var maxSide: CGFloat { return max(width, height) }
+  var maxSide: CGFloat { return Swift.max(width, height) }
 
   var aspectRatio: CGFloat { return height != 0 ? width / height : 0.0 }
 
