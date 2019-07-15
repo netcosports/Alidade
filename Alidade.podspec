@@ -31,6 +31,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'CoreAnimation' do |ss| 
+    ss.dependency 'Alidade/Flowable'
     ss.source_files = 'Alidade/Source/CoreAnimation/*.swift'
   end
 
