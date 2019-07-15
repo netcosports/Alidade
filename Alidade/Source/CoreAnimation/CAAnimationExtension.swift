@@ -30,7 +30,8 @@ public extension CAAnimation {
     get { return (delegate as? CallbackAnimationDelegate)?.didStart }
     set {
       if delegate == nil {
-        delegate = CallbackAnimationDelegate { $0.didStart = newValue }
+        delegate = CallbackAnimationDelegate()
+        (delegate as? CallbackAnimationDelegate)?.didStart = newValue
         return
       }
       if let delegate = delegate as? CallbackAnimationDelegate {
@@ -44,7 +45,8 @@ public extension CAAnimation {
     get { return (delegate as? CallbackAnimationDelegate)?.didStop }
     set {
       if delegate == nil {
-        delegate = CallbackAnimationDelegate { $0.didStop = newValue }
+        delegate = CallbackAnimationDelegate()
+        (delegate as? CallbackAnimationDelegate)?.didStop = newValue
         return
       }
       if let delegate = delegate as? CallbackAnimationDelegate {

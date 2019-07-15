@@ -18,7 +18,6 @@ Pod::Spec.new do |s|
   s.subspec 'Default' do |ss|
     ss.dependency 'Alidade/Core'
     ss.dependency 'Alidade/FormatterPool'
-    ss.dependency 'Alidade/UI'
     ss.dependency 'Alidade/UIExtension'
   end
 
@@ -51,8 +50,7 @@ Pod::Spec.new do |s|
     ss.source_files = 'Alidade/Source/Other/BezierExtractor.swift'
   end
 
-  s.subspec 'CoreAnimation' do |ss| 
-    ss.dependency 'Alidade/Flowable'
+  s.subspec 'CoreAnimation' do |ss|
     ss.source_files = 'Alidade/Source/CoreAnimation/*.swift'
   end
 
