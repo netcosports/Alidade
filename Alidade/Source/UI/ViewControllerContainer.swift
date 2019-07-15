@@ -1,7 +1,4 @@
 //
-//  UIViewController.swift
-//  Utility
-//
 //  Created by Dmitry Duleba on 11/15/17.
 //
 
@@ -28,14 +25,14 @@ public protocol ViewControllerContainerCompatible {
 
 public extension ViewControllerContainerCompatible {
 
-  public func asContainer() -> ViewControllerContainer<Self> {
+  func asContainer() -> ViewControllerContainer<Self> {
     return ViewControllerContainer(self)
   }
 }
 
 public extension ViewControllerContainer where Base: UIViewController {
 
-  public func add(_ childViewController: UIViewController?, to containerView: UIView, animated: Bool) {
+  func add(_ childViewController: UIViewController?, to containerView: UIView, animated: Bool) {
     guard let childViewController = childViewController else { return }
 
     base.addChild(childViewController)
@@ -48,7 +45,7 @@ public extension ViewControllerContainer where Base: UIViewController {
     }
   }
 
-  public func remove(_ childViewController: UIViewController?, animated: Bool) {
+  func remove(_ childViewController: UIViewController?, animated: Bool) {
     guard let childViewController = childViewController else { return }
 
     childViewController.willMove(toParent: nil)

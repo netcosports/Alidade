@@ -1,533 +1,175 @@
 //
-//  Vectorable.swift
-//  Utility
-//
 //  Created by Dmitry Duleba on 1/6/18.
 //
 
-import Foundation
-import UIKit
+import struct UIKit.CGFloat
+import struct UIKit.CGPoint
+import struct UIKit.CGSize
+import struct UIKit.CGVector
+import struct UIKit.UIOffset
+import struct UIKit.CGRect
+import struct UIKit.UIEdgeInsets
 
-//swiftlint:disable identifier_name file_length
-public protocol Vectorable {
+extension CGFloat: SIMDScalar {
 
-  static var length: Int { get }
+  public typealias SIMDMaskScalar = Int
 
-  var vector: [CGFloat] { get set }
+  public typealias SIMD2Storage = SIMD2<CGFloat>
 
-  init()
+  public typealias SIMD4Storage = SIMD4<CGFloat>
+
+  public typealias SIMD8Storage = SIMD8<CGFloat>
+
+  public typealias SIMD16Storage = SIMD16<CGFloat>
+
+  public typealias SIMD32Storage = SIMD32<CGFloat>
+
+  public typealias SIMD64Storage = SIMD64<CGFloat>
+
 }
 
-public extension Vectorable {
+// MARK: - CGPoint
 
-  public init(_ value: Vector1D) {
-    self.init(value.x)
-  }
+extension CGPoint: SIMD {
 
-  public init(_ values: [Vector1D]) {
-    self.init()
-    vector = values.map { $0.x }
-  }
+  public typealias Scalar = CGFloat
 
-  public init(_ values: Vector1D...) {
-    self.init(values)
-  }
+  public typealias MaskStorage = SIMD2<Scalar.SIMDMaskScalar>
 
-  fileprivate init(_ cgFloatValue: CGFloat) {
-    self.init()
-    vector = .init(repeating: cgFloatValue, count: Self.length)
-  }
-}
+  public var scalarCount: Int { return 2 }
 
-// MARK: - Vector1D
-
-public protocol Vector1D: Vectorable {
-
-  var x: CGFloat { get set }
-}
-
-extension Vector1D {
-
-  public static var length: Int { return 1 }
-
-  public var vector: [CGFloat] {
-    get { return [x] }
-    set { x = newValue[0] }
-  }
-
-  public init(x: CGFloat) {
-    self.init()
-    self.x = x
-  }
-}
-
-// MARK: - Vector2D
-
-public protocol Vector2D: Vector1D {
-
-  var y: CGFloat { get set }
-}
-
-extension Vector2D {
-
-  public static var length: Int { return 2 }
-
-  public var vector: [CGFloat] {
-    get { return [x, y] }
-    set { x = newValue[0]; y = newValue[1] }
-  }
-
-  public init(x: CGFloat, y: CGFloat) {
-    self.init()
-    self.x = x
-    self.y = y
-  }
-}
-
-// MARK: - Vector3D
-
-public protocol Vector3D: Vector2D {
-
-  var z: CGFloat { get set }
-}
-
-public extension Vector3D {
-
-  public static var length: Int { return 3 }
-
-  public var vector: [CGFloat] {
-    get { return [x, y, z] }
-    set { x = newValue[0]; y = newValue[1]; z = newValue[2] }
-  }
-
-  public init(x: CGFloat, y: CGFloat, z: CGFloat) {
-    self.init()
-    self.x = x
-    self.y = y
-    self.z = z
-  }
-}
-
-// MARK: - 1D
-
-extension CGFloat: Vector1D {
-
-  public var x: CGFloat {
-    get { return self }
-    set { self = newValue }
-  }
-}
-
-extension Float: Vector1D {
-
-  public var x: CGFloat {
-    get { return CGFloat(self) }
-    set { self = Float(newValue) }
-  }
-}
-
-extension Double: Vector1D {
-
-  public var x: CGFloat {
-    get { return CGFloat(self) }
-    set { self = Double(newValue) }
-  }
-}
-
-extension Int: Vector1D {
-
-  public var x: CGFloat {
-    get { return CGFloat(self) }
-    set { self = Int(newValue) }
-  }
-}
-
-extension UInt: Vector1D {
-
-  public var x: CGFloat {
-    get { return CGFloat(self) }
-    set { self = UInt(newValue) }
-  }
-}
-
-// MARK: - 2D
-
-extension CGPoint: Vector2D { }
-
-extension CGVector: Vector2D {
-
-  public var x: CGFloat {
-    get { return dx }
-    set { dx = newValue }
-  }
-
-  public var y: CGFloat {
-    get { return dy }
-    set { dy = newValue }
-  }
-}
-
-extension CGSize: Vector2D {
-
-  public var x: CGFloat {
-    get { return width }
-    set { width = newValue }
-  }
-
-  public var y: CGFloat {
-    get { return height }
-    set { height = newValue }
-  }
-}
-
-extension UIOffset: Vector2D {
-
-  public var x: CGFloat {
-    get { return horizontal }
-    set { horizontal = newValue }
-  }
-
-  public var y: CGFloat {
-    get { return vertical }
-    set { vertical = newValue }
-  }
-}
-
-// MARK: - 3D
-
-// MARK: - N-dimensional
-
-extension CGRect: Vectorable {
-
-  public static var length: Int { return 4 }
-
-  public var vector: [CGFloat] {
-    get { return [origin.x, origin.y, size.width, size.height] }
+  public subscript(index: Int) -> CGFloat {
+    get {
+      if index == 0 { return x } else { return y }
+    }
     set {
-      origin.x = newValue[0]
-      origin.y = newValue[1]
-      size.width = newValue[2]
-      size.height = newValue[3]
+      if index == 0 { x = newValue } else { y = newValue }
     }
   }
+
 }
 
-extension UIEdgeInsets: Vectorable {
+// MARK: - CGSize
 
-  public static var length: Int { return 4 }
+extension CGSize: SIMD {
 
-  public var vector: [CGFloat] {
-    get { return [top, left, bottom, right] }
+  public typealias Scalar = CGFloat
+
+  public typealias MaskStorage = SIMD2<Scalar.SIMDMaskScalar>
+
+  public var scalarCount: Int { return 2 }
+
+  public subscript(index: Int) -> CGFloat {
+    get {
+      if index == 0 { return width } else { return height }
+    }
     set {
-      top = newValue[0]
-      left = newValue[1]
-      bottom = newValue[2]
-      right = newValue[3]
+      if index == 0 { width = newValue } else { height = newValue }
     }
   }
+
 }
 
-// MARK: - 1-to-1 Operations
+// MARK: - CGVector
 
-public func + <T, U>(lhs: T, rhs: U) -> T where T: Vector1D, U: Vector1D {
-  return .init(x: lhs.x + rhs.x)
-}
+extension CGVector: SIMD {
 
-public func - <T, U>(lhs: U, rhs: T) -> T where T: Vector1D, U: Vector1D {
-  return .init(x: lhs.x - rhs.x)
-}
+  public typealias Scalar = CGFloat
 
-public func * <T, U>(lhs: U, rhs: T) -> T where T: Vector1D, U: Vector1D {
-  return .init(x: lhs.x * rhs.x)
-}
+  public typealias MaskStorage = SIMD2<Scalar.SIMDMaskScalar>
 
-public func / <T, U>(lhs: U, rhs: T) -> T where T: Vector1D, U: Vector1D {
-  return .init(x: lhs.x / rhs.x)
-}
+  public var scalarCount: Int { return 2 }
 
-// MARK: - 2 prefix Operations
-
-public prefix func - <T>(lhs: T) -> T where T: Vector2D {
-  return .init(x: -lhs.x, y: -lhs.y)
-}
-
-// MARK: - 2-to-1 Operations
-
-extension Vector2D {
-
-  public static func += <T>(lhs: inout Self, rhs: T) where T: Vector1D {
-    lhs.x += rhs.x
-    lhs.y += rhs.x
-  }
-
-  public static func -= <T>(lhs: inout Self, rhs: T) where T: Vector1D {
-    lhs.x -= rhs.x
-    lhs.y -= rhs.x
-  }
-
-  public static func *= <T>(lhs: inout Self, rhs: T) where T: Vector1D {
-    lhs.x *= rhs.x
-    lhs.y *= rhs.x
-  }
-
-  public static func /= <T>(lhs: inout Self, rhs: T) where T: Vector1D {
-    lhs.x /= rhs.x
-    lhs.y /= rhs.x
+  public subscript(index: Int) -> CGFloat {
+    get {
+      if index == 0 { return dx } else { return dy }
+    }
+    set {
+      if index == 0 { dx = newValue } else { dy = newValue }
+    }
   }
 
 }
 
-public func + <T, U>(lhs: T, rhs: U) -> T where T: Vector2D, U: Vector1D {
-  return .init(x: lhs.x + rhs.x, y: lhs.y + rhs.x)
-}
+// MARK: - UIOffset
 
-public func + <T, U>(lhs: U, rhs: T) -> T where T: Vector2D, U: Vector1D {
-  return .init(x: lhs.x + rhs.x, y: lhs.x + rhs.y)
-}
+extension UIOffset: SIMD {
 
-public func - <T, U>(lhs: T, rhs: U) -> T where T: Vector2D, U: Vector1D {
-  return .init(x: lhs.x - rhs.x, y: lhs.y - rhs.x)
-}
+  public typealias Scalar = CGFloat
 
-public func - <T, U>(lhs: U, rhs: T) -> T where T: Vector2D, U: Vector1D {
-  return .init(x: lhs.x - rhs.x, y: lhs.x - rhs.y)
-}
+  public typealias MaskStorage = SIMD2<Scalar.SIMDMaskScalar>
 
-public func * <T, U>(lhs: T, rhs: U) -> T where T: Vector2D, U: Vector1D {
-  return .init(x: lhs.x * rhs.x, y: lhs.y * rhs.x)
-}
+  public var scalarCount: Int { return 2 }
 
-public func * <T, U>(lhs: U, rhs: T) -> T where T: Vector2D, U: Vector1D {
-  return .init(x: lhs.x * rhs.x, y: lhs.x * rhs.y)
-}
-
-public func / <T, U>(lhs: T, rhs: U) -> T where T: Vector2D, U: Vector1D {
-  return .init(x: lhs.x / rhs.x, y: lhs.y / rhs.x)
-}
-
-public func / <T, U>(lhs: U, rhs: T) -> T where T: Vector2D, U: Vector1D {
-  return .init(x: lhs.x / rhs.x, y: lhs.x / rhs.y)
-}
-
-// MARK: - 2-to-2 Operations
-
-extension Vector2D {
-
-  public static func += <T>(lhs: inout Self, rhs: T) where T: Vector2D {
-    lhs.x += rhs.x
-    lhs.y += rhs.y
-  }
-
-  public static func -= <T>(lhs: inout Self, rhs: T) where T: Vector2D {
-    lhs.x -= rhs.x
-    lhs.y -= rhs.y
-  }
-
-  public static func *= <T>(lhs: inout Self, rhs: T) where T: Vector2D {
-    lhs.x *= rhs.x
-    lhs.y *= rhs.y
-  }
-
-  public static func /= <T>(lhs: inout Self, rhs: T) where T: Vector2D {
-    lhs.x /= rhs.x
-    lhs.y /= rhs.y
+  public subscript(index: Int) -> CGFloat {
+    get {
+      if index == 0 { return horizontal } else { return vertical }
+    }
+    set {
+      if index == 0 { horizontal = newValue } else { vertical = newValue }
+    }
   }
 
 }
 
-public func + <T, U>(lhs: T, rhs: U) -> T where T: Vector2D, U: Vector2D {
-  return .init(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
-}
+// MARK: - CGRect
 
-public func - <T, U>(lhs: T, rhs: U) -> T where T: Vector2D, U: Vector2D {
-  return .init(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
-}
+extension CGRect: SIMD {
 
-public func * <T, U>(lhs: T, rhs: U) -> T where T: Vector2D, U: Vector2D {
-  return .init(x: lhs.x * rhs.x, y: lhs.y * rhs.y)
-}
+  public typealias Scalar = CGFloat
 
-public func / <T, U>(lhs: T, rhs: U) -> T where T: Vector2D, U: Vector2D {
-  return .init(x: lhs.x / rhs.x, y: lhs.y / rhs.y)
-}
+  public typealias MaskStorage = SIMD4<Scalar.SIMDMaskScalar>
 
-// MARK: - 3 prefix Operations
+  public var scalarCount: Int { return 4 }
 
-public prefix func - <T>(lhs: T) -> T where T: Vector3D {
-  return .init(x: -lhs.x, y: -lhs.y, z: -lhs.z)
-}
-
-// MARK: - 3-to-1 Operations
-
-extension Vector3D {
-
-  public static func += <T>(lhs: inout Self, rhs: T) where T: Vector1D {
-    lhs.x += rhs.x
-    lhs.y += rhs.x
-    lhs.z += rhs.x
-  }
-
-  public static func -= <T>(lhs: inout Self, rhs: T) where T: Vector1D {
-    lhs.x -= rhs.x
-    lhs.y -= rhs.x
-    lhs.z -= rhs.x
-  }
-
-  public static func *= <T>(lhs: inout Self, rhs: T) where T: Vector1D {
-    lhs.x *= rhs.x
-    lhs.y *= rhs.x
-    lhs.z *= rhs.x
-  }
-
-  public static func /= <T>(lhs: inout Self, rhs: T) where T: Vector1D {
-    lhs.x /= rhs.x
-    lhs.y /= rhs.x
-    lhs.z /= rhs.x
+  public subscript(index: Int) -> CGFloat {
+    get {
+      switch index {
+      case 0: return origin.x
+      case 1: return origin.y
+      case 2: return size.width
+      default: return size.height
+      }
+    }
+    set {
+      switch index {
+      case 0: origin.x = newValue
+      case 1: origin.y = newValue
+      case 2: size.width = newValue
+      default: size.height = newValue
+      }
+    }
   }
 
 }
 
-public func + <T, U>(lhs: T, rhs: U) -> T where T: Vector3D, U: Vector1D {
-  return .init(x: lhs.x + rhs.x, y: lhs.y + rhs.x, z: lhs.z + rhs.x)
-}
+// MARK: - UIEdgeInsets
 
-public func + <T, U>(lhs: U, rhs: T) -> T where T: Vector3D, U: Vector1D {
-  return .init(x: lhs.x + rhs.x, y: lhs.x + rhs.y, z: lhs.x + rhs.z)
-}
+extension UIEdgeInsets: SIMD {
 
-public func - <T, U>(lhs: T, rhs: U) -> T where T: Vector3D, U: Vector1D {
-  return .init(x: lhs.x - rhs.x, y: lhs.y - rhs.x, z: lhs.z - rhs.x)
-}
+  public typealias Scalar = CGFloat
 
-public func - <T, U>(lhs: U, rhs: T) -> T where T: Vector3D, U: Vector1D {
-  return .init(x: lhs.x - rhs.x, y: lhs.x - rhs.y, z: lhs.x - rhs.z)
-}
+  public typealias MaskStorage = SIMD4<Scalar.SIMDMaskScalar>
 
-public func * <T, U>(lhs: T, rhs: U) -> T where T: Vector3D, U: Vector1D {
-  return .init(x: lhs.x * rhs.x, y: lhs.y * rhs.x, z: lhs.z * rhs.x)
-}
+  public var scalarCount: Int { return 4 }
 
-public func * <T, U>(lhs: U, rhs: T) -> T where T: Vector3D, U: Vector1D {
-  return .init(x: lhs.x * rhs.x, y: lhs.x * rhs.y, z: lhs.x * rhs.z)
-}
-
-public func / <T, U>(lhs: T, rhs: U) -> T where T: Vector3D, U: Vector1D {
-  return .init(x: lhs.x / rhs.x, y: lhs.y / rhs.x, z: lhs.z / rhs.x)
-}
-
-public func / <T, U>(lhs: U, rhs: T) -> T where T: Vector3D, U: Vector1D {
-  return .init(x: lhs.x / rhs.x, y: lhs.x / rhs.y, z: lhs.x / rhs.z)
-}
-
-// MARK: - n prefix Operations
-
-public prefix func - <T>(lhs: T) -> T where T: Vectorable {
-  return n1Operation(lhs, -1) { $0 * $1 }
-}
-
-// MARK: - n-to-1 Operations
-
-private typealias Transform = (CGFloat, CGFloat) -> CGFloat
-private func n1Operation<T, U>(_ lhs: T, _ rhs: U, transform: Transform) -> T where T: Vectorable, U: Vector1D {
-  let rhs = T.init(rhs.x)
-  return nnOperation(lhs, rhs, transform: transform)
-}
-
-extension Vectorable {
-
-  public static func += <T>(lhs: inout Self, rhs: T) where T: Vector1D {
-    lhs = n1Operation(lhs, rhs) { $0 + $1 }
-  }
-
-  public static func -= <T>(lhs: inout Self, rhs: T) where T: Vector1D {
-    lhs = n1Operation(lhs, rhs) { $0 - $1 }
-  }
-
-  public static func *= <T>(lhs: inout Self, rhs: T) where T: Vector1D {
-    lhs = n1Operation(lhs, rhs) { $0 * $1 }
-  }
-
-  public static func /= <T>(lhs: inout Self, rhs: T) where T: Vector1D {
-    lhs = n1Operation(lhs, rhs) { $0 / $1 }
+  public subscript(index: Int) -> CGFloat {
+    get {
+      switch index {
+      case 0: return top
+      case 1: return left
+      case 2: return bottom
+      default: return right
+      }
+    }
+    set {
+      switch index {
+      case 0: top = newValue
+      case 1: left = newValue
+      case 2: bottom = newValue
+      default: right = newValue
+      }
+    }
   }
 
 }
-
-public func + <T, U>(lhs: T, rhs: U) -> T where T: Vectorable, U: Vector1D {
-  return n1Operation(lhs, rhs) { $0 + $1 }
-}
-
-public func + <T, U>(lhs: U, rhs: T) -> T where T: Vectorable, U: Vector1D {
-  return n1Operation(rhs, lhs) { $1 + $0 }
-}
-
-public func - <T, U>(lhs: T, rhs: U) -> T where T: Vectorable, U: Vector1D {
-  return n1Operation(lhs, rhs) { $0 - $1 }
-}
-
-public func - <T, U>(lhs: U, rhs: T) -> T where T: Vectorable, U: Vector1D {
-  return n1Operation(rhs, lhs) { $1 - $0 }
-}
-
-public func * <T, U>(lhs: T, rhs: U) -> T where T: Vectorable, U: Vector1D {
-  return n1Operation(lhs, rhs) { $0 * $1 }
-}
-
-public func * <T, U>(lhs: U, rhs: T) -> T where T: Vectorable, U: Vector1D {
-  return n1Operation(rhs, lhs) { $1 * $0 }
-}
-
-public func / <T, U>(lhs: T, rhs: U) -> T where T: Vectorable, U: Vector1D {
-  return n1Operation(lhs, rhs) { $0 / $1 }
-}
-
-public func / <T, U>(lhs: U, rhs: T) -> T where T: Vectorable, U: Vector1D {
-  return n1Operation(rhs, lhs) { $1 / $0 }
-}
-
-// MARK: - n-to-n Operations
-
-private func nnOperation<T, U>(_ lhs: T, _ rhs: U, transform: Transform) -> T where T: Vectorable, U: Vectorable {
-  assert(T.length == U.length, "vectors lengths not equal: \(T.length) != \(U.length)")
-
-  var result = T.init()
-  result.vector = zip(lhs.vector, rhs.vector).map(transform)
-  return result
-}
-
-extension Vectorable {
-
-  public static func += <T>(lhs: inout Self, rhs: T) where T: Vectorable {
-    lhs = nnOperation(lhs, rhs) { $0 + $1 }
-  }
-
-  public static func -= <T>(lhs: inout Self, rhs: T) where T: Vectorable {
-    lhs = nnOperation(lhs, rhs) { $0 - $1 }
-  }
-
-  public static func *= <T>(lhs: inout Self, rhs: T) where T: Vectorable {
-    lhs = nnOperation(lhs, rhs) { $0 * $1 }
-  }
-
-  public static func /= <T>(lhs: inout Self, rhs: T) where T: Vectorable {
-    lhs = nnOperation(lhs, rhs) { $0 / $1 }
-  }
-
-}
-
-public func + <T, U>(lhs: T, rhs: U) -> T where T: Vectorable, U: Vectorable {
-  return nnOperation(lhs, rhs) { $0 + $1 }
-}
-
-public func - <T, U>(lhs: T, rhs: U) -> T where T: Vectorable, U: Vectorable {
-  return nnOperation(lhs, rhs) { $0 - $1 }
-}
-
-public func * <T, U>(lhs: T, rhs: U) -> T where T: Vectorable, U: Vectorable {
-  return nnOperation(lhs, rhs) { $0 * $1 }
-}
-
-public func / <T, U>(lhs: T, rhs: U) -> T where T: Vectorable, U: Vectorable {
-  return nnOperation(lhs, rhs) { $0 / $1 }
-}
-//swiftlint:enable identifier_name file_length

@@ -1,34 +1,34 @@
+//
+//  Created by Dmitry Duleba on 10/24/17.
+//
+
 import Foundation
 import UIKit
 
 public extension CGSize {
 
-  public init(side: Int) { self.init(width: side, height: side) }
+  init(side: Int) { self.init(width: side, height: side) }
 
-  public init(side: CGFloat) { self.init(width: side, height: side) }
+  init(side: CGFloat) { self.init(width: side, height: side) }
 
-  public init(side: Double) { self.init(width: side, height: side) }
+  init(side: Double) { self.init(width: side, height: side) }
 
-  public var pointValue: CGPoint { return CGPoint(x: width, y: height) }
+  var rectValue: CGRect { return CGRect(origin: .zero, size: self) }
 
-  public var rectValue: CGRect { return CGRect(origin: .zero, size: self) }
+  var integral: CGSize { return CGRect(size: self).integral.size }
 
-  public var hashValue: Int { return width.hashValue ^ height.hashValue }
+  var standartized: CGSize { return CGRect(size: self).standardized.size }
 
-  public var rounded: CGSize { return CGSize(width: width.rounded(), height: height.rounded()) }
+  var isEmpty: Bool { return CGRect(size: self).isEmpty }
 
-  public var ceiled: CGSize { return CGSize(width: ceil(width), height: ceil(height)) }
+  var isNull: Bool { return CGRect(size: self).isNull }
 
-  public var floored: CGSize { return CGSize(width: floor(width), height: floor(height)) }
+  var isInfinite: Bool { return CGRect(size: self).isInfinite }
 
-  public var integral: CGSize { return CGRect(size: self).integral.size }
+  var minSide: CGFloat { return Swift.min(width, height) }
 
-  public var standartized: CGSize { return CGRect(size: self).standardized.size }
+  var maxSide: CGFloat { return Swift.max(width, height) }
 
-  public var isEmpty: Bool { return CGRect(size: self).isEmpty }
-
-  public var isNull: Bool { return CGRect(size: self).isNull }
-
-  public var isInfinite: Bool { return CGRect(size: self).isInfinite }
+  var aspectRatio: CGFloat { return height != 0 ? width / height : 0.0 }
 
 }

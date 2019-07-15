@@ -1,10 +1,14 @@
+//
+//  Created by Dmitry Duleba on 10/24/17.
+//
+
 import UIKit
 
 // MARK: - GradientView.Direction
 
 public extension GradientView {
 
-  public struct Direction {
+  struct Direction {
 
     public static let up = Direction(start: CGPoint(x: 0.5, y: 1.0), end: CGPoint(x: 0.5, y: 0.0))
     public static let down = Direction(start: CGPoint(x: 0.5, y: 0.0), end: CGPoint(x: 0.5, y: 1.0))

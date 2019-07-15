@@ -1,12 +1,14 @@
+//
+//  Created by Dmitry Duleba on 10/24/17.
+//
+
 import Foundation
 import UIKit
 
 public extension CGRect {
 
-  public init(size: CGSize) { self.init(origin: .zero, size: size) }
+  init(size: CGSize) { self.init(origin: .zero, size: size) }
 
-  public var hashValue: Int { return origin.hashValue ^ size.hashValue }
-
-  public var midpoint: CGPoint { return CGPoint(x: midX, y: midY) }
+  var midpoint: CGPoint { return CGPoint(x: midX, y: midY) }
 
 }

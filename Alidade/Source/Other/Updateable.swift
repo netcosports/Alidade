@@ -1,3 +1,7 @@
+//
+//  Created by Dmitry Duleba on 10/24/17.
+//
+
 import Foundation
 
 private var updater = Updater()
@@ -41,11 +45,11 @@ public protocol Updateable: class {
 
 public extension Updateable {
 
-  public func setNeedsUpdate() {
+  func setNeedsUpdate() {
     updater.add(self)
   }
 
-  public func updateIfNeeded() {
+  func updateIfNeeded() {
     update()
   }
 }

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Alidade"
-  s.version      = "1.2.2"
+  s.version      = "5.0.0"
   s.summary      = "Utility components"
 
   s.homepage     = "https://github.com/netcosports/Alidade"
@@ -18,36 +18,11 @@ Pod::Spec.new do |s|
   s.subspec 'Default' do |ss|
     ss.dependency 'Alidade/Core'
     ss.dependency 'Alidade/FormatterPool'
-    ss.dependency 'Alidade/Vectors'
-    ss.dependency 'Alidade/String'
-    ss.dependency 'Alidade/UI'
     ss.dependency 'Alidade/UIExtension'
-    ss.dependency 'Alidade/Logging'
   end
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'Alidade/Source/Core/*.swift'
-  end
-
-  s.subspec 'Date' do |ss|
-    ss.dependency 'Alidade/FormatterPool'
-    ss.source_files = 'Alidade/Source/Date/*.swift'
-  end
-
-  s.subspec 'Geometry' do |ss|
-    ss.dependency 'Alidade/Core'
-    ss.dependency 'Alidade/Vectors'
-    ss.source_files = 'Alidade/Source/Geometry/*.swift'
-  end
-
-  s.subspec 'Vectors' do |ss|
-    ss.source_files = 'Alidade/Source/Vectors/*.swift'
-    # ss.dependency 'Interpolate'
-  end
-
-  s.subspec 'String' do |ss|
-    ss.dependency 'Alidade/Core'
-    ss.source_files = 'Alidade/Source/String/*.swift'
   end
 
   s.subspec 'UI' do |ss|
@@ -71,12 +46,41 @@ Pod::Spec.new do |s|
     ss.source_files = 'Alidade/Source/Other/Boxed.swift'
   end
 
+  s.subspec 'BezierExtractor' do |ss|
+    ss.source_files = 'Alidade/Source/Other/BezierExtractor.swift'
+  end
+
+  s.subspec 'CoreAnimation' do |ss|
+    ss.source_files = 'Alidade/Source/CoreAnimation/*.swift'
+  end
+
   s.subspec 'Flowable' do |ss|
     ss.source_files = 'Alidade/Source/Other/Flowable.swift'
   end
 
   s.subspec 'FormatterPool' do |ss|
     ss.source_files = 'Alidade/Source/Other/FormatterPool.swift'
+  end
+
+  s.subspec 'FunctionalAnimation' do |ss|
+    ss.dependency 'Alidade/Core'
+    ss.source_files = 'Alidade/Source/Other/FunctionalAnimation/**/*.swift'
+  end
+
+  s.subspec 'Geometry' do |ss|
+    ss.dependency 'Alidade/Core'
+    ss.dependency 'Alidade/Vectors'
+    ss.source_files = 'Alidade/Source/Geometry/*.swift'
+  end
+
+  s.subspec 'Vectors' do |ss|
+    ss.dependency 'Alidade/Core'
+    ss.source_files = 'Alidade/Source/Vectors/*.swift'
+  end
+
+  s.subspec 'String' do |ss|
+    ss.dependency 'Alidade/Core'
+    ss.source_files = 'Alidade/Source/String/*.swift'
   end
 
   s.subspec 'Logging' do |ss|

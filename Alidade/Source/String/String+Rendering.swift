@@ -1,12 +1,18 @@
 //
-//  String+Rendering.swift
-//  Utility
-//
 //  Created by Dmitry Duleba on 10/24/17.
 //
 
 import Foundation
 import UIKit
+
+public enum StringSizeCalculationMode {
+
+  case coreText
+  case textKit
+
+  public static var `default`: StringSizeCalculationMode { return .coreText }
+
+}
 
 private let stringSizeCache: NSCache = { () -> NSCache<AnyObject, AnyObject> in
   let cache = NSCache<AnyObject, AnyObject>()
@@ -18,19 +24,17 @@ private let stringSizeCache: NSCache = { () -> NSCache<AnyObject, AnyObject> in
 
 public extension String {
 
-  public func sizeWith(fixedWidth: CGFloat, with font: UIFont) -> CGSize {
-    let string = NSAttributedString(string: self, attributes: [.font: font])
-    let result = string.sizeWith(fixedWidth: fixedWidth)
-    return result
+  func sizeWith(fixedWidth: CGFloat, with font: UIFont, mode: StringSizeCalculationMode = .default) -> CGSize {
+    return NSAttributedString(string: self, attributes: [.font: font])
+      .sizeWith(fixedWidth: fixedWidth, mode: mode)
   }
 
-  public func sizeWith(fixedHeight: CGFloat, with font: UIFont) -> CGSize {
-    let string = NSAttributedString(string: self, attributes: [.font: font])
-    let result = string.sizeWith(fixedHeight: fixedHeight)
-    return result
+  func sizeWith(fixedHeight: CGFloat, with font: UIFont, mode: StringSizeCalculationMode = .default) -> CGSize {
+    return NSAttributedString(string: self, attributes: [.font: font])
+      .sizeWith(fixedHeight: fixedHeight, mode: mode)
   }
 
-  public func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
+  func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
     let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
     let options: NSStringDrawingOptions = [.usesFontLeading, .usesLineFragmentOrigin]
     let boundingBox = self.boundingRect(with: constraintRect, options: options, attributes: [.font: font], context: nil)
@@ -44,7 +48,7 @@ public extension NSAttributedString {
 
   // MARK: Size rendering
 
-  func sizeWith(fixedWidth: CGFloat) -> CGSize {
+  func sizeWith(fixedWidth: CGFloat, mode: StringSizeCalculationMode = .default) -> CGSize {
     let size = CGSize(width: fixedWidth, height: .greatestFiniteMagnitude)
     let key = size.hashValue ^ hashValue
     if let cachedValue = stringSizeCache.object(forKey: key as AnyObject) as? NSValue {
@@ -56,7 +60,7 @@ public extension NSAttributedString {
     return result
   }
 
-  func sizeWith(fixedHeight: CGFloat) -> CGSize {
+  func sizeWith(fixedHeight: CGFloat, mode: StringSizeCalculationMode = .default) -> CGSize {
     let size = CGSize(width: .greatestFiniteMagnitude, height: fixedHeight)
     let key = size.hashValue ^ hashValue
     if let cachedValue = stringSizeCache.object(forKey: key as AnyObject) as? NSValue {
@@ -68,7 +72,13 @@ public extension NSAttributedString {
     return result
   }
 
-  private func framesetterLayoutSize(with fitSize: CGSize) -> CGSize {
+}
+
+// MARK: - Private
+
+private extension NSAttributedString {
+
+  func framesetterLayoutSize(with fitSize: CGSize) -> CGSize {
     guard length > 0 else { return .zero }
 
     let attrString = self as CFAttributedString
@@ -79,7 +89,7 @@ public extension NSAttributedString {
     return frameSize
   }
 
-  private func layoutSize(with bounds: CGSize) -> CGSize {
+  func layoutSize(with bounds: CGSize) -> CGSize {
     let textStorage = NSTextStorage(attributedString: self)
     let textContainer = NSTextContainer(size: bounds)
     textContainer.lineFragmentPadding = 0.0
@@ -91,4 +101,5 @@ public extension NSAttributedString {
     _ = layoutManager.glyphRange(for: textContainer)
     return layoutManager.usedRect(for: textContainer).integral.size
   }
+
 }

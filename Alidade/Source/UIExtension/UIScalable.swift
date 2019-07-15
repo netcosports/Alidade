@@ -1,7 +1,4 @@
 //
-//  UIScalable.swift
-//  Alidade
-//
 //  Created by Dmitry Duleba on 11/13/18.
 //
 
@@ -99,14 +96,14 @@ fileprivate extension UI {
 
   static func value(_ value: CGSize, for intent: Intent) -> CGSize {
     let scaleFactor = self.scaleFactor(for: intent)
-    return CGSize(width: value.width * scaleFactor,
-                  height: value.height * scaleFactor).ceiled
+    return CGSize(width: ceil(value.width * scaleFactor),
+                  height: ceil(value.height * scaleFactor))
   }
 
   static func value(_ value: CGPoint, for intent: Intent) -> CGPoint {
     let scaleFactor = self.scaleFactor(for: intent)
-    return CGPoint(x: value.x * scaleFactor,
-                   y: value.y * scaleFactor).ceiled
+    return CGPoint(x: ceil(value.x * scaleFactor),
+                   y: ceil(value.y * scaleFactor))
   }
 
   static func value(_ value: UIEdgeInsets, for intent: Intent) -> UIEdgeInsets {

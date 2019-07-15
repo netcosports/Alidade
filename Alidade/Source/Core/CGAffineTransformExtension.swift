@@ -1,12 +1,25 @@
-import UIKit
+//
+//  Created by Dmitry Duleba on 10/24/17.
+//
+
+import struct CoreGraphics.CGAffineTransform
+import struct CoreGraphics.CGPoint
 
 public extension CGAffineTransform {
 
-  public var translation: CGPoint {
+  var translation: CGPoint {
     return CGPoint(x: tx, y: ty)
   }
 
-  public static func += (left: inout CGAffineTransform, right: CGAffineTransform) {
+  var rotation: CGFloat {
+    return atan2(b, a)
+  }
+
+  var scale: CGPoint {
+    return CGPoint(x: a, y: d)
+  }
+
+  static func += (left: inout CGAffineTransform, right: CGAffineTransform) {
     left = left.concatenating(right)
   }
 

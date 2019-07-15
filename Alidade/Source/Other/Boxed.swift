@@ -1,3 +1,7 @@
+//
+//  Created by Dmitry Duleba on 10/24/17.
+//
+
 public class Boxed<T> {
 
   public var value: T?
