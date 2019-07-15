@@ -17,38 +17,13 @@ Pod::Spec.new do |s|
 
   s.subspec 'Default' do |ss|
     ss.dependency 'Alidade/Core'
-    ss.dependency 'Alidade/CoreAnimation'
     ss.dependency 'Alidade/FormatterPool'
-    ss.dependency 'Alidade/Vectors'
-    ss.dependency 'Alidade/String'
     ss.dependency 'Alidade/UI'
     ss.dependency 'Alidade/UIExtension'
-    ss.dependency 'Alidade/Logging'
   end
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'Alidade/Source/Core/*.swift'
-  end
-
-  s.subspec 'CoreAnimation' do |ss| 
-    ss.dependency 'Alidade/Flowable'
-    ss.source_files = 'Alidade/Source/CoreAnimation/*.swift'
-  end
-
-  s.subspec 'Geometry' do |ss|
-    ss.dependency 'Alidade/Core'
-    ss.dependency 'Alidade/Vectors'
-    ss.source_files = 'Alidade/Source/Geometry/*.swift'
-  end
-
-  s.subspec 'Vectors' do |ss|
-    ss.dependency 'Alidade/Core'
-    ss.source_files = 'Alidade/Source/Vectors/*.swift'
-  end
-
-  s.subspec 'String' do |ss|
-    ss.dependency 'Alidade/Core'
-    ss.source_files = 'Alidade/Source/String/*.swift'
   end
 
   s.subspec 'UI' do |ss|
@@ -76,6 +51,11 @@ Pod::Spec.new do |s|
     ss.source_files = 'Alidade/Source/Other/BezierExtractor.swift'
   end
 
+  s.subspec 'CoreAnimation' do |ss| 
+    ss.dependency 'Alidade/Flowable'
+    ss.source_files = 'Alidade/Source/CoreAnimation/*.swift'
+  end
+
   s.subspec 'Flowable' do |ss|
     ss.source_files = 'Alidade/Source/Other/Flowable.swift'
   end
@@ -84,14 +64,30 @@ Pod::Spec.new do |s|
     ss.source_files = 'Alidade/Source/Other/FormatterPool.swift'
   end
 
-  s.subspec 'Logging' do |ss|
-    ss.dependency 'Alidade/Core'
-    ss.source_files = 'Alidade/Source/Other/Logging.swift'
-  end
-
   s.subspec 'FunctionalAnimation' do |ss|
     ss.dependency 'Alidade/Core'
     ss.source_files = 'Alidade/Source/Other/FunctionalAnimation/**/*.swift'
+  end
+
+  s.subspec 'Geometry' do |ss|
+    ss.dependency 'Alidade/Core'
+    ss.dependency 'Alidade/Vectors'
+    ss.source_files = 'Alidade/Source/Geometry/*.swift'
+  end
+
+  s.subspec 'Vectors' do |ss|
+    ss.dependency 'Alidade/Core'
+    ss.source_files = 'Alidade/Source/Vectors/*.swift'
+  end
+
+  s.subspec 'String' do |ss|
+    ss.dependency 'Alidade/Core'
+    ss.source_files = 'Alidade/Source/String/*.swift'
+  end
+
+  s.subspec 'Logging' do |ss|
+    ss.dependency 'Alidade/Core'
+    ss.source_files = 'Alidade/Source/Other/Logging.swift'
   end
 
 end
