@@ -50,7 +50,7 @@ public extension NSAttributedString {
 
   func sizeWith(fixedWidth: CGFloat, mode: StringSizeCalculationMode = .default) -> CGSize {
     let size = CGSize(width: fixedWidth, height: .greatestFiniteMagnitude)
-    let key = size.hashValue ^ hashValue
+    let key = size.width.hashValue ^ size.height.hashValue ^ hashValue
     if let cachedValue = stringSizeCache.object(forKey: key as AnyObject) as? NSValue {
       return cachedValue.cgSizeValue
     }
@@ -62,7 +62,7 @@ public extension NSAttributedString {
 
   func sizeWith(fixedHeight: CGFloat, mode: StringSizeCalculationMode = .default) -> CGSize {
     let size = CGSize(width: .greatestFiniteMagnitude, height: fixedHeight)
-    let key = size.hashValue ^ hashValue
+    let key = size.width.hashValue ^ size.height.hashValue ^ hashValue
     if let cachedValue = stringSizeCache.object(forKey: key as AnyObject) as? NSValue {
       return cachedValue.cgSizeValue
     }

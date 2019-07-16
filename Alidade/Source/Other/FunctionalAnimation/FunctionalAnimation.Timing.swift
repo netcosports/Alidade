@@ -83,7 +83,7 @@ fileprivate extension FunctionalAnimation.Timing {
       guard points.count > 0 else { return 0 }
 
       var t_x_coeffiecients = polynomialForm(points: points.map { $0.x }).coefficients
-      t_x_coeffiecients.last.with { last in
+      if let last = t_x_coeffiecients.last {
         let last_x = last - x
         t_x_coeffiecients = t_x_coeffiecients.dropLast() + [last_x]
       }

@@ -45,7 +45,7 @@ public extension UIView {
       return Shadow(color: layer.shadowColor.map { UIColor(cgColor: $0) },
                     blur: layer.shadowRadius,
                     opacity: layer.shadowOpacity.cg,
-                    offset: layer.shadowOffset.pointValue,
+                    offset: CGPoint(x: layer.shadowOffset.width, y: layer.shadowOffset.height),
                     path: layer.shadowPath)
     }
     set {
@@ -53,7 +53,7 @@ public extension UIView {
       layer.shadowRadius = newValue.blur
       layer.shadowPath = newValue.path
       layer.shadowOpacity = Float(newValue.opacity)
-      layer.shadowOffset = newValue.offset.sizeValue
+      layer.shadowOffset = CGSize(width: newValue.offset.x, height: newValue.offset.y)
     }
   }
 
