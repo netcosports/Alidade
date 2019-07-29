@@ -14,6 +14,17 @@ public extension CGPoint {
   }
 
   var clampNormal: CGPoint { return clamp(CGPoint.zero, CGPoint(x: 1.0, y: 1.0)) }
+
+  //swiftlint:disable identifier_name
+  func clamp(_ min: CGPoint, _ max: CGPoint) -> CGPoint {
+    var p = self
+    if p.x > max.x { p.x = max.x }
+    if p.x < min.x { p.x = min.x }
+    if p.y > max.y { p.y = max.y }
+    if p.y < min.y { p.y = min.y }
+    return p
+  }
+  //swiftlint:enable identifier_name
 }
 
 extension CGPoint: Comparable {
@@ -22,14 +33,4 @@ extension CGPoint: Comparable {
     return lhs.x < rhs.x && lhs.y < lhs.y
   }
 }
-
-fileprivate extension CGPoint {
-
-  func clamp(_ min: CGPoint, _ max: CGPoint) -> CGPoint {
-    let realMin = Swift.min(min, max)
-    let realMax = Swift.max(min, max)
-    return Swift.min(Swift.max(self, realMin), realMax)
-  }
-}
-
 
