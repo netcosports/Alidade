@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Alidade"
-  s.version      = "5.0.2"
+  s.version      = "5.0.3"
   s.summary      = "Utility components"
 
   s.homepage     = "https://github.com/netcosports/Alidade"

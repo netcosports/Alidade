@@ -2,7 +2,7 @@
 //  IntExtensionSpec.swift
 //  Tests
 //
-//  Created by AP Dzmitry Duleba on 1/14/19.
+//  Created by Dmitry Duleba on 1/14/19.
 //
 
 import XCTest

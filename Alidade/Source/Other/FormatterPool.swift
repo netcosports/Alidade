@@ -68,7 +68,7 @@ fileprivate final class FormatterPool {
     return formatter
   }
 
-  fileprivate static func formatter<T: LocalizedFormatter>(format: T.Format, locale: Locale = .current) -> T {
+  fileprivate static func formatter<T: LocalizedFormatter>(format: T.Format, locale: Locale) -> T {
     let key = T.hashValue(format: format, locale: locale)
     if let formatter = cache.object(forKey: key as AnyObject) as? T {
       return formatter
@@ -79,6 +79,20 @@ fileprivate final class FormatterPool {
     cache.setObject(formatter, forKey: key as AnyObject)
     return formatter
   }
+
+  fileprivate static func formatter<T: DateFormatter>(format: T.Format, locale: Locale, timeZone: TimeZone) -> T {
+    let key = T.hashValue(format: format, locale: locale, timeZone: timeZone)
+    if let formatter = cache.object(forKey: key as AnyObject) as? T {
+      return formatter
+    }
+    let formatter = T.init()
+    formatter.format = format
+    formatter.locale = locale
+    formatter.timeZone = timeZone
+    cache.setObject(formatter, forKey: key as AnyObject)
+    return formatter
+  }
+
 }
 
 // MARK: - DateFormatter
@@ -94,10 +108,19 @@ extension DateFormatter: LocalizedFormatter {
   }
 
   public static func hashValue(format: Format, locale: Locale = .autoupdatingCurrent) -> Int {
+    return hashValue(format: format, locale: locale, timeZone: .autoupdatingCurrent)
+  }
+
+  public static func hashValue(format: Format, locale: Locale = .autoupdatingCurrent, timeZone: TimeZone) -> Int {
     return format.hashValue ^ locale.identifier.hashValue
   }
 
   public static func cached(format: String, locale: Locale = .autoupdatingCurrent) -> DateFormatter {
+    return cached(format: format, locale: locale, timeZone: .autoupdatingCurrent)
+  }
+
+  public static func cached(format: String, locale: Locale = .autoupdatingCurrent,
+                            timeZone: TimeZone) -> DateFormatter {
     return FormatterPool.formatter(format: format, locale: locale)
   }
 
@@ -305,6 +328,12 @@ extension PersonNameComponentsFormatter: Formatter {
   public struct Format {
     public var style: Style
     public var isPhonetic: Bool
+
+    public init(style: Style, isPhonetic: Bool) {
+      self.style = style
+      self.isPhonetic = isPhonetic
+    }
+
   }
 
   public var format: Format {
@@ -331,6 +360,12 @@ extension MeasurementFormatter: LocalizedFormatter {
   public struct Format {
     public var units: UnitOptions
     public var style: UnitStyle
+
+    public init(units: UnitOptions, style: UnitStyle) {
+      self.units = units
+      self.style = style
+    }
+
   }
 
   public var format: Format {
