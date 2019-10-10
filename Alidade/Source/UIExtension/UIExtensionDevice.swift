@@ -8,6 +8,7 @@ import UIKit
 public extension UI {
 
   enum Device { }
+
 }
 
 public extension UI.Device {
@@ -15,32 +16,39 @@ public extension UI.Device {
   static func value<T>(_ phone: T, _ pad: T) -> T {
     return UIDevice.current.userInterfaceIdiom == .pad ? pad : phone
   }
+
 }
 
 public extension UI.Device {
 
+  @available(*, deprecated, message: "Use safe area or UIViewController.layouGuides instead")
   static let isIPhoneX: Bool = {
     return UIDevice.current.userInterfaceIdiom == .phone &&
         UIScreen.main.nativeBounds.height == 2436
   }()
 
+  @available(*, deprecated, message: "Use safe area or UIViewController.layouGuides instead")
   static let isIPhoneXR: Bool = {
     return UIDevice.current.userInterfaceIdiom == .phone &&
       UIScreen.main.nativeBounds.height == 1792
   }()
 
+  @available(*, deprecated, message: "Use safe area or UIViewController.layouGuides instead")
   static let isIPhoneXS: Bool = {
     return isIPhoneX
   }()
 
+  @available(*, deprecated, message: "Use safe area or UIViewController.layouGuides instead")
   static let isIPhoneXSMax: Bool = {
     return UIDevice.current.userInterfaceIdiom == .phone &&
       UIScreen.main.nativeBounds.height == 2688
   }()
 
+  @available(*, deprecated, message: "Use safe area or UIViewController.layouGuides instead")
   static let isIPhoneXSeries: Bool = {
     return isIPhoneX || isIPhoneXR || isIPhoneXS || isIPhoneXSMax
   }()
+
 }
 
 public extension UI.Device {
@@ -68,5 +76,6 @@ public extension UI.Device {
       }
       return System.iOS9
     }()
+    
   }
 }

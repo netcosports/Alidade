@@ -13,66 +13,93 @@ public protocol UIScalable {
   var ui: UIValue { get }
 
   func uiValue(for intent: UI.Intent) -> UIValue
+  
 }
 
 extension Int: UIScalable {
+
   public typealias UIValue = CGFloat
   public var ui: UIValue { return UI.value(self, for: .general) }
   public func uiValue(for intent: UI.Intent) -> UIValue { return UI.value(self, for: intent) }
+
 }
 
 extension UInt: UIScalable {
+
   public typealias UIValue = CGFloat
   public var ui: UIValue { return UI.value(self, for: .general) }
   public func uiValue(for intent: UI.Intent) -> UIValue { return UI.value(self, for: intent) }
+
 }
 
 extension CGFloat: UIScalable {
+
   public typealias UIValue = CGFloat
   public var ui: UIValue { return UI.value(self, for: .general) }
   public func uiValue(for intent: UI.Intent) -> UIValue { return UI.value(self, for: intent) }
+
 }
 
 extension Double: UIScalable {
+
   public typealias UIValue = CGFloat
   public var ui: UIValue { return UI.value(cg, for: .general) }
   public func uiValue(for intent: UI.Intent) -> UIValue { return UI.value(cg, for: intent) }
+
 }
 
 extension Float: UIScalable {
+
   public typealias UIValue = CGFloat
   public var ui: UIValue { return UI.value(cg, for: .general) }
   public func uiValue(for intent: UI.Intent) -> UIValue { return UI.value(cg, for: intent) }
+
 }
 
 extension CGPoint: UIScalable {
+
   public typealias UIValue = CGPoint
   public var ui: UIValue { return UI.value(self, for: .general) }
   public func uiValue(for intent: UI.Intent) -> UIValue { return UI.value(self, for: intent) }
+
 }
 
 extension CGSize: UIScalable {
+
   public typealias UIValue = CGSize
   public var ui: UIValue { return UI.value(self, for: .general) }
   public func uiValue(for intent: UI.Intent) -> UIValue { return UI.value(self, for: intent) }
+
 }
 
 extension UIOffset: UIScalable {
+
   public typealias UIValue = UIOffset
   public var ui: UIValue { return UI.value(self, for: .general) }
   public func uiValue(for intent: UI.Intent) -> UIValue { return UI.value(self, for: intent) }
+
 }
 
 extension UIEdgeInsets: UIScalable {
+
   public typealias UIValue = UIEdgeInsets
   public var ui: UIValue { return UI.value(self, for: .general) }
   public func uiValue(for intent: UI.Intent) -> UIValue { return UI.value(self, for: intent) }
+
 }
 
 extension UIFont: UIScalable {
+
   public typealias UIValue = UIFont
   public var ui: UIValue { return UI.value(self, for: .general) }
   public func uiValue(for intent: UI.Intent) -> UIValue { return UI.value(self, for: intent) }
+
+}
+
+extension Array where Element: UIScalable {
+
+  public var ui: [Element.UIValue] { return map { $0.ui } }
+
 }
 
 // MARK: - UI.Private

@@ -9,11 +9,15 @@ import UIKit
 public extension UIColor {
 
   enum Lightness {
+
     case dark
     case light
 
-    fileprivate static let threashold: CGFloat = 0.65
+    public static var threashold: CGFloat = 0.65
+
   }
+
+  var isLight: Bool { return luminance >= Lightness.threashold }
 
   static var random: UIColor {
     let r = CGFloat.random
@@ -43,7 +47,6 @@ public extension UIColor {
     return newHSL.color()
   }
 
-  var isLight: Bool { return luminance >= Lightness.threashold }
 }
 
 // MARK: - RGBA
@@ -105,6 +108,7 @@ public extension UIColor {
     public func color() -> UIColor {
       return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
+
   }
 
   func rgbaValue() -> RGBA {
@@ -113,6 +117,7 @@ public extension UIColor {
     getRed(&r, green: &g, blue: &b, alpha: &a)
     return RGBA(r, g, b, a)
   }
+
 }
 
 // MARK: - HSLA
@@ -174,6 +179,7 @@ public extension UIColor {
       return rgba.color()
     }
     // swiftlint:enable identifier_name
+
   }
 }
 
@@ -200,7 +206,7 @@ public extension UIColor {
     }
     // swiftlint:enable identifier_name
 
-    func color() -> UIColor {
+    public func color() -> UIColor {
       let color = UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: alpha)
       return color
     }
@@ -208,6 +214,7 @@ public extension UIColor {
     public var debugDescription: String {
       return "h: %.2\(hue), s: %.2\(saturation), l: %.2\(brightness), a: %.2\(alpha)"
     }
+
   }
 
   func hsbaValue() -> HSBA {
@@ -217,5 +224,6 @@ public extension UIColor {
   func hslaValue() -> HSLA {
     return rgbaValue().hslaValue()
   }
+
 }
 //swiftlint:enable identifier_name
