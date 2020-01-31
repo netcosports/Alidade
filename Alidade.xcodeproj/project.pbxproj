@@ -27,6 +27,7 @@
 		464EE931225B3A50008EC790 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE92C225B3A4F008EC790 /* Geometry.swift */; };
 		464EE932225B3A50008EC790 /* Geometry.Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE92D225B3A4F008EC790 /* Geometry.Objects.swift */; };
 		4C544D6448BB92F2D474BAD9 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28E5B09976A3B3F3D71C2E74 /* Pods_Tests.framework */; };
+		5686B76A23E431B000D061D5 /* Attributable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5686B76923E431B000D061D5 /* Attributable.swift */; };
 		5C5442AE200A7FF500E1E326 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5442AD200A7FF500E1E326 /* FloatExtension.swift */; };
 		5C6972922002D2B2001A5051 /* Associatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6972912002D2B2001A5051 /* Associatable.swift */; settings = {COMPILER_FLAGS = "-w"; }; };
 		5C8ABDA3200155DB003FA5DD /* Vectorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABDA2200155DB003FA5DD /* Vectorable.swift */; };
@@ -105,6 +106,7 @@
 		464EE92C225B3A4F008EC790 /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		464EE92D225B3A4F008EC790 /* Geometry.Objects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.Objects.swift; sourceTree = "<group>"; };
 		487DF70427D4ED24096AF528 /* Pods-Alidade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alidade.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alidade/Pods-Alidade.release.xcconfig"; sourceTree = "<group>"; };
+		5686B76923E431B000D061D5 /* Attributable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributable.swift; sourceTree = "<group>"; };
 		5C5442AD200A7FF500E1E326 /* FloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
 		5C6972912002D2B2001A5051 /* Associatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Associatable.swift; sourceTree = "<group>"; };
 		5C8ABDA2200155DB003FA5DD /* Vectorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vectorable.swift; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 				CE7F372F219AD0DE00C3B310 /* UIScalable.swift */,
 				CE91F3911F948F9C002FCE7E /* UIExtension.swift */,
 				CEE0CACF1F9F868A00EE9B2E /* UIExtensionDevice.swift */,
+				5686B76923E431B000D061D5 /* Attributable.swift */,
 			);
 			path = UIExtension;
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 				CE91F3AB1F948FAC002FCE7E /* UIColorExtension.swift in Sources */,
 				CE91F3AE1F948FAC002FCE7E /* UIScrollViewExtension.swift in Sources */,
 				CEE0CABE1F9F685E00EE9B2E /* CGSizeExtension.swift in Sources */,
+				5686B76A23E431B000D061D5 /* Attributable.swift in Sources */,
 				CE91F3AF1F948FAC002FCE7E /* UIView+Animations.swift in Sources */,
 				CE91F3B01F948FAC002FCE7E /* UIViewExtension.swift in Sources */,
 				5C8ABDA520015620003FA5DD /* Flowable.swift in Sources */,
