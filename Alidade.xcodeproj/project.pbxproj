@@ -27,6 +27,7 @@
 		464EE931225B3A50008EC790 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE92C225B3A4F008EC790 /* Geometry.swift */; };
 		464EE932225B3A50008EC790 /* Geometry.Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464EE92D225B3A4F008EC790 /* Geometry.Objects.swift */; };
 		4C544D6448BB92F2D474BAD9 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28E5B09976A3B3F3D71C2E74 /* Pods_Tests.framework */; };
+		56596E9A23FC24DD00E48B21 /* Decorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56596E9923FC24DD00E48B21 /* Decorable.swift */; };
 		5686B76A23E431B000D061D5 /* Attributable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5686B76923E431B000D061D5 /* Attributable.swift */; };
 		5C5442AE200A7FF500E1E326 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5442AD200A7FF500E1E326 /* FloatExtension.swift */; };
 		5C6972922002D2B2001A5051 /* Associatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6972912002D2B2001A5051 /* Associatable.swift */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -106,6 +107,7 @@
 		464EE92C225B3A4F008EC790 /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		464EE92D225B3A4F008EC790 /* Geometry.Objects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.Objects.swift; sourceTree = "<group>"; };
 		487DF70427D4ED24096AF528 /* Pods-Alidade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alidade.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alidade/Pods-Alidade.release.xcconfig"; sourceTree = "<group>"; };
+		56596E9923FC24DD00E48B21 /* Decorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decorable.swift; sourceTree = "<group>"; };
 		5686B76923E431B000D061D5 /* Attributable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributable.swift; sourceTree = "<group>"; };
 		5C5442AD200A7FF500E1E326 /* FloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
 		5C6972912002D2B2001A5051 /* Associatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Associatable.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 				CE91F3911F948F9C002FCE7E /* UIExtension.swift */,
 				CEE0CACF1F9F868A00EE9B2E /* UIExtensionDevice.swift */,
 				5686B76923E431B000D061D5 /* Attributable.swift */,
+				56596E9923FC24DD00E48B21 /* Decorable.swift */,
 			);
 			path = UIExtension;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 			files = (
 				5CDE89032245821400DD40D3 /* VectorableRepresentation.swift in Sources */,
 				CE7F3730219AD0DE00C3B310 /* UIScalable.swift in Sources */,
+				56596E9A23FC24DD00E48B21 /* Decorable.swift in Sources */,
 				CE91F3B11F948FB3002FCE7E /* Updateable.swift in Sources */,
 				CE91F3B21F948FB3002FCE7E /* UIExtension.swift in Sources */,
 				464EE921225B358C008EC790 /* FunctionalAnimation.swift in Sources */,
