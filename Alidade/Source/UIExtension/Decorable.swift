@@ -4,20 +4,15 @@
 
 import UIKit
 
-public typealias Decoration = (UIView) -> Void
+public typealias Decoration<View> = (View) -> Void
 
 public protocol Decorable {
-  var decoration: Decoration { get }
+  associatedtype View
+  var decoration: Decoration<View> { get }
 }
 
 extension Decorable {
-  public func apply(_ object: UIView) -> Void {
-    decoration(object)
-  }
-}
-
-extension Array where Element == Decorable {
-  func apply(_ object: UIView) -> Void {
-    self.forEach { $0.decoration(object) }
+  public func apply<T>(_ view: T) where T == View {
+    decoration(view)
   }
 }
