@@ -5,6 +5,21 @@
 import UIKit
 
 public extension UIView {
+  private enum Associated {
+    static var frameKVO = "frame_kvo"
+  }
+
+  private var frameKVO: NSKeyValueObservation? {
+    set {
+      objc_setAssociatedObject(self,
+                               &Associated.frameKVO,
+                               newValue,
+                               .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
+    get {
+      return objc_getAssociatedObject(self, &Associated.frameKVO) as? NSKeyValueObservation
+    }
+  }
 
   struct Shadow {
     public var color: UIColor?
@@ -49,12 +64,22 @@ public extension UIView {
                     path: layer.shadowPath)
     }
     set {
-      layer.shadowColor = newValue.color?.cgColor
-      layer.shadowRadius = newValue.blur
-      layer.shadowPath = newValue.path
-      layer.shadowOpacity = Float(newValue.opacity)
-      layer.shadowOffset = CGSize(width: newValue.offset.x, height: newValue.offset.y)
+      if !frame.isEmpty { applyShadow() }
+      if frameKVO == nil {
+        frameKVO = observe(\.frame) { [weak self] view, _ in
+          if view.frame.isEmpty == false {
+            self?.applyShadow()
+          }
+        }
+      }
     }
   }
 
+  private func applyShadow() {
+    layer.shadowColor = shadow.color?.cgColor
+    layer.shadowRadius = shadow.blur
+    layer.shadowPath = shadow.path
+    layer.shadowOpacity = Float(shadow.opacity)
+    layer.shadowOffset = CGSize(width: shadow.offset.x, height: shadow.offset.y)
+  }
 }
