@@ -80,7 +80,7 @@ fileprivate final class FormatterPool {
     return formatter
   }
 
-  fileprivate static func formatter<T: DateFormatter>(format: T.Format, locale: Locale, timeZone: TimeZone) -> T {
+  fileprivate static func formatter<T: DateFormatter>(format: String, locale: Locale, timeZone: TimeZone) -> T {
     let key = T.hashValue(format: format, locale: locale, timeZone: timeZone)
     if let formatter = cache.object(forKey: key as AnyObject) as? T {
       return formatter
@@ -93,6 +93,52 @@ fileprivate final class FormatterPool {
     return formatter
   }
 
+
+  
+  fileprivate static func formatter<T: DateFormatter>(
+    template: String,
+    locale: Locale,
+    timeZone: TimeZone
+  ) -> T {
+    let key = T.hashValue(
+      template: template,
+      locale: locale,
+      timeZone: timeZone
+    ) as AnyObject
+    if let formatter = cache.object(forKey: key) as? T {
+      return formatter
+    }
+    let formatter = T.init()
+    formatter.setLocalizedDateFormatFromTemplate(template)
+    formatter.locale = locale
+    formatter.timeZone = timeZone
+    cache.setObject(formatter, forKey: key)
+    return formatter
+  }
+
+  fileprivate static func formatter<T: DateFormatter>(
+    dateStyle: DateFormatter.Style,
+    timeStyle: DateFormatter.Style,
+    locale: Locale,
+    timeZone: TimeZone
+  ) -> T {
+    let key = T.hashValue(
+      dateStyle: dateStyle,
+      timeStyle: timeStyle,
+      locale: locale,
+      timeZone: timeZone
+    ) as AnyObject
+    if let formatter = cache.object(forKey: key) as? T {
+      return formatter
+    }
+    let formatter = T.init()
+    formatter.dateStyle = dateStyle
+    formatter.timeStyle = timeStyle
+    formatter.locale = locale
+    formatter.timeZone = timeZone
+    cache.setObject(formatter, forKey: key)
+    return formatter
+  }
 }
 
 // MARK: - DateFormatter
@@ -112,18 +158,83 @@ extension DateFormatter: LocalizedFormatter {
   }
 
   public static func hashValue(format: Format, locale: Locale = .autoupdatingCurrent, timeZone: TimeZone) -> Int {
-    return format.hashValue ^ locale.identifier.hashValue
+    var hasher = Hasher()
+    hasher.combine(#line)
+    hasher.combine(format)
+    hasher.combine(locale)
+    hasher.combine(timeZone)
+    return hasher.finalize()
   }
 
   public static func cached(format: String, locale: Locale = .autoupdatingCurrent) -> DateFormatter {
     return cached(format: format, locale: locale, timeZone: .autoupdatingCurrent)
   }
 
-  public static func cached(format: String, locale: Locale = .autoupdatingCurrent,
-                            timeZone: TimeZone) -> DateFormatter {
-    return FormatterPool.formatter(format: format, locale: locale)
+  public static func cached(
+    format: String,
+    locale: Locale = .autoupdatingCurrent,
+    timeZone: TimeZone
+  ) -> DateFormatter {
+    return FormatterPool.formatter(
+      format: format,
+      locale: locale,
+      timeZone: timeZone
+    )
   }
 
+  public static func hashValue(
+    template: String,
+    locale: Locale = .autoupdatingCurrent,
+    timeZone: TimeZone = .autoupdatingCurrent
+  ) -> Int {
+    var hasher = Hasher()
+    hasher.combine(#line)
+    hasher.combine(template)
+    hasher.combine(locale)
+    hasher.combine(timeZone)
+    return hasher.finalize()
+  }
+
+  public static func cached(
+    template: String,
+    locale: Locale = .autoupdatingCurrent,
+    timeZone: TimeZone = .autoupdatingCurrent
+  ) -> DateFormatter {
+    return FormatterPool.formatter(
+      template: template,
+      locale: locale,
+      timeZone: timeZone
+    )
+  }
+
+  public static func hashValue(
+    dateStyle: DateFormatter.Style,
+    timeStyle: DateFormatter.Style,
+    locale: Locale = .autoupdatingCurrent,
+    timeZone: TimeZone = .autoupdatingCurrent
+  ) -> Int {
+    var hasher = Hasher()
+    hasher.combine(#line)
+    hasher.combine(dateStyle)
+    hasher.combine(timeStyle)
+    hasher.combine(locale)
+    hasher.combine(timeZone)
+    return hasher.finalize()
+  }
+
+  public static func cached(
+    dateStyle: DateFormatter.Style,
+    timeStyle: DateFormatter.Style,
+    locale: Locale = .autoupdatingCurrent,
+    timeZone: TimeZone = .autoupdatingCurrent
+  ) -> DateFormatter {
+    return FormatterPool.formatter(
+      dateStyle: dateStyle,
+      timeStyle: timeStyle,
+      locale: locale,
+      timeZone: timeZone
+    )
+  }
 }
 
 // MARK: - NumberFormatter
