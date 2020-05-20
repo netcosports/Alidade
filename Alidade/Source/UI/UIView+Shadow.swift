@@ -29,9 +29,9 @@ public extension UIView {
     public var blur: CGFloat
     public var spread: CGFloat
 
-    func path(for bounds: CGRect) -> CGPath {
+    func path(for bounds: CGRect, corners: CGFloat) -> CGPath {
       let rect = bounds.insetBy(dx: -spread, dy: spread)
-      return UIBezierPath(rect: rect).cgPath
+      return UIBezierPath(roundedRect: rect, cornerRadius: corners).cgPath
     }
 
     var offset: CGPoint {
@@ -85,7 +85,7 @@ public extension UIView {
   private func applyShadow(shadow: Shadow) {
     layer.shadowColor = shadow.color.cgColor
     layer.shadowRadius = shadow.blur
-    layer.shadowPath = shadow.path(for: bounds)
+    layer.shadowPath = shadow.path(for: bounds, corners: self.layer.cornerRadius)
     layer.shadowOpacity = Float(shadow.alpha)
     layer.shadowOffset = CGSize(width: shadow.offset.x, height: shadow.offset.y)
   }
