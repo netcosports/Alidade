@@ -5,18 +5,27 @@
 import Foundation
 import UIKit
 
+public extension NSAttributedString.Key {
+  static let uppercased = NSAttributedString.Key("uppercased")
+}
+
 public protocol Attributable {
-    var attributes: [NSAttributedString.Key: Any] { get }
+  var attributes: [NSAttributedString.Key: Any] { get }
 }
 
 public extension String {
   func styled(as style: Attributable) -> NSAttributedString {
-    return NSAttributedString(string: self, attributes: style.attributes)
+    let attributes = style.attributes
+    let uppercased = attributes[.uppercased] != nil
+    return NSAttributedString(string: uppercased ? self.uppercased() : self, attributes: attributes)
   }
 
   func styled(phone: Attributable,
               pad: Attributable) -> NSAttributedString {
     let style = UIDevice.current.userInterfaceIdiom == .pad ? pad : phone
-    return NSAttributedString(string: self, attributes: style.attributes)
+    let attributes = style.attributes
+    let uppercased = attributes[.uppercased] != nil
+    return NSAttributedString(string: uppercased ? self.uppercased() : self, attributes: attributes)
   }
 }
+
