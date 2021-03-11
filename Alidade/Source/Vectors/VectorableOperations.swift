@@ -115,11 +115,13 @@ public extension SIMD where Scalar == CGFloat, MaskStorage == SIMD2<Scalar.SIMDM
 
 // swiftlint:disable identifier_name
 
-public func ~== <T>(lhs: T, rhs: T) -> Bool where T: SIMD, T.Scalar == CGFloat {
+infix operator ~== : ComparisonPrecedence
+func ~== <T>(lhs: T, rhs: T) -> Bool where T: SIMD, T.Scalar == CGFloat {
   return lhs.isFuzzyEqual(to: rhs)
 }
 
-public func ~!= <T>(lhs: T, rhs: T) -> Bool where T: SIMD, T.Scalar == CGFloat {
+infix operator ~!= : ComparisonPrecedence
+func ~!= <T>(lhs: T, rhs: T) -> Bool where T: SIMD, T.Scalar == CGFloat {
   return !lhs.isFuzzyEqual(to: rhs)
 }
 

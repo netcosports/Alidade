@@ -4,6 +4,9 @@
 
 import UIKit
 import Foundation
+#if SWIFT_PACKAGE
+	import AlidadeCore
+#endif
 
 //swiftlint:disable line_length type_name identifier_name
 

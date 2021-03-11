@@ -3,7 +3,7 @@
 //
 
 import Foundation
-import UIKit
+import struct UIKit.CGFloat
 
 public protocol VectorableScalarConvertible {
 
@@ -11,12 +11,6 @@ public protocol VectorableScalarConvertible {
   var cg: CGFloat { get }
 
 }
-
-extension Int: VectorableScalarConvertible { }
-
-extension Float: VectorableScalarConvertible { }
-
-extension Double: VectorableScalarConvertible { }
 
 public extension SIMD where Scalar == CGFloat {
 

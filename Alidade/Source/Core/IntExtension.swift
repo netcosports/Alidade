@@ -2,7 +2,7 @@
 //  Created by Dmitry Duleba on 10/24/17.
 //
 
-import Foundation
+import CoreGraphics
 
 public extension Int {
 

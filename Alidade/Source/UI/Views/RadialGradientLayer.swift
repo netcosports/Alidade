@@ -2,8 +2,11 @@
 //  Created by Dmitry Duleba on 10/24/17.
 //
 
-import Foundation
+import CoreGraphics
 import UIKit
+#if SWIFT_PACKAGE
+	import AlidadeCore
+#endif
 
 public class RadialGradientLayer: CALayer {
 

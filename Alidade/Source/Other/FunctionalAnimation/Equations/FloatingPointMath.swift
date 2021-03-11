@@ -80,6 +80,7 @@ extension Float: FloatingPointMath {
 }
 
 extension CGFloat: FloatingPointMath {
+	static var epsilon: CGFloat { CGFloat(self) }
 
   var asDouble: Double { return Double(self) }
 
