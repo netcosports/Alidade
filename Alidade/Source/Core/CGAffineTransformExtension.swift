@@ -2,8 +2,7 @@
 //  Created by Dmitry Duleba on 10/24/17.
 //
 
-import struct CoreGraphics.CGAffineTransform
-import struct CoreGraphics.CGPoint
+import CoreGraphics
 
 public extension CGAffineTransform {
 

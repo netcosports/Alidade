@@ -6,6 +6,7 @@ import struct UIKit.CGVector
 import struct UIKit.CGPoint
 import struct UIKit.CGSize
 import struct UIKit.UIOffset
+import struct UIKit.CGFloat
 
 public extension SIMD where Scalar == CGFloat, MaskStorage == SIMD2<Scalar.SIMDMaskScalar> {
 

@@ -2,7 +2,13 @@
 //  Created by Dmitry Duleba on 11/13/18.
 //
 
-import Foundation
+import CoreGraphics
+import struct UIKit.UIOffset
+import struct UIKit.UIEdgeInsets
+import class UIKit.UIFont
+#if SWIFT_PACKAGE
+	import AlidadeCore
+#endif
 
 // MARK: - UIScalable
 
@@ -13,7 +19,6 @@ public protocol UIScalable {
   var ui: UIValue { get }
 
   func uiValue(for intent: UI.Intent) -> UIValue
-  
 }
 
 extension Int: UIScalable {
@@ -108,7 +113,8 @@ fileprivate extension UI {
 
   static func value(_ value: CGFloat, for intent: Intent) -> CGFloat {
     let absValue = abs(value)
-    let sign = value.sign
+		let sign: CGFloat = value < 0.0 ? -1.0 : 1.0
+
     guard absValue > 1.0 else { return value }
     return floor(absValue * scaleFactor(for: intent)) * sign
   }

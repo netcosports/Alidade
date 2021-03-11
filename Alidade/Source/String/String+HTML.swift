@@ -2,7 +2,7 @@
 //  Created by Dmitry Duleba on 10/24/17.
 //
 
-import Foundation
+import UIKit
 
 private let htmlToPlainStringCache: NSCache = { () -> NSCache<AnyObject, AnyObject> in
   let cache = NSCache<AnyObject, AnyObject>()

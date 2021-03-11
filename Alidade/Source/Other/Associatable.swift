@@ -3,7 +3,9 @@
 //
 
 import Foundation
-
+#if SWIFT_PACKAGE
+	import AlidadeBoxed
+#endif
 // MARK: - Associatable
 
 public protocol Associatable {
