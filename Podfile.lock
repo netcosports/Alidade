@@ -1,20 +1,47 @@
 PODS:
-  - Nimble (8.0.1)
-  - SwiftLint (0.26.0)
+  - Alidade (5.1.7)
+  - AlidadeCoreAnimation (5.1.7):
+    - Alidade
+  - AlidadeFunctionalAnimation (5.1.7):
+    - Alidade
+  - AlidadeGeometry (5.1.7):
+    - AlidadeVectors
+  - AlidadeVectors (5.1.7):
+    - Alidade
+  - Nimble (9.2.0)
 
 DEPENDENCIES:
+  - Alidade (from `.`)
+  - AlidadeCoreAnimation (from `.`)
+  - AlidadeFunctionalAnimation (from `.`)
+  - AlidadeGeometry (from `.`)
+  - AlidadeVectors (from `.`)
   - Nimble
-  - SwiftLint
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Nimble
-    - SwiftLint
+
+EXTERNAL SOURCES:
+  Alidade:
+    :path: "."
+  AlidadeCoreAnimation:
+    :path: "."
+  AlidadeFunctionalAnimation:
+    :path: "."
+  AlidadeGeometry:
+    :path: "."
+  AlidadeVectors:
+    :path: "."
 
 SPEC CHECKSUMS:
-  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
-  SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
+  Alidade: 700937e22f8eed50ed31448fd87215d126e67b36
+  AlidadeCoreAnimation: 2c6d8fea03df38ab3a154d5624c5e332945dc0fa
+  AlidadeFunctionalAnimation: 4f22a76706b66487974d98efee6b5c77f42b8d2f
+  AlidadeGeometry: e6c637eeed7efe230a4ce394f623926ee0981b65
+  AlidadeVectors: 66d1e41354b9a83b563a5671087a198435ee3bd2
+  Nimble: 4f4a345c80b503b3ea13606a4f98405974ee4d0b
 
-PODFILE CHECKSUM: 6f1bbd33f9d3a56ab53a99981fa660ebfc6b0a04
+PODFILE CHECKSUM: b8403889241bc0f21f510b2d256297d4cd932297
 
 COCOAPODS: 1.7.4

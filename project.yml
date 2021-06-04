@@ -1,0 +1,16 @@
+name: Alidade
+attributes:
+  ORGANIZATIONNAME: NetcoSports
+options:
+  minimumXcodeGenVersion: 2.1.0
+  xcodeVersion: "~> 12.5"
+  indentWidth: 2
+  tabWidth: 2
+  developmentLanguage: en
+targets:
+  Tests:
+    platform: [iOS]
+    deploymentTarget: '11.0'
+    type: bundle.unit-test
+    sources:
+    - path: Tests

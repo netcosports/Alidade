@@ -5,6 +5,8 @@
 import Foundation
 import UIKit
 
+import Alidade
+
 // MARK: - SIMD2
 
 public extension SIMD where Scalar == CGFloat, MaskStorage == SIMD2<Scalar.SIMDMaskScalar> {

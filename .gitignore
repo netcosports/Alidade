@@ -26,6 +26,9 @@ fastlane/report.xml
 fastlane/README.md
 fastlane/.env
 .bundle
+.build
+.swiftpm
+
 vendor
 
 # CocoaPods
@@ -34,4 +37,5 @@ vendor
 # you should judge for yourself, the pros and cons are mentioned at:
 # http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
 #
+
 Pods/

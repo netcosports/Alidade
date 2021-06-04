@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "Alidade"
+  s.name         = "AlidadeGeometry"
   s.version      = "5.1.7"
   s.summary      = "Utility components"
 
@@ -16,6 +16,8 @@ Pod::Spec.new do |s|
   s.platform = :ios
   s.ios.deployment_target = "10.0"
 
-  s.source_files = 'Alidade/Source/Root/*.swift'
+  s.dependency 'AlidadeVectors'
+
+  s.source_files = 'Alidade/Source/Geometry/*.swift'
 
 end
