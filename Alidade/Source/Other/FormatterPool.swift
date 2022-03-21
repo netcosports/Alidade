@@ -298,20 +298,41 @@ extension DateComponentsFormatter: Formatter {
   public struct Format {
     public var units: NSCalendar.Unit
     public var style: UnitsStyle
+    public var zeroFormattingBehavior: DateComponentsFormatter.ZeroFormattingBehavior
 
-    public init(units: NSCalendar.Unit = .init(rawValue: 0), style: UnitsStyle = .positional) {
+    public init(
+      units: NSCalendar.Unit = .init(rawValue: 0),
+      style: UnitsStyle = .positional,
+      zeroFormattingBehavior: DateComponentsFormatter.ZeroFormattingBehavior = .default
+    ) {
       self.units = units
       self.style = style
+      self.zeroFormattingBehavior = zeroFormattingBehavior
     }
   }
 
   public var format: Format {
-    get { return .init(units: allowedUnits, style: unitsStyle) }
-    set { allowedUnits = newValue.units; unitsStyle = newValue.style }
+    get {
+      .init(
+        units: allowedUnits,
+        style: unitsStyle,
+        zeroFormattingBehavior: zeroFormattingBehavior
+      )
+    }
+    set {
+      allowedUnits = newValue.units;
+      unitsStyle = newValue.style
+      zeroFormattingBehavior = newValue.zeroFormattingBehavior
+    }
   }
 
   public static func hashValue(format: Format) -> Int {
-    return format.style.hashValue ^ format.units.rawValue.hashValue
+    var hasher = Hasher()
+    hasher.combine(#line)
+    hasher.combine(format.style)
+    hasher.combine(format.units.rawValue)
+    hasher.combine(format.zeroFormattingBehavior.rawValue)
+    return hasher.finalize()
   }
 
   public static func cached(format: Format) -> DateComponentsFormatter {
