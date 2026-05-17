@@ -3,9 +3,6 @@
 //
 
 import Foundation
-#if SWIFT_PACKAGE
-	import Alidade
-#endif
 
 public extension NSObject {
 
